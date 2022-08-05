@@ -1,5 +1,9 @@
 
 
+import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/beranda.dart';
+import 'package:expektasi/views/home/cart.dart';
+import 'package:expektasi/views/home/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -16,6 +20,9 @@ class TemplateMainView extends StatefulWidget {
 class _TemplateMainViewState extends State<TemplateMainView> {
 
   List<Widget> listWidget = [
+    BerandaView(),
+    CartView(),
+    ProfileView(),
   ];
   void val(int index) {
     setState(() {
@@ -30,23 +37,23 @@ class _TemplateMainViewState extends State<TemplateMainView> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: SizedBox(
-        height: 70,
-        width: 70,
-        child: FloatingActionButton(
-            backgroundColor: Colors.white,
-            onPressed: () {
-              // goPush(
-              //     // qrView()
-              // );
-            },
-            child: Icon(
-              PhosphorIcons.qrCodeFill,
-              size: 32.0,
-              // color: selectedIndex == 1 ? Colors.white : Colors.black,
-            )
-        ),
-      ),
+      // floatingActionButton: SizedBox(
+      //   height: 70,
+      //   width: 70,
+      //   child: FloatingActionButton(
+      //       backgroundColor: Colors.white,
+      //       onPressed: () {
+      //         // goPush(
+      //         //     // qrView()
+      //         // );
+      //       },
+      //       child: Icon(
+      //         PhosphorIcons.qrCodeFill,
+      //         size: 32.0,
+      //         // color: selectedIndex == 1 ? Colors.white : Colors.black,
+      //       )
+      //   ),
+      // ),
       extendBody: true,
       bottomNavigationBar: BottomAppBar(
         elevation: 20.0,
@@ -69,14 +76,25 @@ class _TemplateMainViewState extends State<TemplateMainView> {
                     PhosphorIcons.houseBold,
                     size: 32.0,
                   ),
-                  // color: selectedIndex == 0 ? primaryColor : Colors.grey.shade400,
+                  color: selectedIndex == 0 ? secondaryColor : Colors.black   ,
                   //   //darken the icon if it is selected or else give it a different color
                   // color: val == 0
                   //   ? Colors.blue.shade900
                   //       : Colors.grey.shade400,
                 ),
-                SizedBox(
-                  width: 50.0,
+                IconButton(
+                  //update the bottom app bar view each time an item is clicked
+                  onPressed: () {
+                    val(1);
+                  },
+                  iconSize: 32.0,
+                  icon: Icon(
+                    PhosphorIcons.shoppingCartSimpleBold,
+                    size: 32.0,
+                  ),
+                  color: selectedIndex == 1 ? secondaryColor : Colors.black,
+                  //darken the icon if it is selected or else give it a different color
+                  // color: selectedIndex == 2 ? primaryColor : Colors.grey.shade400,
                 ),
                 IconButton(
                   //update the bottom app bar view each time an item is clicked
@@ -88,6 +106,7 @@ class _TemplateMainViewState extends State<TemplateMainView> {
                     PhosphorIcons.userBold,
                     size: 32.0,
                   ),
+                  color: selectedIndex == 2 ? secondaryColor : Colors.black,
                   //darken the icon if it is selected or else give it a different color
                   // color: selectedIndex == 2 ? primaryColor : Colors.grey.shade400,
                 ),
