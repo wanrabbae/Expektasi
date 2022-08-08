@@ -2,7 +2,11 @@ import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
+
+import '../../core/utils/constant.dart';
+import '../../core/utils/navigator_helper.dart';
 
 class BerandaView extends StatefulWidget {
   const BerandaView({Key? key}) : super(key: key);
@@ -22,10 +26,9 @@ class _BerandaViewState extends State<BerandaView> {
             children: [
               Container(
                 child: Image.network(
-                  'https://cdn.discordapp.com/attachments/990841636386897971/1004642987973808178/Rectangle_20.png',
+                  'https://cdn.discordapp.com/attachments/990841636386897971/1006062749547237506/banner_rev1_1_1.png',
                   fit: BoxFit.cover,
                   width: double.infinity,
-                  height: 250,
                 ),
               ),
               Container(
@@ -34,8 +37,16 @@ class _BerandaViewState extends State<BerandaView> {
                   horizontal: 25
                 ),
                 height: 1000,
-                transform: Matrix4.translationValues(0.0, -90.0, 0.0),
+                transform: Matrix4.translationValues(0.0, -40.0, 0.0),
                 decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black12,
+                        spreadRadius: 0,
+                        offset: Offset(0.0, -5.0), //(x,y)
+                        blurRadius: 15,
+                      ),
+                    ],
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -63,7 +74,7 @@ class _BerandaViewState extends State<BerandaView> {
                                 children: [
                                   Icon(
                                     PhosphorIcons.wallet,
-                                    size: 40,
+                                    size: 30,
                                     color: Color(0xffEB9007),
                                   ),
                                   Padding(
@@ -108,7 +119,7 @@ class _BerandaViewState extends State<BerandaView> {
                                 children: <Widget>[
                                   Icon(
                                     PhosphorIcons.scan,
-                                    size: 35,
+                                    size: 30,
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
@@ -138,7 +149,7 @@ class _BerandaViewState extends State<BerandaView> {
                                 children: <Widget>[
                                   Icon(
                                     PhosphorIcons.coins,
-                                    size: 35,
+                                    size: 30,
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
@@ -168,7 +179,7 @@ class _BerandaViewState extends State<BerandaView> {
                                 children: <Widget>[
                                   Icon(
                                     PhosphorIcons.arrowsLeftRight,
-                                    size: 35,
+                                    size: 30,
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
@@ -203,6 +214,62 @@ class _BerandaViewState extends State<BerandaView> {
                           //     )
                           // ),
                         ],
+                      ),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      height: 90,
+                      margin: EdgeInsets.symmetric(vertical: 20),
+                      child: GridView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: listMenu.length,
+                        shrinkWrap: true,
+                        physics: AlwaysScrollableScrollPhysics(),
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 1,
+                        ),
+                        // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        //   crossAxisCount: 5,
+                        //   crossAxisSpacing: 5.0,
+                        //   mainAxisSpacing: 5.0,
+                        // ),
+                        // gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                        //   maxCrossAxisExtent: 4
+                        // ),
+                        itemBuilder: (context, index) {
+                          var data = listMenu[index];
+                          return InkWell(
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => (data['link'])));
+                              //   goPush(data['link']);
+                            },
+                            child: Column(
+                              // crossAxisAlignment: CrossAxisAlignment.center,
+                              // mainAxisAlignment:
+                              // MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Container(
+                                  padding: EdgeInsets.all(
+                                    10,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Color(0xFFF4F4F4),
+                                  ),
+                                  child: Icon(
+                                    data['icon'],
+                                    size: 30,
+                                    color: secondaryColor,
+                                  ),
+                                ),
+                                Text(
+                                  data['name'].toString(),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
+                          );
+                        },
                       ),
                     )
                   ],

@@ -1,7 +1,6 @@
+import 'package:expektasi/core/utils/constant.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 Future goBack([args]) async =>
     Navigator.of(navigatorKey.currentContext!).pop(args);

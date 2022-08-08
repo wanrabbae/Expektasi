@@ -24,6 +24,7 @@ class _CartViewState extends State<CartView> {
             elevation: 2,
             bottom: TabBar(
               indicatorColor: secondaryColor,
+              indicatorWeight: 5,
               labelColor: Colors.black,
               tabs: [
                 Tab(
