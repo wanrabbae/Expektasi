@@ -112,3 +112,28 @@ DefaultTabController customAppbar3() => DefaultTabController(
       ),
     )
 );
+
+AppBar customAppBar4({String? title, List<Widget>? actions}) => AppBar(
+  elevation: 0.0,
+  backgroundColor: secondaryColor,
+  title: Row(
+    mainAxisSize: MainAxisSize.min,
+    children: [
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            title ?? '',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+              fontSize: 25,
+            ),
+          ),
+        ],
+      ),
+    ],
+  ),
+  actions: actions,
+  toolbarHeight: 80,
+);
