@@ -34,7 +34,10 @@ class _ProfileViewState extends State<ProfileView> {
           child: Container(
         alignment: Alignment.center,
         child: Column(children: [
-          Image.asset('images/3.png'),
+          Image.asset(
+            'images/3.png',
+            width: 100,
+          ),
           // Nama user
           Text(
             'asep123',
@@ -48,14 +51,13 @@ class _ProfileViewState extends State<ProfileView> {
             margin: EdgeInsets.only(top: 15),
             padding: EdgeInsets.only(top: 2, bottom: 2, right: 15, left: 15),
             decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(5)
-            ),
-            child: Text("New Member", style: TextStyle(
-              fontSize: 13,
-              backgroundColor: Color(117438),
-              color: Colors.white,
-            )),
+                color: Colors.green, borderRadius: BorderRadius.circular(5)),
+            child: Text("New Member",
+                style: TextStyle(
+                  fontSize: 13,
+                  backgroundColor: Color(117438),
+                  color: Colors.white,
+                )),
           ),
 
           Column(
@@ -64,53 +66,59 @@ class _ProfileViewState extends State<ProfileView> {
                 margin: EdgeInsets.only(top: 30),
                 padding: EdgeInsets.symmetric(horizontal: 25, vertical: 40),
                 decoration: BoxDecoration(
-                color: Color.fromRGBO(255, 199, 0, 0.15),
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(40), topLeft: Radius.circular(40))
-                ),
+                    color: Color.fromRGBO(255, 199, 0, 0.15),
+                    borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(40),
+                        topLeft: Radius.circular(40))),
                 child: Column(children: [
                   Card(
+                      elevation: 0,
                       child: InkWell(
-                    splashColor: secondaryColor.withAlpha(30),
-                    onTap: () {
-                      debugPrint('Card tapped.');
-                    },
-                    child: Container(
-                        margin: EdgeInsets.only(left: 20),
-                        child: SizedBox(
-                            height: 70,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                Container(
-                                  padding: EdgeInsets.all(5),
-                                  decoration: BoxDecoration(
-                                      color: Color.fromRGBO(255, 199, 0, 0.15),
-                                      borderRadius: BorderRadius.circular(10)
-                                  ),
-                                  child: Icon(
-                                    PhosphorIcons.bicycleFill,
-                                    size: 32.0,
-                                    color: secondaryColor,
-                                  ),
-                                ),
-                                Container(
-                                  margin: EdgeInsets.only(left: 10),
-                                  child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text('Pesanan',
-                                            style: TextStyle(
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold)),
-                                        Text('Riwayat pesananmu' , style: TextStyle(fontSize: 10)),
-                                      ]),
-                                )
-                              ],
-                            ))),
-                  )),
-
+                        splashColor: secondaryColor.withAlpha(30),
+                        onTap: () {
+                          debugPrint('Card tapped.');
+                        },
+                        child: Container(
+                            margin: EdgeInsets.only(left: 20),
+                            child: SizedBox(
+                                height: 70,
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(5),
+                                      decoration: BoxDecoration(
+                                          color:
+                                              Color.fromRGBO(255, 199, 0, 0.15),
+                                          borderRadius:
+                                              BorderRadius.circular(10)),
+                                      child: Icon(
+                                        PhosphorIcons.bicycleFill,
+                                        size: 25.0,
+                                        color: secondaryColor,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.only(left: 10),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text('Pesanan',
+                                                style: TextStyle(
+                                                    fontSize: 14,
+                                                    fontWeight:
+                                                        FontWeight.bold)),
+                                            Text('Riwayat pesananmu',
+                                                style: TextStyle(fontSize: 10)),
+                                          ]),
+                                    )
+                                  ],
+                                ))),
+                      )),
                   Container(
                       padding: EdgeInsets.only(top: 15, bottom: 15),
                       child: Row(
@@ -126,13 +134,14 @@ class _ProfileViewState extends State<ProfileView> {
                               children: [
                                 Icon(
                                   PhosphorIcons.wallet,
-                                  size: 32.0,
+                                  size: 25.0,
                                   color: secondaryColor,
                                 ),
                                 Text(
                                   'Menunggu \n Pembayaran',
                                   style: TextStyle(
-                                      fontSize: 11, fontWeight: FontWeight.normal),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.normal),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -147,13 +156,14 @@ class _ProfileViewState extends State<ProfileView> {
                               children: [
                                 Icon(
                                   PhosphorIcons.packageFill,
-                                  size: 32.0,
+                                  size: 25.0,
                                   color: secondaryColor,
                                 ),
                                 Text(
                                   'Perlu \n Dikirim',
                                   style: TextStyle(
-                                      fontSize: 11, fontWeight: FontWeight.normal),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.normal),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -166,13 +176,14 @@ class _ProfileViewState extends State<ProfileView> {
                               children: [
                                 Icon(
                                   PhosphorIcons.truckFill,
-                                  size: 32.0,
+                                  size: 25.0,
                                   color: secondaryColor,
                                 ),
                                 Text(
                                   'Dalam \n Perjalanan',
                                   style: TextStyle(
-                                      fontSize: 11, fontWeight: FontWeight.normal),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.normal),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -185,13 +196,14 @@ class _ProfileViewState extends State<ProfileView> {
                               children: [
                                 Icon(
                                   PhosphorIcons.star,
-                                  size: 32.0,
+                                  size: 25.0,
                                   color: secondaryColor,
                                 ),
                                 Text(
                                   'Ulasan',
                                   style: TextStyle(
-                                      fontSize: 11, fontWeight: FontWeight.normal),
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.normal),
                                   textAlign: TextAlign.center,
                                 ),
                               ],
@@ -199,10 +211,10 @@ class _ProfileViewState extends State<ProfileView> {
                           )
                         ],
                       )),
-                  Column(
-                      children: [
+                  Column(children: [
                     Card(
-                      margin: EdgeInsets.only(bottom: 15),
+                        elevation: 0,
+                        margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
@@ -213,38 +225,46 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                          color: Color.fromRGBO(255, 199, 0, 0.15),
-                                          borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.walletFill,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Dompetasi',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Saldo akunmu' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text('Saldo akunmu',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -256,38 +276,47 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.penFill,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Edit Profil',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Perbarui atau ubah profilmu' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text(
+                                                  'Perbarui atau ubah profilmu',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -299,38 +328,47 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.shoppingBagFill,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Mulai Jual',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Buat bisnismu berkembang sekarang juga!', style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text(
+                                                  'Buat bisnismu berkembang sekarang juga!',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -342,38 +380,47 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.monitorPlay,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Voucher',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Voucher punyamu yang siap kamu gunakan' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text(
+                                                  'Voucher punyamu yang siap kamu gunakan',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -385,38 +432,47 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
-                                          PhosphorIcons.clockCounterClockwiseBold,
-                                          size: 32.0,
+                                          PhosphorIcons
+                                              .clockCounterClockwiseBold,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Riwayat',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Riwayat pencarianmu' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text('Riwayat pencarianmu',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -428,38 +484,46 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.heartFill,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Favorit',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Daftar kaos kesukaanmu' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text('Daftar kaos kesukaanmu',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
                                   ))),
                         )),
                     Card(
+                        elevation: 0,
                         margin: EdgeInsets.only(bottom: 55),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
@@ -471,32 +535,40 @@ class _ProfileViewState extends State<ProfileView> {
                               child: SizedBox(
                                   height: 70,
                                   child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(5),
                                         decoration: BoxDecoration(
-                                            color: Color.fromRGBO(255, 199, 0, 0.15),
-                                            borderRadius: BorderRadius.circular(10)
-                                        ),
+                                            color: Color.fromRGBO(
+                                                255, 199, 0, 0.15),
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
                                         child: Icon(
                                           PhosphorIcons.questionFill,
-                                          size: 32.0,
+                                          size: 25.0,
                                           color: secondaryColor,
                                         ),
                                       ),
                                       Container(
                                         margin: EdgeInsets.only(left: 10),
                                         child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            mainAxisAlignment: MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             children: [
                                               Text('Pusat Bantuan',
                                                   style: TextStyle(
                                                       fontSize: 14,
-                                                      fontWeight: FontWeight.bold)),
-                                              Text('Apabila kamu ada keluhan, bisa disini ya' , style: TextStyle(fontSize: 10)),
+                                                      fontWeight:
+                                                          FontWeight.bold)),
+                                              Text(
+                                                  'Apabila kamu ada keluhan, bisa disini ya',
+                                                  style:
+                                                      TextStyle(fontSize: 10)),
                                             ]),
                                       )
                                     ],
