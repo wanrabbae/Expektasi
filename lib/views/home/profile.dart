@@ -34,14 +34,8 @@ class _ProfileViewState extends State<ProfileView> {
           child: Container(
         alignment: Alignment.center,
         child: Column(children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: Colors.black
-            ),
-          ),
+          Image.asset('images/3.png'),
+          // Nama user
           Text(
             'asep123',
             style: TextStyle(
@@ -89,14 +83,14 @@ class _ProfileViewState extends State<ProfileView> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Container(
-                                  padding: EdgeInsets.all(10),
+                                  padding: EdgeInsets.all(5),
                                   decoration: BoxDecoration(
                                       color: Color.fromRGBO(255, 199, 0, 0.15),
                                       borderRadius: BorderRadius.circular(10)
                                   ),
                                   child: Icon(
                                     PhosphorIcons.bicycleFill,
-                                    size: 25,
+                                    size: 32.0,
                                     color: secondaryColor,
                                   ),
                                 ),
@@ -337,7 +331,6 @@ class _ProfileViewState extends State<ProfileView> {
                                   ))),
                         )),
                     Card(
-                      elevation: 0,
                         margin: EdgeInsets.only(bottom: 15),
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),

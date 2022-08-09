@@ -12,16 +12,16 @@
 12         to allow setting breakpoints, to provide hot reload, etc.
 13    -->
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->E:\expektasi\android\app\src\main\AndroidManifest.xml:35:5-67
-14-->E:\expektasi\android\app\src\main\AndroidManifest.xml:35:22-64
+14-->/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/AndroidManifest.xml:35:5-67
+14-->/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/AndroidManifest.xml:35:22-64
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->E:\expektasi\android\app\src\main\AndroidManifest.xml:36:5-79
-15-->E:\expektasi\android\app\src\main\AndroidManifest.xml:36:22-76
+15-->/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/AndroidManifest.xml:36:5-79
+15-->/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/AndroidManifest.xml:36:22-76
 16
 17    <application
 18        android:name="android.app.Application"
 19        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-19-->[androidx.core:core:1.6.0] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\122df2e57d294d1a53db26bbc3b813c1\core-1.6.0\AndroidManifest.xml:24:18-86
+19-->[androidx.core:core:1.6.0] /home/alwan/.gradle/caches/transforms-2/files-2.1/122df2e57d294d1a53db26bbc3b813c1/core-1.6.0/AndroidManifest.xml:24:18-86
 20        android:debuggable="true"
 21        android:icon="@mipmap/ic_launcher"
 22        android:label="expektasi" >
@@ -60,17 +60,17 @@
 55            android:value="2" />
 56
 57        <uses-library
-57-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
+57-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
 58            android:name="androidx.window.extensions"
-58-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:26:13-54
+58-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
 59            android:required="false" />
-59-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:27:13-37
+59-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
 60        <uses-library
-60-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:28:9-30:40
+60-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
 61            android:name="androidx.window.sidecar"
-61-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:29:13-51
+61-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
 62            android:required="false" />
-62-->[androidx.window:window:1.0.0-beta04] C:\Users\JAGAT\.gradle\caches\transforms-2\files-2.1\03c633e46d75bfb21f082f0417f55161\jetified-window-1.0.0-beta04\AndroidManifest.xml:30:13-37
+62-->[androidx.window:window:1.0.0-beta04] /home/alwan/.gradle/caches/transforms-2/files-2.1/03c633e46d75bfb21f082f0417f55161/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
 63    </application>
 64
 65</manifest>
