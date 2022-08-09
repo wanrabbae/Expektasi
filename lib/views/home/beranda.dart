@@ -25,10 +25,16 @@ class _BerandaViewState extends State<BerandaView> {
           child: Column(
             children: [
               Container(
-                child: Image.network(
-                  'https://cdn.discordapp.com/attachments/990841636386897971/1006062749547237506/banner_rev1_1_1.png',
-                  fit: BoxFit.cover,
-                  width: double.infinity,
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    color: Colors.white60,
+                  ),
+                  child: Image.network(
+                    'https://cdn.discordapp.com/attachments/990841636386897971/1006062749547237506/banner_rev1_1_1.png',
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
                 ),
               ),
               Container(
@@ -58,7 +64,7 @@ class _BerandaViewState extends State<BerandaView> {
                     Container(
                       padding: EdgeInsets.symmetric(
                           vertical: 10,
-                          horizontal: 20
+                          horizontal: 10
                       ),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
@@ -86,10 +92,16 @@ class _BerandaViewState extends State<BerandaView> {
                                     crossAxisAlignment: CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Saldo'
+                                        'Saldo',
+                                        style: TextStyle(
+                                          fontSize: 12
+                                        ),
                                       ),
                                       Text(
-                                        'Rp.'
+                                        'Rp.',
+                                          style: TextStyle(
+                                              fontSize: 10
+                                          )
                                       ),
                                     ],
                                   ),
@@ -109,7 +121,7 @@ class _BerandaViewState extends State<BerandaView> {
                           // ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 10
+                              horizontal: 5
                             ),
                             child: InkWell(
                               splashColor: secondaryColor,
@@ -129,7 +141,7 @@ class _BerandaViewState extends State<BerandaView> {
                                     child: Text(
                                         "Bayar",
                                       style: TextStyle(
-                                        fontSize: 12
+                                        fontSize: 10
                                       ),
                                     ),
                                   ), // <-- Text
@@ -139,7 +151,7 @@ class _BerandaViewState extends State<BerandaView> {
                           ),
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                              horizontal: 10
+                              horizontal: 5
                             ),
                             child: InkWell(
                               splashColor: secondaryColor,
@@ -159,7 +171,7 @@ class _BerandaViewState extends State<BerandaView> {
                                     child: Text(
                                         "Top Up",
                                       style: TextStyle(
-                                        fontSize: 12
+                                        fontSize: 10
                                       ),
                                     ),
                                   ), // <-- Text
@@ -189,7 +201,7 @@ class _BerandaViewState extends State<BerandaView> {
                                     child: Text(
                                         "Transfer",
                                       style: TextStyle(
-                                        fontSize: 12
+                                        fontSize: 10
                                       ),
                                     ),
                                   ), // <-- Text
@@ -218,7 +230,7 @@ class _BerandaViewState extends State<BerandaView> {
                     ),
                     Container(
                       width: double.infinity,
-                      height: 90,
+                      height: 100,
                       margin: EdgeInsets.symmetric(vertical: 20),
                       child: GridView.builder(
                         scrollDirection: Axis.horizontal,
@@ -227,6 +239,7 @@ class _BerandaViewState extends State<BerandaView> {
                         physics: AlwaysScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 1,
+                          childAspectRatio: 1.1
                         ),
                         // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         //   crossAxisCount: 5,
@@ -262,14 +275,105 @@ class _BerandaViewState extends State<BerandaView> {
                                     color: secondaryColor,
                                   ),
                                 ),
-                                Text(
-                                  data['name'].toString(),
-                                  textAlign: TextAlign.center,
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 5),
+                                  child: Text(
+                                    data['name'].toString(),
+                                    style: TextStyle(
+                                      fontSize: 12
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                               ],
                             ),
                           );
                         },
+                      ),
+                    ),
+                    Container(
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            onTap: (){},
+                            child:  Container(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 15,
+                                  horizontal: 30
+                              ),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(10),
+                                    topRight: Radius.circular(10),
+                                    bottomLeft: Radius.circular(10),
+                                    bottomRight: Radius.circular(0),
+                                  ),
+                                  color: Color(0xffEB9007)
+                              ),
+                              child: Text(
+                                'Buat Akun',
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10
+                                ),
+                              ),
+                            ),
+                            splashColor: secondaryColor,
+                            highlightColor: secondaryColor,
+                          ),
+                          // FlatButton(
+                          //     onPressed: (){},
+                          //     child: Ink(
+                          //       padding: EdgeInsets.symmetric(
+                          //         vertical: 15,
+                          //         horizontal: 30
+                          //       ),
+                          //       decoration: BoxDecoration(
+                          //         borderRadius: BorderRadius.only(
+                          //           topLeft: Radius.circular(10),
+                          //           topRight: Radius.circular(10),
+                          //           bottomLeft: Radius.circular(10),
+                          //           bottomRight: Radius.circular(0),
+                          //         ),
+                          //         color: Color(0xffEB9007)
+                          //       ),
+                          //       child: Text(
+                          //         'Buat Akun',
+                          //         style: TextStyle(
+                          //           color: Colors.white,
+                          //           fontSize: 10
+                          //         ),
+                          //       ),
+                          //     )
+                          // ),
+                          InkWell(
+                              onTap: (){},
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 15,
+                                    horizontal: 30
+                                ),
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      topRight: Radius.circular(10),
+                                      bottomLeft: Radius.circular(0),
+                                      bottomRight: Radius.circular(10),
+                                    ),
+                                    color: Colors.white
+                                ),
+                                child: Text(
+                                    'Login',
+                                    style: TextStyle(
+                                        color: Color(0xffEB9007),
+                                        fontSize: 10
+                                    )
+                                ),
+                              )
+                          )
+                        ],
                       ),
                     )
                   ],

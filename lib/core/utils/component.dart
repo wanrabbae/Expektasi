@@ -15,9 +15,9 @@ AppBar customAppBar([PreferredSizeWidget? bottom]) => AppBar(
     child: Center(
       child: TextFormField(
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(
-            vertical: 12.5
-          ),
+          // contentPadding: EdgeInsets.symmetric(
+          //   vertical: 12.5
+          // ),
             fillColor: Colors.white,
             prefixIcon: const Icon(Icons.search),
             suffixIcon: IconButton(
