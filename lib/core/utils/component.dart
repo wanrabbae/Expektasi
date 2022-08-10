@@ -5,20 +5,21 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 Color secondaryColor = Color(0xffFDD100);
 
-AppBar customAppBar([PreferredSizeWidget? bottom]) => AppBar(
+AppBar customAppBar({PreferredSizeWidget? bottom, List<Widget>? actions}) => AppBar(
   backgroundColor: secondaryColor,
   title: Container(
     width: double.infinity,
-    height: 40,
-    decoration: BoxDecoration(
-        color: Colors.white, borderRadius: BorderRadius.circular(5)),
+    height: 35,
+    // decoration: BoxDecoration(
+    //     color: Colors.white, borderRadius: BorderRadius.circular(5)),
     child: Center(
       child: TextFormField(
         decoration: InputDecoration(
-          // contentPadding: EdgeInsets.symmetric(
-          //   vertical: 12.5
-          // ),
+          contentPadding: EdgeInsets.symmetric(
+            vertical: 0
+          ),
             fillColor: Colors.white,
+            filled: true,
             prefixIcon: const Icon(Icons.search),
             suffixIcon: IconButton(
               icon: const Icon(Icons.camera_alt),
@@ -27,29 +28,17 @@ AppBar customAppBar([PreferredSizeWidget? bottom]) => AppBar(
               },
             ),
             hintText: 'Hari ini mau nyari apa nih?..',
-          border: InputBorder.none,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide.none,
+          ),
         ),
       ),
     ),
   ),
-  actions: [
-    IconButton(
-        onPressed: (){},
-        icon: Icon(
-          PhosphorIcons.bellSimple,
-          color: Colors.white,
-        ),
-    ),
-    IconButton(
-        onPressed: (){},
-          icon: Icon(
-            PhosphorIcons.chats,
-            color: Colors.white,
-          ),
-    ),
-  ],
+  actions: actions,
   elevation: 3,
-  toolbarHeight: 80,
+  toolbarHeight: 70,
 );
 AppBar customAppBar2([PreferredSizeWidget? bottom]) => AppBar(
   backgroundColor: Colors.white,

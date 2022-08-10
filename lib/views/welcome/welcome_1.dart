@@ -28,14 +28,14 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
         title: "EXPEKTASI",
           styleTitle: TextStyle(
             color: Color(0xffFDD100),
-            fontSize: 20,
+            fontSize: 15,
             fontWeight: FontWeight.w700,
           ),
         description:
         "Belanja Puas, Harga Pas",
         styleDescription: TextStyle(
             color: Colors.black,
-            fontSize: 13,
+            fontSize: 10,
             fontWeight: FontWeight.w500,
         ),
         pathImage: "images/1.png",
@@ -49,14 +49,14 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
         title: "Thousand of Product",
         styleTitle: TextStyle(
           color: Color(0xffFDD100),
-          fontSize: 20,
+          fontSize: 15,
           fontWeight: FontWeight.w700,
         ),
         description:
         "Bingung pilih produk?\n Expektasi menyediakan ribuan produk, yuk cek!",
         styleDescription: TextStyle(
           color: Colors.black,
-          fontSize: 13,
+          fontSize: 10,
           fontWeight: FontWeight.w500,
         ),
         pathImage: "images/2.png",
@@ -67,14 +67,14 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
         title: "Easy Pay",
         styleTitle: TextStyle(
           color: Color(0xffFDD100),
-          fontSize: 20,
+          fontSize: 15,
           fontWeight: FontWeight.w700,
         ),
         description:
         "Bayar instant tanpa ribet.",
         styleDescription: TextStyle(
           color: Colors.black,
-          fontSize: 13,
+          fontSize: 10,
           fontWeight: FontWeight.w500,
         ),
         pathImage: "images/3.png",

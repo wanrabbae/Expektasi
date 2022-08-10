@@ -1,6 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/home/login.dart';
-import 'package:expektasi/views/home/register.dart';
+import 'package:expektasi/views/home/register/register.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +21,26 @@ class _BerandaViewState extends State<BerandaView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(),
+      appBar: customAppBar(
+        actions: [
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+              PhosphorIcons.bellSimple,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
+          IconButton(
+            onPressed: (){},
+            icon: Icon(
+                PhosphorIcons.chats,
+                color: Colors.white,
+                size: 20
+            ),
+          ),
+        ]
+      ),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -72,7 +91,7 @@ class _BerandaViewState extends State<BerandaView> {
                             children: [
                               Icon(
                                 PhosphorIcons.wallet,
-                                size: 30,
+                                size: 25,
                                 color: Color(0xffEB9007),
                               ),
                               Padding(
@@ -82,9 +101,9 @@ class _BerandaViewState extends State<BerandaView> {
                                 children: [
                                   Text(
                                     'Saldo',
-                                    style: TextStyle(fontSize: 12),
+                                    style: TextStyle(fontSize: 10),
                                   ),
-                                  Text('Rp.', style: TextStyle(fontSize: 10)),
+                                  Text('Rp.', style: TextStyle(fontSize: 8)),
                                 ],
                               ),
                             ],
@@ -100,78 +119,90 @@ class _BerandaViewState extends State<BerandaView> {
                           //     'Bayar'
                           //   ),
                           // ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                          Material(
+                            color: Colors.white,
                             child: InkWell(
                               splashColor: secondaryColor,
                               onTap: () {},
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(
-                                    PhosphorIcons.scan,
-                                    size: 30,
-                                    color: Color(0xffEB9007),
-                                  ), // <-- Icon
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 5),
-                                    child: Text(
-                                      "Bayar",
-                                      style: TextStyle(fontSize: 10),
-                                    ),
-                                  ), // <-- Text
-                                ],
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 5
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Icon(
+                                      PhosphorIcons.scan,
+                                      size: 25,
+                                      color: Color(0xffEB9007),
+                                    ), // <-- Icon
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.symmetric(vertical: 2),
+                                      child: Text(
+                                        "Bayar",
+                                        style: TextStyle(fontSize: 8),
+                                      ),
+                                    ), // <-- Text
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                          Material(
+                            color: Colors.white,
                             child: InkWell(
-                              splashColor: secondaryColor,
                               onTap: () {},
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(
-                                    PhosphorIcons.coins,
-                                    size: 30,
-                                    color: Color(0xffEB9007),
-                                  ), // <-- Icon
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 2),
-                                    child: Text(
-                                      "Top Up",
-                                      style: TextStyle(fontSize: 10),
-                                    ),
-                                  ), // <-- Text
-                                ],
+                              child: Container(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Icon(
+                                      PhosphorIcons.coins,
+                                      size: 25,
+                                      color: Color(0xffEB9007),
+                                    ), // <-- Icon
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.symmetric(vertical: 2),
+                                      child: Text(
+                                        "Top Up",
+                                        style: TextStyle(fontSize: 8),
+                                      ),
+                                    ), // <-- Text
+                                  ],
+                                ),
                               ),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                          Material(
+                            color: Colors.white,
                             child: InkWell(
                               splashColor: secondaryColor,
                               onTap: () {},
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  Icon(
-                                    PhosphorIcons.arrowsLeftRight,
-                                    size: 30,
-                                    color: Color(0xffEB9007),
-                                  ), // <-- Icon
-                                  Padding(
-                                    padding:
-                                        const EdgeInsets.symmetric(vertical: 2),
-                                    child: Text(
-                                      "Transfer",
-                                      style: TextStyle(fontSize: 10),
-                                    ),
-                                  ), // <-- Text
-                                ],
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 5
+                                ),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Icon(
+                                      PhosphorIcons.arrowsLeftRight,
+                                      size: 25,
+                                      color: Color(0xffEB9007),
+                                    ), // <-- Icon
+                                    Padding(
+                                      padding:
+                                          const EdgeInsets.symmetric(vertical: 2),
+                                      child: Text(
+                                        "Transfer",
+                                        style: TextStyle(fontSize: 8),
+                                      ),
+                                    ), // <-- Text
+                                  ],
+                                ),
                               ),
                             ),
                           ),
@@ -204,7 +235,7 @@ class _BerandaViewState extends State<BerandaView> {
                         shrinkWrap: true,
                         physics: AlwaysScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 1, childAspectRatio: 1.1),
+                            crossAxisCount: 1, childAspectRatio: 1.2),
                         // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         //   crossAxisCount: 5,
                         //   crossAxisSpacing: 5.0,
@@ -238,7 +269,7 @@ class _BerandaViewState extends State<BerandaView> {
                                   ),
                                   child: Icon(
                                     data['icon'],
-                                    size: 30,
+                                    size: 25,
                                     color: secondaryColor,
                                   ),
                                 ),
@@ -246,7 +277,7 @@ class _BerandaViewState extends State<BerandaView> {
                                   padding: const EdgeInsets.only(top: 5),
                                   child: Text(
                                     data['name'].toString(),
-                                    style: TextStyle(fontSize: 12),
+                                    style: TextStyle(fontSize: 10),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -261,81 +292,196 @@ class _BerandaViewState extends State<BerandaView> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => (Register())));
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  vertical: 15, horizontal: 30),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(10),
-                                    topRight: Radius.circular(10),
-                                    bottomLeft: Radius.circular(10),
-                                    bottomRight: Radius.circular(0),
-                                  ),
-                                  color: Color(0xffEB9007)),
-                              child: Text(
-                                'Buat Akun',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 10),
-                              ),
-                            ),
-                            splashColor: secondaryColor,
-                            highlightColor: secondaryColor,
-                          ),
-                          // FlatButton(
-                          //     onPressed: (){},
-                          //     child: Ink(
-                          //       padding: EdgeInsets.symmetric(
-                          //         vertical: 15,
-                          //         horizontal: 30
-                          //       ),
-                          //       decoration: BoxDecoration(
+                          // InkWell(
+                          //   onTap: () {
+                          //     Navigator.push(
+                          //         context,
+                          //         MaterialPageRoute(
+                          //             builder: (context) => (Register())));
+                          //   },
+                          //   child: Container(
+                          //     padding: EdgeInsets.symmetric(
+                          //         vertical: 15, horizontal: 30),
+                          //     decoration: BoxDecoration(
                           //         borderRadius: BorderRadius.only(
                           //           topLeft: Radius.circular(10),
                           //           topRight: Radius.circular(10),
                           //           bottomLeft: Radius.circular(10),
                           //           bottomRight: Radius.circular(0),
                           //         ),
-                          //         color: Color(0xffEB9007)
-                          //       ),
-                          //       child: Text(
-                          //         'Buat Akun',
-                          //         style: TextStyle(
-                          //           color: Colors.white,
-                          //           fontSize: 10
-                          //         ),
-                          //       ),
-                          //     )
+                          //         color: Color(0xffEB9007)),
+                          //     child: Text(
+                          //       'Buat Akun',
+                          //       style: TextStyle(
+                          //           color: Colors.white, fontSize: 10),
+                          //     ),
+                          //   ),
+                          //   splashColor: secondaryColor,
+                          //   highlightColor: secondaryColor,
                           // ),
-                          InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => (Login())));
+                          FlatButton(
+                            onPressed: (){
+                              Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => (Register())));
+                            },
+                            color: Color(0xffEB9007),
+                            padding: EdgeInsets.symmetric(
+                              vertical: 15,
+                              horizontal: 30
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(10),
+                                bottomRight: Radius.circular(0),
+                              )
+                            ),
+                              child: Text(
+                                  'Buat Akun',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 10
+                                  ),
+                                ),
+                          ),
+                          FlatButton(
+                            onPressed: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (Login())));
+                            },
+                            color: Colors.white,
+                            padding: EdgeInsets.symmetric(
+                              vertical: 15,
+                              horizontal: 35
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10),
+                                topRight: Radius.circular(10),
+                                bottomLeft: Radius.circular(0),
+                                bottomRight: Radius.circular(10),
+                              )
+                            ),
+                              child: Text(
+                                  'Masuk',
+                                  style: TextStyle(
+                                      color: Color(0xffEB9007),
+                                    fontSize: 10
+                                  ),
+                                ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.symmetric(
+                        vertical: 60
+                      ),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              Icon(
+                               CupertinoIcons.star_fill,
+                                color: secondaryColor,
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 10
+                                  )
+                              ),
+                              Text(
+                                'Produk Pilihan',
+                                style: TextStyle(
+                                  fontSize: 12
+                                ),
+                              )
+                            ],
+                          ),
+                          Container(
+                            width: double.infinity,
+                            height: 205,
+                            margin: EdgeInsets.symmetric(vertical: 25),
+                            child: GridView.builder(
+                              itemCount: listProducts.length,
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              physics: AlwaysScrollableScrollPhysics(),
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 1, childAspectRatio: 1.75),
+                              itemBuilder: (products, index) {
+                                var data = listProducts[index];
+                                return InkWell(
+                                  splashColor: secondaryColor.withAlpha(30),
+                                  onTap: () {
+                                    // Navigator.push(context,
+                                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(0),
+                                        margin: EdgeInsets.symmetric(horizontal: 5),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color.fromRGBO(0, 0, 0, 0.1),
+                                              blurRadius: 10,
+                                              offset: Offset(0, 3),
+                                            ),
+                                          ],
+                                        ),
+                                        // padding:
+                                        //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                        child: Column(children: [
+                                          Image.network(
+                                            data['image'],
+                                            fit: BoxFit.contain,
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.all(5),
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.only(bottom: 10),
+                                                  child: Text(
+                                                    data['name'].toString().toUpperCase(),
+                                                    textAlign: TextAlign.start,
+                                                    style: TextStyle(
+                                                      fontSize: 8.5,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                    padding:
+                                                    EdgeInsets.symmetric(horizontal: 4),
+                                                    margin: EdgeInsets.only(bottom: 10),
+                                                    child: Text(
+                                                      data['price'],
+                                                      textAlign: TextAlign.start,
+                                                      style: TextStyle(
+                                                          color: secondaryColor, fontSize: 9),
+                                                    ))
+                                              ],
+                                            ),
+                                          )
+                                        ]),
+                                      ),
+                                    ],
+                                  ),
+                                );
                               },
-                              child: Container(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 15, horizontal: 30),
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.only(
-                                      topLeft: Radius.circular(10),
-                                      topRight: Radius.circular(10),
-                                      bottomLeft: Radius.circular(0),
-                                      bottomRight: Radius.circular(10),
-                                    ),
-                                    color: Colors.white),
-                                child: Text('Login',
-                                    style: TextStyle(
-                                        color: Color(0xffEB9007),
-                                        fontSize: 10)),
-                              ))
+                            ),
+                          ),
                         ],
                       ),
                     )

@@ -1,5 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
-import 'package:expektasi/views/home/verification_code.dart';
+import 'package:expektasi/views/home/register/verification_code.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
