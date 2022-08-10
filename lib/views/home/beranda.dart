@@ -1,4 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/login.dart';
+import 'package:expektasi/views/home/register.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,10 +40,7 @@ class _BerandaViewState extends State<BerandaView> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(
-                  vertical: 35,
-                  horizontal: 25
-                ),
+                padding: EdgeInsets.symmetric(vertical: 35, horizontal: 25),
                 height: 1000,
                 transform: Matrix4.translationValues(0.0, -40.0, 0.0),
                 decoration: BoxDecoration(
@@ -53,61 +52,43 @@ class _BerandaViewState extends State<BerandaView> {
                         blurRadius: 15,
                       ),
                     ],
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(30),
-                    topRight: Radius.circular(30),
-                  )
-                ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    )),
                 child: Column(
                   children: [
                     Container(
-                      padding: EdgeInsets.symmetric(
-                          vertical: 10,
-                          horizontal: 10
-                      ),
+                      padding:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                        border: Border.all(
-                          width: 3,
-                          color: secondaryColor
-                        )
-                      ),
+                          border: Border.all(width: 3, color: secondaryColor)),
                       child: Row(
                         children: [
                           Expanded(
                               child: Row(
+                            children: [
+                              Icon(
+                                PhosphorIcons.wallet,
+                                size: 30,
+                                color: Color(0xffEB9007),
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 5)),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    PhosphorIcons.wallet,
-                                    size: 30,
-                                    color: Color(0xffEB9007),
+                                  Text(
+                                    'Saldo',
+                                    style: TextStyle(fontSize: 12),
                                   ),
-                                  Padding(
-                                      padding: EdgeInsets.symmetric(
-                                        horizontal: 5
-                                      )
-                                  ),
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Saldo',
-                                        style: TextStyle(
-                                          fontSize: 12
-                                        ),
-                                      ),
-                                      Text(
-                                        'Rp.',
-                                          style: TextStyle(
-                                              fontSize: 10
-                                          )
-                                      ),
-                                    ],
-                                  ),
+                                  Text('Rp.', style: TextStyle(fontSize: 10)),
                                 ],
-                              )
-                          ),
+                              ),
+                            ],
+                          )),
                           // FlatButton.icon(
                           //     onPressed: () {},
                           //     icon: Icon(
@@ -120,9 +101,7 @@ class _BerandaViewState extends State<BerandaView> {
                           //   ),
                           // ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 5
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: InkWell(
                               splashColor: secondaryColor,
                               onTap: () {},
@@ -135,14 +114,11 @@ class _BerandaViewState extends State<BerandaView> {
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 5
-                                    ),
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 5),
                                     child: Text(
-                                        "Bayar",
-                                      style: TextStyle(
-                                        fontSize: 10
-                                      ),
+                                      "Bayar",
+                                      style: TextStyle(fontSize: 10),
                                     ),
                                   ), // <-- Text
                                 ],
@@ -150,9 +126,7 @@ class _BerandaViewState extends State<BerandaView> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 5
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: InkWell(
                               splashColor: secondaryColor,
                               onTap: () {},
@@ -165,14 +139,11 @@ class _BerandaViewState extends State<BerandaView> {
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        vertical: 2
-                                    ),
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 2),
                                     child: Text(
-                                        "Top Up",
-                                      style: TextStyle(
-                                        fontSize: 10
-                                      ),
+                                      "Top Up",
+                                      style: TextStyle(fontSize: 10),
                                     ),
                                   ), // <-- Text
                                 ],
@@ -180,9 +151,7 @@ class _BerandaViewState extends State<BerandaView> {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 5
-                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: InkWell(
                               splashColor: secondaryColor,
                               onTap: () {},
@@ -195,14 +164,11 @@ class _BerandaViewState extends State<BerandaView> {
                                     color: Color(0xffEB9007),
                                   ), // <-- Icon
                                   Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                      vertical: 2
-                                    ),
+                                    padding:
+                                        const EdgeInsets.symmetric(vertical: 2),
                                     child: Text(
-                                        "Transfer",
-                                      style: TextStyle(
-                                        fontSize: 10
-                                      ),
+                                      "Transfer",
+                                      style: TextStyle(fontSize: 10),
                                     ),
                                   ), // <-- Text
                                 ],
@@ -238,9 +204,7 @@ class _BerandaViewState extends State<BerandaView> {
                         shrinkWrap: true,
                         physics: AlwaysScrollableScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 1,
-                          childAspectRatio: 1.1
-                        ),
+                            crossAxisCount: 1, childAspectRatio: 1.1),
                         // gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         //   crossAxisCount: 5,
                         //   crossAxisSpacing: 5.0,
@@ -253,7 +217,10 @@ class _BerandaViewState extends State<BerandaView> {
                           var data = listMenu[index];
                           return InkWell(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => (data['link'])));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (data['link'])));
                               //   goPush(data['link']);
                             },
                             child: Column(
@@ -279,9 +246,7 @@ class _BerandaViewState extends State<BerandaView> {
                                   padding: const EdgeInsets.only(top: 5),
                                   child: Text(
                                     data['name'].toString(),
-                                    style: TextStyle(
-                                      fontSize: 12
-                                    ),
+                                    style: TextStyle(fontSize: 12),
                                     textAlign: TextAlign.center,
                                   ),
                                 ),
@@ -297,12 +262,15 @@ class _BerandaViewState extends State<BerandaView> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           InkWell(
-                            onTap: (){},
-                            child:  Container(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (Register())));
+                            },
+                            child: Container(
                               padding: EdgeInsets.symmetric(
-                                  vertical: 15,
-                                  horizontal: 30
-                              ),
+                                  vertical: 15, horizontal: 30),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     topLeft: Radius.circular(10),
@@ -310,14 +278,11 @@ class _BerandaViewState extends State<BerandaView> {
                                     bottomLeft: Radius.circular(10),
                                     bottomRight: Radius.circular(0),
                                   ),
-                                  color: Color(0xffEB9007)
-                              ),
+                                  color: Color(0xffEB9007)),
                               child: Text(
                                 'Buat Akun',
                                 style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10
-                                ),
+                                    color: Colors.white, fontSize: 10),
                               ),
                             ),
                             splashColor: secondaryColor,
@@ -349,12 +314,15 @@ class _BerandaViewState extends State<BerandaView> {
                           //     )
                           // ),
                           InkWell(
-                              onTap: (){},
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => (Login())));
+                              },
                               child: Container(
                                 padding: EdgeInsets.symmetric(
-                                    vertical: 15,
-                                    horizontal: 30
-                                ),
+                                    vertical: 15, horizontal: 30),
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                       topLeft: Radius.circular(10),
@@ -362,17 +330,12 @@ class _BerandaViewState extends State<BerandaView> {
                                       bottomLeft: Radius.circular(0),
                                       bottomRight: Radius.circular(10),
                                     ),
-                                    color: Colors.white
-                                ),
-                                child: Text(
-                                    'Login',
+                                    color: Colors.white),
+                                child: Text('Login',
                                     style: TextStyle(
                                         color: Color(0xffEB9007),
-                                        fontSize: 10
-                                    )
-                                ),
-                              )
-                          )
+                                        fontSize: 10)),
+                              ))
                         ],
                       ),
                     )
