@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/register/registered.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -11,7 +12,7 @@ class VerificationCode extends StatefulWidget {
 }
 
 class _VerificationCodeState extends State<VerificationCode> {
-  bool _filled = false;
+  bool _filled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -38,14 +39,16 @@ class _VerificationCodeState extends State<VerificationCode> {
               child: SizedBox(
                 width: double.infinity,
                 child: TextButton(
-                  onPressed: !_filled
-                      ? null
-                      : () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => (VerificationCode())));
-                        },
+                  onPressed:
+                      // !_filled
+                      //     ? null
+                      //     :
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => (Registered())));
+                  },
                   child: Text(
                     "Lanjut",
                     style: TextStyle(color: Colors.white),

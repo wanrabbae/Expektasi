@@ -1,4 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/navigator_helper.dart';
+import 'package:expektasi/views/home/register/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -127,7 +129,12 @@ class _LoginState extends State<Login> {
                 children: [
                   InkWell(
                     splashColor: secondaryColor,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => (Register())));
+                    },
                     child: Text(
                       "Daftar",
                       style: TextStyle(color: secondaryColor, fontSize: 12),

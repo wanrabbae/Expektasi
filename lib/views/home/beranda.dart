@@ -21,26 +21,20 @@ class _BerandaViewState extends State<BerandaView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: customAppBar(
-        actions: [
-          IconButton(
-            onPressed: (){},
-            icon: Icon(
-              PhosphorIcons.bellSimple,
-              color: Colors.white,
-              size: 20,
-            ),
+      appBar: customAppBar(actions: [
+        IconButton(
+          onPressed: () {},
+          icon: Icon(
+            PhosphorIcons.bellSimple,
+            color: Colors.white,
+            size: 20,
           ),
-          IconButton(
-            onPressed: (){},
-            icon: Icon(
-                PhosphorIcons.chats,
-                color: Colors.white,
-                size: 20
-            ),
-          ),
-        ]
-      ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: Icon(PhosphorIcons.chats, color: Colors.white, size: 20),
+        ),
+      ]),
       body: SingleChildScrollView(
         child: Container(
           child: Column(
@@ -125,9 +119,7 @@ class _BerandaViewState extends State<BerandaView> {
                               splashColor: secondaryColor,
                               onTap: () {},
                               child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 5
-                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
@@ -137,8 +129,8 @@ class _BerandaViewState extends State<BerandaView> {
                                       color: Color(0xffEB9007),
                                     ), // <-- Icon
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 2),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 2),
                                       child: Text(
                                         "Bayar",
                                         style: TextStyle(fontSize: 8),
@@ -164,8 +156,8 @@ class _BerandaViewState extends State<BerandaView> {
                                       color: Color(0xffEB9007),
                                     ), // <-- Icon
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 2),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 2),
                                       child: Text(
                                         "Top Up",
                                         style: TextStyle(fontSize: 8),
@@ -182,9 +174,7 @@ class _BerandaViewState extends State<BerandaView> {
                               splashColor: secondaryColor,
                               onTap: () {},
                               child: Container(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 5
-                                ),
+                                padding: EdgeInsets.symmetric(horizontal: 5),
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
@@ -194,8 +184,8 @@ class _BerandaViewState extends State<BerandaView> {
                                       color: Color(0xffEB9007),
                                     ), // <-- Icon
                                     Padding(
-                                      padding:
-                                          const EdgeInsets.symmetric(vertical: 2),
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 2),
                                       child: Text(
                                         "Transfer",
                                         style: TextStyle(fontSize: 8),
@@ -320,35 +310,30 @@ class _BerandaViewState extends State<BerandaView> {
                           //   highlightColor: secondaryColor,
                           // ),
                           FlatButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) => (Register())));
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (Register())));
                             },
                             color: Color(0xffEB9007),
                             padding: EdgeInsets.symmetric(
-                              vertical: 15,
-                              horizontal: 30
-                            ),
+                                vertical: 15, horizontal: 30),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                                bottomLeft: Radius.circular(10),
-                                bottomRight: Radius.circular(0),
-                              )
+                                borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(0),
+                            )),
+                            child: Text(
+                              'Buat Akun',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 10),
                             ),
-                              child: Text(
-                                  'Buat Akun',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10
-                                  ),
-                                ),
                           ),
                           FlatButton(
-                            onPressed: (){
+                            onPressed: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -356,50 +341,39 @@ class _BerandaViewState extends State<BerandaView> {
                             },
                             color: Colors.white,
                             padding: EdgeInsets.symmetric(
-                              vertical: 15,
-                              horizontal: 35
-                            ),
+                                vertical: 15, horizontal: 35),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                topRight: Radius.circular(10),
-                                bottomLeft: Radius.circular(0),
-                                bottomRight: Radius.circular(10),
-                              )
+                                borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(0),
+                              bottomRight: Radius.circular(10),
+                            )),
+                            child: Text(
+                              'Masuk',
+                              style: TextStyle(
+                                  color: Color(0xffEB9007), fontSize: 10),
                             ),
-                              child: Text(
-                                  'Masuk',
-                                  style: TextStyle(
-                                      color: Color(0xffEB9007),
-                                    fontSize: 10
-                                  ),
-                                ),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(
-                        vertical: 60
-                      ),
+                      margin: EdgeInsets.symmetric(vertical: 60),
                       child: Column(
                         children: [
                           Row(
                             children: [
                               Icon(
-                               CupertinoIcons.star_fill,
+                                CupertinoIcons.star_fill,
                                 color: secondaryColor,
                               ),
                               Padding(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 10
-                                  )
-                              ),
+                                  padding:
+                                      EdgeInsets.symmetric(horizontal: 10)),
                               Text(
                                 'Produk Pilihan',
-                                style: TextStyle(
-                                  fontSize: 12
-                                ),
+                                style: TextStyle(fontSize: 12),
                               )
                             ],
                           ),
@@ -412,8 +386,10 @@ class _BerandaViewState extends State<BerandaView> {
                               scrollDirection: Axis.horizontal,
                               shrinkWrap: true,
                               physics: AlwaysScrollableScrollPhysics(),
-                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 1, childAspectRatio: 1.75),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 1,
+                                      childAspectRatio: 1.75),
                               itemBuilder: (products, index) {
                                 var data = listProducts[index];
                                 return InkWell(
@@ -426,7 +402,8 @@ class _BerandaViewState extends State<BerandaView> {
                                     children: [
                                       Container(
                                         padding: EdgeInsets.all(0),
-                                        margin: EdgeInsets.symmetric(horizontal: 5),
+                                        margin:
+                                            EdgeInsets.symmetric(horizontal: 5),
                                         decoration: BoxDecoration(
                                           color: Colors.white,
                                           borderRadius: BorderRadius.only(
@@ -434,7 +411,8 @@ class _BerandaViewState extends State<BerandaView> {
                                               bottomRight: Radius.circular(10)),
                                           boxShadow: [
                                             BoxShadow(
-                                              color: Color.fromRGBO(0, 0, 0, 0.1),
+                                              color:
+                                                  Color.fromRGBO(0, 0, 0, 0.1),
                                               blurRadius: 10,
                                               offset: Offset(0, 3),
                                             ),
@@ -452,9 +430,12 @@ class _BerandaViewState extends State<BerandaView> {
                                             child: Column(
                                               children: [
                                                 Container(
-                                                  margin: EdgeInsets.only(bottom: 10),
+                                                  margin: EdgeInsets.only(
+                                                      bottom: 10),
                                                   child: Text(
-                                                    data['name'].toString().toUpperCase(),
+                                                    data['name']
+                                                        .toString()
+                                                        .toUpperCase(),
                                                     textAlign: TextAlign.start,
                                                     style: TextStyle(
                                                       fontSize: 8.5,
@@ -463,13 +444,17 @@ class _BerandaViewState extends State<BerandaView> {
                                                 ),
                                                 Container(
                                                     padding:
-                                                    EdgeInsets.symmetric(horizontal: 4),
-                                                    margin: EdgeInsets.only(bottom: 10),
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 4),
+                                                    margin: EdgeInsets.only(
+                                                        bottom: 10),
                                                     child: Text(
                                                       data['price'],
-                                                      textAlign: TextAlign.start,
+                                                      textAlign:
+                                                          TextAlign.start,
                                                       style: TextStyle(
-                                                          color: secondaryColor, fontSize: 9),
+                                                          color: secondaryColor,
+                                                          fontSize: 9),
                                                     ))
                                               ],
                                             ),
@@ -482,6 +467,340 @@ class _BerandaViewState extends State<BerandaView> {
                               },
                             ),
                           ),
+                          Row(
+                            children: [
+                              Icon(
+                                CupertinoIcons.star_fill,
+                                color: secondaryColor,
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.symmetric(
+                                horizontal: 10,
+                                vertical: 10,
+                              )),
+                              Text(
+                                'Brand Populer',
+                                style: TextStyle(fontSize: 12),
+                              )
+                            ],
+                          ),
+                          Container(
+                            width: double.infinity,
+                            height: 100,
+                            margin: EdgeInsets.symmetric(vertical: 20),
+                            child: GridView.builder(
+                              scrollDirection: Axis.horizontal,
+                              itemCount: listBrands.length,
+                              shrinkWrap: true,
+                              physics: AlwaysScrollableScrollPhysics(),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 1, childAspectRatio: 1.2),
+                              itemBuilder: (context, index) {
+                                var data = listBrands[index];
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                (data['link'])));
+                                    //   goPush(data['link']);
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                          padding: EdgeInsets.all(
+                                            10,
+                                          ),
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(50)),
+                                          child: Image.network(
+                                            data['image'],
+                                            width: 50,
+                                          )),
+                                      Text(
+                                        data['name'].toString(),
+                                        style: TextStyle(fontSize: 10),
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                            ),
+                          ),
+                          // ======= PRODUK TERBARU DAN TERLARIS =======
+                          // Container(
+                          //     child: DefaultTabController(
+                          //         length: 2,
+                          //         child: Column(
+                          //           children: [
+                          //             TabBar(
+                          //               indicatorColor: secondaryColor,
+                          //               indicatorWeight: 5,
+                          //               labelColor: Colors.black,
+                          //               tabs: [
+                          //                 Tab(
+                          //                   text: "Terbaru",
+                          //                 ),
+                          //                 Tab(
+                          //                   text: "Terlaris",
+                          //                 ),
+                          //               ],
+                          //             ),
+                          //             Padding(
+                          //               padding:
+                          //                   EdgeInsets.symmetric(vertical: 10),
+                          //             ),
+                          //             TabBarView(children: [
+                          //               // ======== Terbaru =========
+                          //               Container(
+                          //                 width: double.infinity,
+                          //                 height: 205,
+                          //                 margin: EdgeInsets.symmetric(
+                          //                     vertical: 25),
+                          //                 child: GridView.builder(
+                          //                   itemCount: listProducts.length,
+                          //                   scrollDirection: Axis.horizontal,
+                          //                   shrinkWrap: true,
+                          //                   physics:
+                          //                       AlwaysScrollableScrollPhysics(),
+                          //                   gridDelegate:
+                          //                       SliverGridDelegateWithFixedCrossAxisCount(
+                          //                           crossAxisCount: 1,
+                          //                           childAspectRatio: 1.75),
+                          //                   itemBuilder: (products, index) {
+                          //                     var data = listProducts[index];
+                          //                     return InkWell(
+                          //                       splashColor: secondaryColor
+                          //                           .withAlpha(30),
+                          //                       onTap: () {
+                          //                         // Navigator.push(context,
+                          //                         //     MaterialPageRoute(builder: (context) => (data['link'])));
+                          //                       },
+                          //                       child: Column(
+                          //                         children: [
+                          //                           Container(
+                          //                             padding:
+                          //                                 EdgeInsets.all(0),
+                          //                             margin:
+                          //                                 EdgeInsets.symmetric(
+                          //                                     horizontal: 5),
+                          //                             decoration: BoxDecoration(
+                          //                               color: Colors.white,
+                          //                               borderRadius:
+                          //                                   BorderRadius.only(
+                          //                                       bottomLeft: Radius
+                          //                                           .circular(
+                          //                                               10),
+                          //                                       bottomRight:
+                          //                                           Radius
+                          //                                               .circular(
+                          //                                                   10)),
+                          //                               boxShadow: [
+                          //                                 BoxShadow(
+                          //                                   color:
+                          //                                       Color.fromRGBO(
+                          //                                           0,
+                          //                                           0,
+                          //                                           0,
+                          //                                           0.1),
+                          //                                   blurRadius: 10,
+                          //                                   offset:
+                          //                                       Offset(0, 3),
+                          //                                 ),
+                          //                               ],
+                          //                             ),
+                          //                             // padding:
+                          //                             //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                          //                             child: Column(children: [
+                          //                               Image.network(
+                          //                                 data['image'],
+                          //                                 fit: BoxFit.contain,
+                          //                               ),
+                          //                               Container(
+                          //                                 padding:
+                          //                                     EdgeInsets.all(5),
+                          //                                 child: Column(
+                          //                                   children: [
+                          //                                     Container(
+                          //                                       margin: EdgeInsets
+                          //                                           .only(
+                          //                                               bottom:
+                          //                                                   10),
+                          //                                       child: Text(
+                          //                                         data['name']
+                          //                                             .toString()
+                          //                                             .toUpperCase(),
+                          //                                         textAlign:
+                          //                                             TextAlign
+                          //                                                 .start,
+                          //                                         style:
+                          //                                             TextStyle(
+                          //                                           fontSize:
+                          //                                               8.5,
+                          //                                         ),
+                          //                                       ),
+                          //                                     ),
+                          //                                     Container(
+                          //                                         padding: EdgeInsets
+                          //                                             .symmetric(
+                          //                                                 horizontal:
+                          //                                                     4),
+                          //                                         margin: EdgeInsets
+                          //                                             .only(
+                          //                                                 bottom:
+                          //                                                     10),
+                          //                                         child: Text(
+                          //                                           data[
+                          //                                               'price'],
+                          //                                           textAlign:
+                          //                                               TextAlign
+                          //                                                   .start,
+                          //                                           style: TextStyle(
+                          //                                               color:
+                          //                                                   secondaryColor,
+                          //                                               fontSize:
+                          //                                                   9),
+                          //                                         ))
+                          //                                   ],
+                          //                                 ),
+                          //                               )
+                          //                             ]),
+                          //                           ),
+                          //                         ],
+                          //                       ),
+                          //                     );
+                          //                   },
+                          //                 ),
+                          //               ),
+
+                          //               //  ============ Terlaris ============
+                          //               Container(
+                          //                 width: double.infinity,
+                          //                 height: 205,
+                          //                 margin: EdgeInsets.symmetric(
+                          //                     vertical: 25),
+                          //                 child: GridView.builder(
+                          //                   itemCount: listProducts.length,
+                          //                   scrollDirection: Axis.horizontal,
+                          //                   shrinkWrap: true,
+                          //                   physics:
+                          //                       AlwaysScrollableScrollPhysics(),
+                          //                   gridDelegate:
+                          //                       SliverGridDelegateWithFixedCrossAxisCount(
+                          //                           crossAxisCount: 1,
+                          //                           childAspectRatio: 1.75),
+                          //                   itemBuilder: (products, index) {
+                          //                     var data = listProducts[index];
+                          //                     return InkWell(
+                          //                       splashColor: secondaryColor
+                          //                           .withAlpha(30),
+                          //                       onTap: () {
+                          //                         // Navigator.push(context,
+                          //                         //     MaterialPageRoute(builder: (context) => (data['link'])));
+                          //                       },
+                          //                       child: Column(
+                          //                         children: [
+                          //                           Container(
+                          //                             padding:
+                          //                                 EdgeInsets.all(0),
+                          //                             margin:
+                          //                                 EdgeInsets.symmetric(
+                          //                                     horizontal: 5),
+                          //                             decoration: BoxDecoration(
+                          //                               color: Colors.white,
+                          //                               borderRadius:
+                          //                                   BorderRadius.only(
+                          //                                       bottomLeft: Radius
+                          //                                           .circular(
+                          //                                               10),
+                          //                                       bottomRight:
+                          //                                           Radius
+                          //                                               .circular(
+                          //                                                   10)),
+                          //                               boxShadow: [
+                          //                                 BoxShadow(
+                          //                                   color:
+                          //                                       Color.fromRGBO(
+                          //                                           0,
+                          //                                           0,
+                          //                                           0,
+                          //                                           0.1),
+                          //                                   blurRadius: 10,
+                          //                                   offset:
+                          //                                       Offset(0, 3),
+                          //                                 ),
+                          //                               ],
+                          //                             ),
+                          //                             // padding:
+                          //                             //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                          //                             child: Column(children: [
+                          //                               Image.network(
+                          //                                 data['image'],
+                          //                                 fit: BoxFit.contain,
+                          //                               ),
+                          //                               Container(
+                          //                                 padding:
+                          //                                     EdgeInsets.all(5),
+                          //                                 child: Column(
+                          //                                   children: [
+                          //                                     Container(
+                          //                                       margin: EdgeInsets
+                          //                                           .only(
+                          //                                               bottom:
+                          //                                                   10),
+                          //                                       child: Text(
+                          //                                         data['name']
+                          //                                             .toString()
+                          //                                             .toUpperCase(),
+                          //                                         textAlign:
+                          //                                             TextAlign
+                          //                                                 .start,
+                          //                                         style:
+                          //                                             TextStyle(
+                          //                                           fontSize:
+                          //                                               8.5,
+                          //                                         ),
+                          //                                       ),
+                          //                                     ),
+                          //                                     Container(
+                          //                                         padding: EdgeInsets
+                          //                                             .symmetric(
+                          //                                                 horizontal:
+                          //                                                     4),
+                          //                                         margin: EdgeInsets
+                          //                                             .only(
+                          //                                                 bottom:
+                          //                                                     10),
+                          //                                         child: Text(
+                          //                                           data[
+                          //                                               'price'],
+                          //                                           textAlign:
+                          //                                               TextAlign
+                          //                                                   .start,
+                          //                                           style: TextStyle(
+                          //                                               color:
+                          //                                                   secondaryColor,
+                          //                                               fontSize:
+                          //                                                   9),
+                          //                                         ))
+                          //                                   ],
+                          //                                 ),
+                          //                               )
+                          //                             ]),
+                          //                           ),
+                          //                         ],
+                          //                       ),
+                          //                     );
+                          //                   },
+                          //                 ),
+                          //               ),
+                          //             ])
+                          //           ],
+                          //         )))
                         ],
                       ),
                     )

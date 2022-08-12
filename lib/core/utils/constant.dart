@@ -92,3 +92,36 @@ List<Map<String, dynamic>> listProducts = [
     "link": ''
   },
 ];
+
+List<Map<String, dynamic>> listBrands = [
+  {
+    "name": "Arowwai",
+    "image":
+        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+    "link": ''
+  },
+  {
+    "name": "Arowwai",
+    "image":
+        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+    "link": ''
+  },
+  {
+    "name": "Arowwai",
+    "image":
+        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+    "link": ''
+  },
+  {
+    "name": "Arowwai",
+    "image":
+        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+    "link": ''
+  },
+  {
+    "name": "Arowwai",
+    "image":
+        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+    "link": ''
+  },
+];
