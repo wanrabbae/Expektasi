@@ -1,5 +1,7 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/chat.dart';
 import 'package:expektasi/views/home/login.dart';
+import 'package:expektasi/views/home/notification.dart';
 import 'package:expektasi/views/home/register/register.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,12 +20,17 @@ class BerandaView extends StatefulWidget {
 }
 
 class _BerandaViewState extends State<BerandaView> {
+  // TabController tabController = TabController(length: 2, vsync: this);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: customAppBar(actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => (NotifView())));
+          },
           icon: Icon(
             PhosphorIcons.bellSimple,
             color: Colors.white,
@@ -31,7 +38,10 @@ class _BerandaViewState extends State<BerandaView> {
           ),
         ),
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => (ChatView())));
+          },
           icon: Icon(PhosphorIcons.chats, color: Colors.white, size: 20),
         ),
       ]),
@@ -360,6 +370,7 @@ class _BerandaViewState extends State<BerandaView> {
                     ),
                     Container(
                       margin: EdgeInsets.symmetric(vertical: 60),
+                      // padding: EdgeInsets.symmetric(vertical: ),
                       child: Column(
                         children: [
                           Row(
@@ -532,275 +543,283 @@ class _BerandaViewState extends State<BerandaView> {
                             ),
                           ),
                           // ======= PRODUK TERBARU DAN TERLARIS =======
-                          // Container(
-                          //     child: DefaultTabController(
-                          //         length: 2,
-                          //         child: Column(
-                          //           children: [
-                          //             TabBar(
-                          //               indicatorColor: secondaryColor,
-                          //               indicatorWeight: 5,
-                          //               labelColor: Colors.black,
-                          //               tabs: [
-                          //                 Tab(
-                          //                   text: "Terbaru",
-                          //                 ),
-                          //                 Tab(
-                          //                   text: "Terlaris",
-                          //                 ),
-                          //               ],
-                          //             ),
-                          //             Padding(
-                          //               padding:
-                          //                   EdgeInsets.symmetric(vertical: 10),
-                          //             ),
-                          //             TabBarView(children: [
-                          //               // ======== Terbaru =========
-                          //               Container(
-                          //                 width: double.infinity,
-                          //                 height: 205,
-                          //                 margin: EdgeInsets.symmetric(
-                          //                     vertical: 25),
-                          //                 child: GridView.builder(
-                          //                   itemCount: listProducts.length,
-                          //                   scrollDirection: Axis.horizontal,
-                          //                   shrinkWrap: true,
-                          //                   physics:
-                          //                       AlwaysScrollableScrollPhysics(),
-                          //                   gridDelegate:
-                          //                       SliverGridDelegateWithFixedCrossAxisCount(
-                          //                           crossAxisCount: 1,
-                          //                           childAspectRatio: 1.75),
-                          //                   itemBuilder: (products, index) {
-                          //                     var data = listProducts[index];
-                          //                     return InkWell(
-                          //                       splashColor: secondaryColor
-                          //                           .withAlpha(30),
-                          //                       onTap: () {
-                          //                         // Navigator.push(context,
-                          //                         //     MaterialPageRoute(builder: (context) => (data['link'])));
-                          //                       },
-                          //                       child: Column(
-                          //                         children: [
-                          //                           Container(
-                          //                             padding:
-                          //                                 EdgeInsets.all(0),
-                          //                             margin:
-                          //                                 EdgeInsets.symmetric(
-                          //                                     horizontal: 5),
-                          //                             decoration: BoxDecoration(
-                          //                               color: Colors.white,
-                          //                               borderRadius:
-                          //                                   BorderRadius.only(
-                          //                                       bottomLeft: Radius
-                          //                                           .circular(
-                          //                                               10),
-                          //                                       bottomRight:
-                          //                                           Radius
-                          //                                               .circular(
-                          //                                                   10)),
-                          //                               boxShadow: [
-                          //                                 BoxShadow(
-                          //                                   color:
-                          //                                       Color.fromRGBO(
-                          //                                           0,
-                          //                                           0,
-                          //                                           0,
-                          //                                           0.1),
-                          //                                   blurRadius: 10,
-                          //                                   offset:
-                          //                                       Offset(0, 3),
+                          //   Container(
+                          //       width: double.infinity,
+                          //       child: Column(
+                          //         crossAxisAlignment: CrossAxisAlignment.stretch,
+                          //         children: [
+                          //           // SizedBox(height: 2.0),
+                          //           DefaultTabController(
+                          //               length: 2,
+                          //               initialIndex: 0,
+                          //               child: Column(
+                          //                 crossAxisAlignment:
+                          //                     CrossAxisAlignment.stretch,
+                          //                 children: [
+                          //                   TabBar(
+                          //                     indicatorColor: secondaryColor,
+                          //                     indicatorWeight: 5,
+                          //                     labelColor: Colors.black,
+                          //                     tabs: [
+                          //                       Tab(
+                          //                         text: "Terbaru",
+                          //                       ),
+                          //                       Tab(
+                          //                         text: "Terlaris",
+                          //                       ),
+                          //                     ],
+                          //                   ),
+                          //                   Padding(
+                          //                     padding: EdgeInsets.symmetric(
+                          //                         vertical: 10),
+                          //                   ),
+                          //                   TabBarView(children: [
+                          //                     // ======== Terbaru =========
+                          //                     Container(
+                          //                       width: double.infinity,
+                          //                       height: 205,
+                          //                       margin: EdgeInsets.symmetric(
+                          //                           vertical: 25),
+                          //                       child: GridView.builder(
+                          //                         itemCount: listProducts.length,
+                          //                         scrollDirection:
+                          //                             Axis.horizontal,
+                          //                         shrinkWrap: true,
+                          //                         physics:
+                          //                             AlwaysScrollableScrollPhysics(),
+                          //                         gridDelegate:
+                          //                             SliverGridDelegateWithFixedCrossAxisCount(
+                          //                                 crossAxisCount: 1,
+                          //                                 childAspectRatio: 1.75),
+                          //                         itemBuilder: (products, index) {
+                          //                           var data =
+                          //                               listProducts[index];
+                          //                           return InkWell(
+                          //                             splashColor: secondaryColor
+                          //                                 .withAlpha(30),
+                          //                             onTap: () {
+                          //                               // Navigator.push(context,
+                          //                               //     MaterialPageRoute(builder: (context) => (data['link'])));
+                          //                             },
+                          //                             child: Column(
+                          //                               children: [
+                          //                                 Container(
+                          //                                   padding:
+                          //                                       EdgeInsets.all(0),
+                          //                                   margin: EdgeInsets
+                          //                                       .symmetric(
+                          //                                           horizontal:
+                          //                                               5),
+                          //                                   decoration:
+                          //                                       BoxDecoration(
+                          //                                     color: Colors.white,
+                          //                                     borderRadius: BorderRadius.only(
+                          //                                         bottomLeft: Radius
+                          //                                             .circular(
+                          //                                                 10),
+                          //                                         bottomRight: Radius
+                          //                                             .circular(
+                          //                                                 10)),
+                          //                                     boxShadow: [
+                          //                                       BoxShadow(
+                          //                                         color: Color
+                          //                                             .fromRGBO(
+                          //                                                 0,
+                          //                                                 0,
+                          //                                                 0,
+                          //                                                 0.1),
+                          //                                         blurRadius: 10,
+                          //                                         offset: Offset(
+                          //                                             0, 3),
+                          //                                       ),
+                          //                                     ],
+                          //                                   ),
+                          //                                   // padding:
+                          //                                   //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                          //                                   child: Column(
+                          //                                       children: [
+                          //                                         Image.network(
+                          //                                           data['image'],
+                          //                                           fit: BoxFit
+                          //                                               .contain,
+                          //                                         ),
+                          //                                         Container(
+                          //                                           padding:
+                          //                                               EdgeInsets
+                          //                                                   .all(
+                          //                                                       5),
+                          //                                           child: Column(
+                          //                                             children: [
+                          //                                               Container(
+                          //                                                 margin: EdgeInsets.only(
+                          //                                                     bottom:
+                          //                                                         10),
+                          //                                                 child:
+                          //                                                     Text(
+                          //                                                   data['name']
+                          //                                                       .toString()
+                          //                                                       .toUpperCase(),
+                          //                                                   textAlign:
+                          //                                                       TextAlign.start,
+                          //                                                   style:
+                          //                                                       TextStyle(
+                          //                                                     fontSize:
+                          //                                                         8.5,
+                          //                                                   ),
+                          //                                                 ),
+                          //                                               ),
+                          //                                               Container(
+                          //                                                   padding: EdgeInsets.symmetric(
+                          //                                                       horizontal:
+                          //                                                           4),
+                          //                                                   margin: EdgeInsets.only(
+                          //                                                       bottom:
+                          //                                                           10),
+                          //                                                   child:
+                          //                                                       Text(
+                          //                                                     data['price'],
+                          //                                                     textAlign:
+                          //                                                         TextAlign.start,
+                          //                                                     style:
+                          //                                                         TextStyle(color: secondaryColor, fontSize: 9),
+                          //                                                   ))
+                          //                                             ],
+                          //                                           ),
+                          //                                         )
+                          //                                       ]),
                           //                                 ),
                           //                               ],
                           //                             ),
-                          //                             // padding:
-                          //                             //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                          //                             child: Column(children: [
-                          //                               Image.network(
-                          //                                 data['image'],
-                          //                                 fit: BoxFit.contain,
-                          //                               ),
-                          //                               Container(
-                          //                                 padding:
-                          //                                     EdgeInsets.all(5),
-                          //                                 child: Column(
-                          //                                   children: [
-                          //                                     Container(
-                          //                                       margin: EdgeInsets
-                          //                                           .only(
-                          //                                               bottom:
-                          //                                                   10),
-                          //                                       child: Text(
-                          //                                         data['name']
-                          //                                             .toString()
-                          //                                             .toUpperCase(),
-                          //                                         textAlign:
-                          //                                             TextAlign
-                          //                                                 .start,
-                          //                                         style:
-                          //                                             TextStyle(
-                          //                                           fontSize:
-                          //                                               8.5,
-                          //                                         ),
-                          //                                       ),
-                          //                                     ),
-                          //                                     Container(
-                          //                                         padding: EdgeInsets
-                          //                                             .symmetric(
-                          //                                                 horizontal:
-                          //                                                     4),
-                          //                                         margin: EdgeInsets
-                          //                                             .only(
-                          //                                                 bottom:
-                          //                                                     10),
-                          //                                         child: Text(
-                          //                                           data[
-                          //                                               'price'],
-                          //                                           textAlign:
-                          //                                               TextAlign
-                          //                                                   .start,
-                          //                                           style: TextStyle(
-                          //                                               color:
-                          //                                                   secondaryColor,
-                          //                                               fontSize:
-                          //                                                   9),
-                          //                                         ))
-                          //                                   ],
-                          //                                 ),
-                          //                               )
-                          //                             ]),
-                          //                           ),
-                          //                         ],
+                          //                           );
+                          //                         },
                           //                       ),
-                          //                     );
-                          //                   },
-                          //                 ),
-                          //               ),
+                          //                     ),
 
-                          //               //  ============ Terlaris ============
-                          //               Container(
-                          //                 width: double.infinity,
-                          //                 height: 205,
-                          //                 margin: EdgeInsets.symmetric(
-                          //                     vertical: 25),
-                          //                 child: GridView.builder(
-                          //                   itemCount: listProducts.length,
-                          //                   scrollDirection: Axis.horizontal,
-                          //                   shrinkWrap: true,
-                          //                   physics:
-                          //                       AlwaysScrollableScrollPhysics(),
-                          //                   gridDelegate:
-                          //                       SliverGridDelegateWithFixedCrossAxisCount(
-                          //                           crossAxisCount: 1,
-                          //                           childAspectRatio: 1.75),
-                          //                   itemBuilder: (products, index) {
-                          //                     var data = listProducts[index];
-                          //                     return InkWell(
-                          //                       splashColor: secondaryColor
-                          //                           .withAlpha(30),
-                          //                       onTap: () {
-                          //                         // Navigator.push(context,
-                          //                         //     MaterialPageRoute(builder: (context) => (data['link'])));
-                          //                       },
-                          //                       child: Column(
-                          //                         children: [
-                          //                           Container(
-                          //                             padding:
-                          //                                 EdgeInsets.all(0),
-                          //                             margin:
-                          //                                 EdgeInsets.symmetric(
-                          //                                     horizontal: 5),
-                          //                             decoration: BoxDecoration(
-                          //                               color: Colors.white,
-                          //                               borderRadius:
-                          //                                   BorderRadius.only(
-                          //                                       bottomLeft: Radius
-                          //                                           .circular(
-                          //                                               10),
-                          //                                       bottomRight:
-                          //                                           Radius
-                          //                                               .circular(
-                          //                                                   10)),
-                          //                               boxShadow: [
-                          //                                 BoxShadow(
-                          //                                   color:
-                          //                                       Color.fromRGBO(
-                          //                                           0,
-                          //                                           0,
-                          //                                           0,
-                          //                                           0.1),
-                          //                                   blurRadius: 10,
-                          //                                   offset:
-                          //                                       Offset(0, 3),
+                          //                     //  ============ Terlaris ============
+                          //                     Container(
+                          //                       width: double.infinity,
+                          //                       height: 205,
+                          //                       margin: EdgeInsets.symmetric(
+                          //                           vertical: 25),
+                          //                       child: GridView.builder(
+                          //                         itemCount: listProducts.length,
+                          //                         scrollDirection:
+                          //                             Axis.horizontal,
+                          //                         shrinkWrap: true,
+                          //                         physics:
+                          //                             AlwaysScrollableScrollPhysics(),
+                          //                         gridDelegate:
+                          //                             SliverGridDelegateWithFixedCrossAxisCount(
+                          //                                 crossAxisCount: 1,
+                          //                                 childAspectRatio: 1.75),
+                          //                         itemBuilder: (products, index) {
+                          //                           var data =
+                          //                               listProducts[index];
+                          //                           return InkWell(
+                          //                             splashColor: secondaryColor
+                          //                                 .withAlpha(30),
+                          //                             onTap: () {
+                          //                               // Navigator.push(context,
+                          //                               //     MaterialPageRoute(builder: (context) => (data['link'])));
+                          //                             },
+                          //                             child: Column(
+                          //                               children: [
+                          //                                 Container(
+                          //                                   padding:
+                          //                                       EdgeInsets.all(0),
+                          //                                   margin: EdgeInsets
+                          //                                       .symmetric(
+                          //                                           horizontal:
+                          //                                               5),
+                          //                                   decoration:
+                          //                                       BoxDecoration(
+                          //                                     color: Colors.white,
+                          //                                     borderRadius: BorderRadius.only(
+                          //                                         bottomLeft: Radius
+                          //                                             .circular(
+                          //                                                 10),
+                          //                                         bottomRight: Radius
+                          //                                             .circular(
+                          //                                                 10)),
+                          //                                     boxShadow: [
+                          //                                       BoxShadow(
+                          //                                         color: Color
+                          //                                             .fromRGBO(
+                          //                                                 0,
+                          //                                                 0,
+                          //                                                 0,
+                          //                                                 0.1),
+                          //                                         blurRadius: 10,
+                          //                                         offset: Offset(
+                          //                                             0, 3),
+                          //                                       ),
+                          //                                     ],
+                          //                                   ),
+                          //                                   // padding:
+                          //                                   //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                          //                                   child: Column(
+                          //                                       children: [
+                          //                                         Image.network(
+                          //                                           data['image'],
+                          //                                           fit: BoxFit
+                          //                                               .contain,
+                          //                                         ),
+                          //                                         Container(
+                          //                                           padding:
+                          //                                               EdgeInsets
+                          //                                                   .all(
+                          //                                                       5),
+                          //                                           child: Column(
+                          //                                             children: [
+                          //                                               Container(
+                          //                                                 margin: EdgeInsets.only(
+                          //                                                     bottom:
+                          //                                                         10),
+                          //                                                 child:
+                          //                                                     Text(
+                          //                                                   data['name']
+                          //                                                       .toString()
+                          //                                                       .toUpperCase(),
+                          //                                                   textAlign:
+                          //                                                       TextAlign.start,
+                          //                                                   style:
+                          //                                                       TextStyle(
+                          //                                                     fontSize:
+                          //                                                         8.5,
+                          //                                                   ),
+                          //                                                 ),
+                          //                                               ),
+                          //                                               Container(
+                          //                                                   padding: EdgeInsets.symmetric(
+                          //                                                       horizontal:
+                          //                                                           4),
+                          //                                                   margin: EdgeInsets.only(
+                          //                                                       bottom:
+                          //                                                           10),
+                          //                                                   child:
+                          //                                                       Text(
+                          //                                                     data['price'],
+                          //                                                     textAlign:
+                          //                                                         TextAlign.start,
+                          //                                                     style:
+                          //                                                         TextStyle(color: secondaryColor, fontSize: 9),
+                          //                                                   ))
+                          //                                             ],
+                          //                                           ),
+                          //                                         )
+                          //                                       ]),
                           //                                 ),
                           //                               ],
                           //                             ),
-                          //                             // padding:
-                          //                             //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                          //                             child: Column(children: [
-                          //                               Image.network(
-                          //                                 data['image'],
-                          //                                 fit: BoxFit.contain,
-                          //                               ),
-                          //                               Container(
-                          //                                 padding:
-                          //                                     EdgeInsets.all(5),
-                          //                                 child: Column(
-                          //                                   children: [
-                          //                                     Container(
-                          //                                       margin: EdgeInsets
-                          //                                           .only(
-                          //                                               bottom:
-                          //                                                   10),
-                          //                                       child: Text(
-                          //                                         data['name']
-                          //                                             .toString()
-                          //                                             .toUpperCase(),
-                          //                                         textAlign:
-                          //                                             TextAlign
-                          //                                                 .start,
-                          //                                         style:
-                          //                                             TextStyle(
-                          //                                           fontSize:
-                          //                                               8.5,
-                          //                                         ),
-                          //                                       ),
-                          //                                     ),
-                          //                                     Container(
-                          //                                         padding: EdgeInsets
-                          //                                             .symmetric(
-                          //                                                 horizontal:
-                          //                                                     4),
-                          //                                         margin: EdgeInsets
-                          //                                             .only(
-                          //                                                 bottom:
-                          //                                                     10),
-                          //                                         child: Text(
-                          //                                           data[
-                          //                                               'price'],
-                          //                                           textAlign:
-                          //                                               TextAlign
-                          //                                                   .start,
-                          //                                           style: TextStyle(
-                          //                                               color:
-                          //                                                   secondaryColor,
-                          //                                               fontSize:
-                          //                                                   9),
-                          //                                         ))
-                          //                                   ],
-                          //                                 ),
-                          //                               )
-                          //                             ]),
-                          //                           ),
-                          //                         ],
+                          //                           );
+                          //                         },
                           //                       ),
-                          //                     );
-                          //                   },
-                          //                 ),
-                          //               ),
-                          //             ])
-                          //           ],
-                          //         )))
+                          //                     ),
+                          //                   ])
+                          //                 ],
+                          //               )),
+                          //         ],
+                          //       ))
                         ],
                       ),
                     )
