@@ -1,9 +1,7 @@
-
-
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/home/beranda.dart';
 import 'package:expektasi/views/home/cart.dart';
-import 'package:expektasi/views/home/profile.dart';
+import 'package:expektasi/views/home/profile/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -18,7 +16,6 @@ class TemplateMainView extends StatefulWidget {
 }
 
 class _TemplateMainViewState extends State<TemplateMainView> {
-
   List<Widget> listWidget = [
     BerandaView(),
     CartView(),
@@ -58,10 +55,7 @@ class _TemplateMainViewState extends State<TemplateMainView> {
       bottomNavigationBar: BottomAppBar(
         elevation: 20.0,
         child: Container(
-          padding: EdgeInsets.symmetric(
-              vertical: 10,
-              horizontal: 15
-          ),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
           child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -76,7 +70,7 @@ class _TemplateMainViewState extends State<TemplateMainView> {
                     PhosphorIcons.houseBold,
                     size: 32.0,
                   ),
-                  color: selectedIndex == 0 ? secondaryColor : Colors.black   ,
+                  color: selectedIndex == 0 ? secondaryColor : Colors.black,
                   //   //darken the icon if it is selected or else give it a different color
                   // color: val == 0
                   //   ? Colors.blue.shade900
@@ -110,8 +104,7 @@ class _TemplateMainViewState extends State<TemplateMainView> {
                   //darken the icon if it is selected or else give it a different color
                   // color: selectedIndex == 2 ? primaryColor : Colors.grey.shade400,
                 ),
-              ]
-          ),
+              ]),
         ),
         shape: CircularNotchedRectangle(),
       ),
