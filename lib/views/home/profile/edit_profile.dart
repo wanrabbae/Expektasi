@@ -44,147 +44,229 @@ class _EditProfileViewState extends State<EditProfileView> {
             ),
             Container(
               margin: EdgeInsets.only(top: 20),
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               width: double.infinity,
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      style: TextStyle(fontSize: 12),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Nama Lengkap",
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      style: TextStyle(fontSize: 12),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Username",
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      style: TextStyle(fontSize: 12),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Jenis Kelamin",
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      keyboardType: TextInputType.datetime,
-                      style: TextStyle(fontSize: 12),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Tanggal Lahir",
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      keyboardType: TextInputType.emailAddress,
-                      style: TextStyle(fontSize: 12),
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Email",
-                        suffix: InkWell(
-                          child: Text(
-                            "verifikasi",
-                            style: TextStyle(color: secondaryColor),
-                          ),
+                      alignment: Alignment.centerRight,
+                      padding: EdgeInsets.only(bottom: 0, right: 0),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Edit",
+                          style: TextStyle(color: secondaryColor, fontSize: 13),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
+                      )),
                   Container(
-                    padding: EdgeInsets.only(bottom: 25),
-                    child: TextFormField(
-                      style: TextStyle(fontSize: 12),
-                      obscureText: _isObscure,
-                      enableSuggestions: false,
-                      autocorrect: false,
-                      decoration: InputDecoration(
-                        contentPadding:
-                            EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                        hintText: "Password",
-                        suffix: InkWell(
-                          child: Text(
-                            "ubah",
-                            style: TextStyle(color: secondaryColor),
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Nama",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
                           ),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(7.0),
-                            borderSide:
-                                BorderSide(color: secondaryColor, width: 2.0)),
-                        fillColor: Colors.white,
-                      ),
-                    ),
-                  ),
+                          TextFormField(
+                            style: TextStyle(fontSize: 12),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Nama Lengkap",
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Username",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
+                          ),
+                          TextFormField(
+                            style: TextStyle(fontSize: 12),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Username",
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Jenis Kelamin",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
+                          ),
+                          TextFormField(
+                            style: TextStyle(fontSize: 12),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Jenis Kelamin",
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Tanggal Lahir",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
+                          ),
+                          TextFormField(
+                            keyboardType: TextInputType.datetime,
+                            style: TextStyle(fontSize: 12),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Tanggal Lahir",
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Email",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
+                          ),
+                          TextFormField(
+                            keyboardType: TextInputType.emailAddress,
+                            style: TextStyle(fontSize: 12),
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Email",
+                              suffix: InkWell(
+                                child: Text(
+                                  "verifikasi",
+                                  style: TextStyle(color: secondaryColor),
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
+                  Container(
+                      padding: EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Password",
+                              style: TextStyle(
+                                  color: Colors.grey[600], fontSize: 12),
+                            ),
+                          ),
+                          TextFormField(
+                            style: TextStyle(fontSize: 12),
+                            obscureText: _isObscure,
+                            enableSuggestions: false,
+                            autocorrect: false,
+                            decoration: InputDecoration(
+                              contentPadding: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 15),
+                              hintStyle: TextStyle(color: Colors.grey[400]),
+                              hintText: "Password",
+                              suffix: InkWell(
+                                child: Text(
+                                  "ubah",
+                                  style: TextStyle(color: secondaryColor),
+                                ),
+                              ),
+                              enabledBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              focusedBorder: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(7.0),
+                                  borderSide: BorderSide(
+                                      color: secondaryColor, width: 1.5)),
+                              fillColor: Colors.white,
+                            ),
+                          ),
+                        ],
+                      )),
                   Container(
                     child: SizedBox(
                       width: EdgeInsets.symmetric(horizontal: 50).horizontal,
