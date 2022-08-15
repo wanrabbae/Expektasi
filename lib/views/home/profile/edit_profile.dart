@@ -12,6 +12,7 @@ class EditProfileView extends StatefulWidget {
 
 class _EditProfileViewState extends State<EditProfileView> {
   bool _isObscure = false;
+  bool _isEdit = false;
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +53,11 @@ class _EditProfileViewState extends State<EditProfileView> {
                       alignment: Alignment.centerRight,
                       padding: EdgeInsets.only(bottom: 0, right: 0),
                       child: TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          setState(() {
+                            _isEdit = true;
+                          });
+                        },
                         child: Text(
                           "Edit",
                           style: TextStyle(color: secondaryColor, fontSize: 13),
@@ -268,21 +273,23 @@ class _EditProfileViewState extends State<EditProfileView> {
                         ],
                       )),
                   Container(
-                    child: SizedBox(
-                      width: EdgeInsets.symmetric(horizontal: 50).horizontal,
-                      child: TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Simpan",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        style: TextButton.styleFrom(
-                          padding: EdgeInsets.all(10),
-                          backgroundColor: secondaryColor,
-                        ),
-                      ),
-                    ),
-                  )
+                      child: _isEdit
+                          ? SizedBox(
+                              width: EdgeInsets.symmetric(horizontal: 50)
+                                  .horizontal,
+                              child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Simpan",
+                                  style: TextStyle(color: Colors.white),
+                                ),
+                                style: TextButton.styleFrom(
+                                  padding: EdgeInsets.all(10),
+                                  backgroundColor: secondaryColor,
+                                ),
+                              ),
+                            )
+                          : Text(""))
                 ],
               ),
             ),

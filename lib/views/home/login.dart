@@ -19,7 +19,14 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(elevation: 0, backgroundColor: secondaryColor),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -79,7 +86,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(bottom: 30),
+                    margin: EdgeInsets.only(bottom: 10),
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       style: TextStyle(fontSize: 12),
@@ -122,14 +129,13 @@ class _LoginState extends State<Login> {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(bottom: 30),
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              margin: EdgeInsets.only(bottom: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    splashColor: secondaryColor,
-                    onTap: () {
+                  TextButton(
+                    onPressed: () {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -154,17 +160,20 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  InkWell(
-                    splashColor: secondaryColor,
-                    onTap: () {},
-                    child: Text(
-                      "Lupa \n Password",
-                      style: TextStyle(color: secondaryColor, fontSize: 12),
-                    ),
-                  ),
                 ],
               ),
             ),
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              alignment: Alignment.centerLeft,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Lupa Password?",
+                  style: TextStyle(color: secondaryColor, fontSize: 12),
+                ),
+              ),
+            )
           ],
         ),
       ),

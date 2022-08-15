@@ -17,7 +17,14 @@ class _VerificationCodeState extends State<VerificationCode> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(elevation: 0, backgroundColor: secondaryColor),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: SingleChildScrollView(
           child: Container(
         margin: EdgeInsets.symmetric(vertical: 50),
@@ -59,7 +66,14 @@ class _VerificationCodeState extends State<VerificationCode> {
                   ),
                 ),
               ),
-            )
+            ),
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Kirim ulang kode",
+                  style: TextStyle(color: secondaryColor),
+                  textAlign: TextAlign.center,
+                )),
           ],
         ),
       )),

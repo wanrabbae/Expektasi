@@ -1,6 +1,8 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/home/order.dart';
 import 'package:expektasi/views/home/profile/edit_profile.dart';
+import 'package:expektasi/views/home/profile/pusat_bantuan.dart';
+import 'package:expektasi/views/home/profile/riwayat.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -431,7 +433,10 @@ class _ProfileViewState extends State<ProfileView> {
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
-                            debugPrint('Card tapped.');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => (RiwayatView())));
                           },
                           child: Container(
                               margin: EdgeInsets.only(left: 20),
@@ -534,7 +539,11 @@ class _ProfileViewState extends State<ProfileView> {
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
-                            debugPrint('Card tapped.');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        (PusatBantuanView())));
                           },
                           child: Container(
                               margin: EdgeInsets.only(left: 20),
