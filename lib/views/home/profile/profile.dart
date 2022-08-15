@@ -81,7 +81,7 @@ class _ProfileViewState extends State<ProfileView> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => (OrderView())));
+                                  builder: (context) => (OrderView(0))));
                         },
                         child: Container(
                             margin: EdgeInsets.only(left: 20),
@@ -133,7 +133,10 @@ class _ProfileViewState extends State<ProfileView> {
                           InkWell(
                             splashColor: secondaryColor.withAlpha(30),
                             onTap: () {
-                              debugPrint('Card tapped.');
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (OrderView(0))));
                             },
                             child: Column(
                               children: [
@@ -155,7 +158,10 @@ class _ProfileViewState extends State<ProfileView> {
                           InkWell(
                             splashColor: secondaryColor.withAlpha(30),
                             onTap: () {
-                              debugPrint("Card tapped");
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (OrderView(1))));
                             },
                             child: Column(
                               children: [
@@ -176,7 +182,12 @@ class _ProfileViewState extends State<ProfileView> {
                           ),
                           InkWell(
                             splashColor: secondaryColor.withAlpha(30),
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => (OrderView(2))));
+                            },
                             child: Column(
                               children: [
                                 Icon(

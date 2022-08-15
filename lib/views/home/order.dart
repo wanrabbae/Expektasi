@@ -5,7 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class OrderView extends StatefulWidget {
-  const OrderView({Key? key}) : super(key: key);
+  int selectedPage;
+  OrderView(this.selectedPage);
 
   @override
   State<OrderView> createState() => _OrderViewState();
@@ -16,6 +17,7 @@ class _OrderViewState extends State<OrderView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
+        initialIndex: widget.selectedPage,
         length: 6,
         child: Scaffold(
           appBar: AppBar(
