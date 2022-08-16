@@ -101,21 +101,21 @@ List<Map<String, dynamic>> listBrands = [
     "link": ''
   },
   {
-    "name": "Arowwai",
+    "name": "Toko Salimah",
     "image":
-        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1008984302194794516/Ellipse_8.png",
     "link": ''
   },
   {
-    "name": "Arowwai",
+    "name": "Sarifah Collection",
     "image":
-        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1008984302622609418/Ellipse_7.png",
     "link": ''
   },
   {
-    "name": "Arowwai",
+    "name": "Fikry Store",
     "image":
-        "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1008984302987522089/Ellipse_6.png",
     "link": ''
   },
   {
