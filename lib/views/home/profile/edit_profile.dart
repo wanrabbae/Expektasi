@@ -1,3 +1,4 @@
+import 'package:date_time_picker/date_time_picker.dart';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -13,6 +14,7 @@ class EditProfileView extends StatefulWidget {
 class _EditProfileViewState extends State<EditProfileView> {
   bool _isObscure = false;
   bool _isEdit = false;
+  String dropdownValue = 'Pilih';
 
   @override
   Widget build(BuildContext context) {
@@ -139,24 +141,42 @@ class _EditProfileViewState extends State<EditProfileView> {
                                   color: Colors.grey[600], fontSize: 12),
                             ),
                           ),
-                          TextFormField(
-                            style: TextStyle(fontSize: 12),
-                            decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 15),
-                              hintStyle: TextStyle(color: Colors.grey[400]),
-                              hintText: "Jenis Kelamin",
-                              enabledBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(7.0),
-                                  borderSide: BorderSide(
-                                      color: secondaryColor, width: 1.5)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(7.0),
-                                  borderSide: BorderSide(
-                                      color: secondaryColor, width: 1.5)),
-                              fillColor: Colors.white,
+                          Container(
+                            padding: EdgeInsets.symmetric(horizontal: 15),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(7.0),
+                              border:
+                                  Border.all(color: secondaryColor, width: 2.0),
                             ),
-                          ),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              icon: const Icon(Icons.arrow_downward),
+                              iconSize: 12,
+                              iconEnabledColor: secondaryColor,
+                              elevation: 0,
+                              hint: Text("Pilih Jenis Kelamin"),
+                              style: TextStyle(color: Colors.black),
+                              underline: Container(
+                                height: 0,
+                              ),
+                              onChanged: (String? newValue) {
+                                setState(() {
+                                  dropdownValue = newValue!;
+                                });
+                              },
+                              items: <String>[
+                                'Pilih',
+                                'Laki-laki',
+                                'Perempuan'
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          )
                         ],
                       )),
                   Container(
@@ -171,24 +191,27 @@ class _EditProfileViewState extends State<EditProfileView> {
                                   color: Colors.grey[600], fontSize: 12),
                             ),
                           ),
-                          TextFormField(
-                            keyboardType: TextInputType.datetime,
+                          DateTimePicker(
+                            initialValue: '',
+                            firstDate: DateTime(2000),
+                            lastDate: DateTime(2100),
                             style: TextStyle(fontSize: 12),
                             decoration: InputDecoration(
-                              contentPadding: EdgeInsets.symmetric(
-                                  vertical: 10, horizontal: 15),
-                              hintStyle: TextStyle(color: Colors.grey[400]),
-                              hintText: "Tanggal Lahir",
                               enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(7.0),
                                   borderSide: BorderSide(
-                                      color: secondaryColor, width: 1.5)),
+                                      color: secondaryColor, width: 2.0)),
                               focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(7.0),
                                   borderSide: BorderSide(
-                                      color: secondaryColor, width: 1.5)),
-                              fillColor: Colors.white,
+                                      color: secondaryColor, width: 2.0)),
                             ),
+                            onChanged: (val) => print(val),
+                            validator: (val) {
+                              print(val);
+                              return null;
+                            },
+                            onSaved: (val) => print(val),
                           ),
                         ],
                       )),
