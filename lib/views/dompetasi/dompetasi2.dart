@@ -1,5 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/dompetasi/dompetasi_home.dart';
+import 'package:expektasi/views/dompetasi/splash_succes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -54,7 +55,7 @@ class _DompetasiView2State extends State<DompetasiView2> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => (DompetasiHome())));
+                            builder: (context) => (SplashSuccess())));
                   },
                   child: Text(
                     "Lanjut",

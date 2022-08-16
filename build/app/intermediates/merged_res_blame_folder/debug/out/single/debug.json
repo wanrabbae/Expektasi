@@ -1,13 +1,19 @@
 [
     {
+<<<<<<< HEAD
         "merged": "D:\\Project\\expektasi\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "D:\\Project\\expektasi\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+=======
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher2.png.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-mdpi/ic_launcher2.png"
+>>>>>>> a28f5066d2ddc31f4954c671424d469b9686dcf8
     },
     {
         "merged": "D:\\Project\\expektasi\\build\\app\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Project\\expektasi\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Project\\expektasi\\build\\app\\intermediates\\res\\merged\\debug\\drawable-v21_launch_background.xml.flat",
         "source": "D:\\Project\\expektasi\\android\\app\\src\\main\\res\\drawable-v21\\launch_background.xml"
     },
@@ -26,5 +32,45 @@
     {
         "merged": "D:\\Project\\expektasi\\build\\app\\intermediates\\res\\merged\\debug\\drawable_launch_background.xml.flat",
         "source": "D:\\Project\\expektasi\\android\\app\\src\\main\\res\\drawable\\launch_background.xml"
+=======
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.jpg.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.jpg"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.jpg.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.jpg"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.jpg.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-hdpi/ic_launcher.jpg"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher2.png.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher2.png"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.jpg.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xhdpi/ic_launcher.jpg"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.jpg.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-mdpi/ic_launcher.jpg"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher2.png.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-hdpi/ic_launcher2.png"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/drawable_launch_background.xml.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/drawable/launch_background.xml"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher2.png.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xhdpi/ic_launcher2.png"
+    },
+    {
+        "merged": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher2.png.flat",
+        "source": "/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/android/app/src/main/res/mipmap-xxhdpi/ic_launcher2.png"
+>>>>>>> a28f5066d2ddc31f4954c671424d469b9686dcf8
     }
 ]
