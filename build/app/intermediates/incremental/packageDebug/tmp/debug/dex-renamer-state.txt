@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Tue Aug 16 16:11:15 ICT 2022
+#Thu Aug 18 08:23:56 ICT 2022
 base.0=D\:\\Project\\expektasi\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
-=======
-#Tue Aug 16 13:26:44 WIB 2022
-base.0=/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
->>>>>>> a28f5066d2ddc31f4954c671424d469b9686dcf8
 renamed.0=classes.dex
 path.0=classes.dex
