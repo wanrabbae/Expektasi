@@ -86,17 +86,6 @@ class _DompetasiHomeState extends State<DompetasiHome> {
                       ],
                     )),
                   ),
-                  // FlatButton.icon(
-                  //     onPressed: () {},
-                  //     icon: Icon(
-                  //       PhosphorIcons.scan,
-                  //       size: 30,
-                  //       color: Color(0xffEB9007),
-                  //     ),
-                  //   label: Text(
-                  //     'Bayar'
-                  //   ),
-                  // ),
                   Material(
                     color: secondaryColor,
                     child: InkWell(
@@ -186,22 +175,6 @@ class _DompetasiHomeState extends State<DompetasiHome> {
                       ),
                     ),
                   ),
-                  // IconButton(
-                  //     onPressed: () {},
-                  //     icon: Icon(
-                  //       PhosphorIcons.wallet,
-                  //       size: 30,
-                  //       color: Color(0xffEB9007),
-                  //     )
-                  // ),
-                  // IconButton(
-                  //     onPressed: () {},
-                  //     icon: Icon(
-                  //       PhosphorIcons.scan,
-                  //       size: 30,
-                  //       color: Color(0xffEB9007),
-                  //     )
-                  // ),
                 ],
               ),
             ),

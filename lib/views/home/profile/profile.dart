@@ -1,10 +1,12 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/dompetasi/dompetasi1.dart';
+import 'package:expektasi/views/home/cart.dart';
 import 'package:expektasi/views/home/order.dart';
 import 'package:expektasi/views/home/profile/edit_profile.dart';
 import 'package:expektasi/views/home/profile/pusat_bantuan.dart';
 import 'package:expektasi/views/home/profile/riwayat.dart';
 import 'package:expektasi/views/template/main_template.dart';
+import 'package:expektasi/views/vouchers/voucher_home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -401,7 +403,10 @@ class _ProfileViewState extends State<ProfileView> {
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
-                            debugPrint('Card tapped.');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => (VoucherView())));
                           },
                           child: Container(
                               margin: EdgeInsets.only(left: 20),
@@ -508,7 +513,10 @@ class _ProfileViewState extends State<ProfileView> {
                         child: InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
-                            debugPrint('Card tapped.');
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => (CartView())));
                           },
                           child: Container(
                               margin: EdgeInsets.only(left: 20),
