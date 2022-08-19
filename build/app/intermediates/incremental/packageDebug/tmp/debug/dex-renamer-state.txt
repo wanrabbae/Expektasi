@@ -1,4 +1,4 @@
-#Thu Aug 18 08:23:56 ICT 2022
+#Fri Aug 19 14:22:05 ICT 2022
 base.0=D\:\\Project\\expektasi\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

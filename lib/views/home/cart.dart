@@ -3,7 +3,6 @@ import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 class CartView extends StatefulWidget {
   const CartView({Key? key}) : super(key: key);
 
@@ -27,25 +26,16 @@ class _CartViewState extends State<CartView> {
               indicatorWeight: 5,
               labelColor: Colors.black,
               tabs: [
-                Tab(
-                    text: 'Semua'
-                ),
-                Tab(
-                    text: 'Favorit'
-                ),
-                Tab(
-                    text: 'Beli Lagi'
-                ),
+                Tab(text: 'Semua'),
+                Tab(text: 'Favorit'),
+                Tab(text: 'Beli Lagi'),
               ],
             ),
             title: Center(
                 child: Text(
-                    'Keranjang Belanja ',
-                  style: TextStyle(
-                    color: Colors.black
-                  ),
-                )
-             ),
+              'Keranjang Belanja ',
+              style: TextStyle(color: Colors.black),
+            )),
           ),
           body: const TabBarView(
             children: [

@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -80,7 +82,7 @@ class _VoucherViewState extends State<VoucherView> {
                       debugPrint('The Button Pressed');
                     },
                     icon: Icon(
-                      PhosphorIcons.ticket,
+                      PhosphorIcons.plusCircleBold,
                       color: secondaryColor,
                       size: 26.0,
                     ),
@@ -92,6 +94,7 @@ class _VoucherViewState extends State<VoucherView> {
             ),
           ),
           Container(
+            margin: EdgeInsets.only(bottom: 15),
             child: Column(
               children: [
                 Card(
@@ -102,13 +105,114 @@ class _VoucherViewState extends State<VoucherView> {
                       debugPrint("Card on Tapped");
                     },
                     child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
                       child: SizedBox(
-                        width: 300,
-                        height: 300,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                        ),
-                      ),
+                          width: 300,
+                          height: 150,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                child: Transform.rotate(
+                                  angle: 90 * math.pi / 180,
+                                  child: new LayoutBuilder(
+                                    builder: (context, constraints) {
+                                      return new Icon(
+                                        PhosphorIcons.ticket,
+                                        color: secondaryColor,
+                                        size: 125,
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 60),
+                                margin: EdgeInsets.only(top: 13),
+                                child: Align(
+                                  alignment: Alignment.topRight,
+                                  child: Text(
+                                    "Khusus Pengguna  Baru",
+                                    style: TextStyle(
+                                        color: secondaryColor, fontSize: 9),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
+                )
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(bottom: 15),
+            child: Column(
+              children: [
+                Card(
+                  elevation: 0,
+                  child: InkWell(
+                    splashColor: secondaryColor.withAlpha(30),
+                    onTap: () {
+                      debugPrint("Card on Tapped");
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 2,
+                          ),
+                          borderRadius: BorderRadius.circular(12)),
+                      child: SizedBox(
+                          width: 300,
+                          height: 150,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Container(
+                                child: Transform.rotate(
+                                  angle: 90 * math.pi / 180,
+                                  child: new LayoutBuilder(
+                                    builder: (context, constraints) {
+                                      return new Icon(
+                                        PhosphorIcons.ticket,
+                                        color: secondaryColor,
+                                        size: 125,
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 60),
+                                margin: EdgeInsets.only(top: 13),
+                                child: Align(
+                                  alignment: Alignment.topRight,
+                                  child: Text(
+                                    "Khusus Pengguna  Baru",
+                                    style: TextStyle(
+                                        color: secondaryColor, fontSize: 9),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [],
+                                ),
+                              )
+                            ],
+                          )),
                     ),
                   ),
                 )

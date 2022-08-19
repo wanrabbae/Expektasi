@@ -64,6 +64,7 @@ flutter:
     - images/2.png
     - images/3.png
     - images/logo.png
+    - images/expektoko.png
 
   # To add assets to your application, add an assets section, like this:
   # assets:
