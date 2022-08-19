@@ -544,277 +544,279 @@ class _BerandaViewState extends State<BerandaView> {
                             ),
                           ),
                           // ======= PRODUK TERBARU DAN TERLARIS =======
-                          Container(
-                            width: double.infinity,
-                            margin: EdgeInsets.only(top: 14),
-                            height: 300,
-                            child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: <Widget>[
-                                  // SizedBox(height: 10.0),
-                                  DefaultTabController(
-                                      length: 2, // length of tabs
-                                      child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.stretch,
-                                          children: <Widget>[
-                                            Container(
-                                              child: TabBar(
-                                                indicatorColor: secondaryColor,
-                                                labelColor: secondaryColor,
-                                                indicatorWeight: 3,
-                                                unselectedLabelColor:
-                                                    Colors.black,
-                                                tabs: [
-                                                  Tab(text: 'Terbaru'),
-                                                  Tab(text: 'Terlaris'),
-                                                ],
-                                              ),
+                          DefaultTabController(
+                              length: 2, // length of tabs
+                              child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  children: <Widget>[
+                                    Container(
+                                      child: TabBar(
+                                        indicatorColor: secondaryColor,
+                                        labelColor: secondaryColor,
+                                        indicatorWeight: 3,
+                                        unselectedLabelColor: Colors.black,
+                                        tabs: [
+                                          Tab(text: 'Terbaru'),
+                                          Tab(text: 'Terlaris'),
+                                        ],
+                                      ),
+                                    ),
+                                    Container(
+                                        height: 220, //height of TabBarView
+                                        decoration: BoxDecoration(
+                                            border: Border(
+                                                top: BorderSide(
+                                                    color: Colors.grey,
+                                                    width: 0.5))),
+                                        child: TabBarView(children: <Widget>[
+                                          Container(
+                                            width: double.infinity,
+                                            height: 210,
+                                            margin: EdgeInsets.symmetric(
+                                                vertical: 25),
+                                            child: GridView.builder(
+                                              itemCount: listProducts.length,
+                                              scrollDirection: Axis.horizontal,
+                                              shrinkWrap: true,
+                                              physics:
+                                                  AlwaysScrollableScrollPhysics(),
+                                              gridDelegate:
+                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                      crossAxisCount: 1,
+                                                      childAspectRatio: 1.75),
+                                              itemBuilder: (products, index) {
+                                                var data = listProducts[index];
+                                                return InkWell(
+                                                  splashColor: secondaryColor
+                                                      .withAlpha(30),
+                                                  onTap: () {
+                                                    // Navigator.push(context,
+                                                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                                                  },
+                                                  child: Column(
+                                                    children: [
+                                                      Container(
+                                                        padding:
+                                                            EdgeInsets.all(0),
+                                                        margin: EdgeInsets
+                                                            .symmetric(
+                                                                horizontal: 5),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius:
+                                                              BorderRadius.only(
+                                                                  bottomLeft: Radius
+                                                                      .circular(
+                                                                          7),
+                                                                  bottomRight: Radius
+                                                                      .circular(
+                                                                          7)),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      0.1),
+                                                              blurRadius: 10,
+                                                              offset:
+                                                                  Offset(0, 3),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                        // padding:
+                                                        //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                                        child: Column(
+                                                            children: [
+                                                              Image.network(
+                                                                data['image'],
+                                                                fit: BoxFit
+                                                                    .contain,
+                                                              ),
+                                                              Container(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(5),
+                                                                child: Column(
+                                                                  children: [
+                                                                    Container(
+                                                                      margin: EdgeInsets.only(
+                                                                          bottom:
+                                                                              10),
+                                                                      child:
+                                                                          Text(
+                                                                        data['name']
+                                                                            .toString()
+                                                                            .toUpperCase(),
+                                                                        textAlign:
+                                                                            TextAlign.start,
+                                                                        style:
+                                                                            TextStyle(
+                                                                          fontSize:
+                                                                              8.5,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                        padding: EdgeInsets.symmetric(
+                                                                            horizontal:
+                                                                                4),
+                                                                        margin: EdgeInsets.only(
+                                                                            bottom:
+                                                                                10),
+                                                                        child:
+                                                                            Text(
+                                                                          data[
+                                                                              'price'],
+                                                                          textAlign:
+                                                                              TextAlign.start,
+                                                                          style: TextStyle(
+                                                                              color: secondaryColor,
+                                                                              fontSize: 9),
+                                                                        ))
+                                                                  ],
+                                                                ),
+                                                              )
+                                                            ]),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
                                             ),
-                                            Container(
-                                                height:
-                                                    220, //height of TabBarView
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        top: BorderSide(
-                                                            color: Colors.grey,
-                                                            width: 0.5))),
-                                                child: TabBarView(
-                                                    children: <Widget>[
+                                          ),
+                                          Container(
+                                            width: double.infinity,
+                                            height: 220,
+                                            margin: EdgeInsets.symmetric(
+                                                vertical: 25),
+                                            child: GridView.builder(
+                                              itemCount: listProducts.length,
+                                              scrollDirection: Axis.horizontal,
+                                              shrinkWrap: true,
+                                              physics:
+                                                  AlwaysScrollableScrollPhysics(),
+                                              gridDelegate:
+                                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                                      crossAxisCount: 1,
+                                                      childAspectRatio: 1.75),
+                                              itemBuilder: (products, index) {
+                                                var data = listProducts[index];
+                                                return InkWell(
+                                                  splashColor: secondaryColor
+                                                      .withAlpha(30),
+                                                  onTap: () {
+                                                    // Navigator.push(context,
+                                                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                                                  },
+                                                  child: Column(
+                                                    children: [
                                                       Container(
-                                                        width: double.infinity,
-                                                        height: 210,
+                                                        padding:
+                                                            EdgeInsets.all(0),
                                                         margin: EdgeInsets
                                                             .symmetric(
-                                                                vertical: 25),
-                                                        child: GridView.builder(
-                                                          itemCount:
-                                                              listProducts
-                                                                  .length,
-                                                          scrollDirection:
-                                                              Axis.horizontal,
-                                                          shrinkWrap: true,
-                                                          physics:
-                                                              AlwaysScrollableScrollPhysics(),
-                                                          gridDelegate:
-                                                              SliverGridDelegateWithFixedCrossAxisCount(
-                                                                  crossAxisCount:
-                                                                      1,
-                                                                  childAspectRatio:
-                                                                      1.75),
-                                                          itemBuilder:
-                                                              (products,
-                                                                  index) {
-                                                            var data =
-                                                                listProducts[
-                                                                    index];
-                                                            return InkWell(
-                                                              splashColor:
-                                                                  secondaryColor
-                                                                      .withAlpha(
-                                                                          30),
-                                                              onTap: () {
-                                                                // Navigator.push(context,
-                                                                //     MaterialPageRoute(builder: (context) => (data['link'])));
-                                                              },
-                                                              child: Column(
-                                                                children: [
-                                                                  Container(
-                                                                    padding:
-                                                                        EdgeInsets
-                                                                            .all(0),
-                                                                    margin: EdgeInsets
-                                                                        .symmetric(
-                                                                            horizontal:
-                                                                                5),
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Colors
-                                                                          .white,
-                                                                      borderRadius: BorderRadius.only(
-                                                                          bottomLeft: Radius.circular(
-                                                                              7),
-                                                                          bottomRight:
-                                                                              Radius.circular(7)),
-                                                                      boxShadow: [
-                                                                        BoxShadow(
-                                                                          color: Color.fromRGBO(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0.1),
-                                                                          blurRadius:
-                                                                              10,
-                                                                          offset: Offset(
-                                                                              0,
-                                                                              3),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    // padding:
-                                                                    //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                                                                    child: Column(
-                                                                        children: [
-                                                                          Image
-                                                                              .network(
-                                                                            data['image'],
-                                                                            fit:
-                                                                                BoxFit.contain,
-                                                                          ),
-                                                                          Container(
-                                                                            padding:
-                                                                                EdgeInsets.all(5),
-                                                                            child:
-                                                                                Column(
-                                                                              children: [
-                                                                                Container(
-                                                                                  margin: EdgeInsets.only(bottom: 10),
-                                                                                  child: Text(
-                                                                                    data['name'].toString().toUpperCase(),
-                                                                                    textAlign: TextAlign.start,
-                                                                                    style: TextStyle(
-                                                                                      fontSize: 8.5,
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                                Container(
-                                                                                    padding: EdgeInsets.symmetric(horizontal: 4),
-                                                                                    margin: EdgeInsets.only(bottom: 10),
-                                                                                    child: Text(
-                                                                                      data['price'],
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: TextStyle(color: secondaryColor, fontSize: 9),
-                                                                                    ))
-                                                                              ],
-                                                                            ),
-                                                                          )
-                                                                        ]),
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            );
-                                                          },
+                                                                horizontal: 5),
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: Colors.white,
+                                                          borderRadius:
+                                                              BorderRadius.only(
+                                                                  bottomLeft: Radius
+                                                                      .circular(
+                                                                          7),
+                                                                  bottomRight: Radius
+                                                                      .circular(
+                                                                          7)),
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Color
+                                                                  .fromRGBO(
+                                                                      0,
+                                                                      0,
+                                                                      0,
+                                                                      0.1),
+                                                              blurRadius: 10,
+                                                              offset:
+                                                                  Offset(0, 3),
+                                                            ),
+                                                          ],
                                                         ),
-                                                      ),
-                                                      Container(
-                                                        width: double.infinity,
-                                                        height: 210,
-                                                        margin: EdgeInsets
-                                                            .symmetric(
-                                                                vertical: 25),
-                                                        child: GridView.builder(
-                                                          itemCount:
-                                                              listProducts
-                                                                  .length,
-                                                          scrollDirection:
-                                                              Axis.horizontal,
-                                                          shrinkWrap: true,
-                                                          physics:
-                                                              AlwaysScrollableScrollPhysics(),
-                                                          gridDelegate:
-                                                              SliverGridDelegateWithFixedCrossAxisCount(
-                                                                  crossAxisCount:
-                                                                      1,
-                                                                  childAspectRatio:
-                                                                      1.75),
-                                                          itemBuilder:
-                                                              (products,
-                                                                  index) {
-                                                            var data =
-                                                                listProducts[
-                                                                    index];
-                                                            return InkWell(
-                                                              splashColor:
-                                                                  secondaryColor
-                                                                      .withAlpha(
-                                                                          30),
-                                                              onTap: () {
-                                                                // Navigator.push(context,
-                                                                //     MaterialPageRoute(builder: (context) => (data['link'])));
-                                                              },
-                                                              child: Column(
-                                                                children: [
-                                                                  Container(
-                                                                    padding:
-                                                                        EdgeInsets
-                                                                            .all(0),
-                                                                    margin: EdgeInsets
-                                                                        .symmetric(
-                                                                            horizontal:
-                                                                                5),
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: Colors
-                                                                          .white,
-                                                                      borderRadius: BorderRadius.only(
-                                                                          bottomLeft: Radius.circular(
-                                                                              7),
-                                                                          bottomRight:
-                                                                              Radius.circular(7)),
-                                                                      boxShadow: [
-                                                                        BoxShadow(
-                                                                          color: Color.fromRGBO(
-                                                                              0,
-                                                                              0,
-                                                                              0,
-                                                                              0.1),
-                                                                          blurRadius:
-                                                                              10,
-                                                                          offset: Offset(
-                                                                              0,
-                                                                              3),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                    // padding:
-                                                                    //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                                                                    child: Column(
-                                                                        children: [
-                                                                          Image
-                                                                              .network(
-                                                                            data['image'],
-                                                                            fit:
-                                                                                BoxFit.contain,
-                                                                          ),
-                                                                          Container(
-                                                                            padding:
-                                                                                EdgeInsets.all(5),
-                                                                            child:
-                                                                                Column(
-                                                                              children: [
-                                                                                Container(
-                                                                                  margin: EdgeInsets.only(bottom: 10),
-                                                                                  child: Text(
-                                                                                    data['name'].toString().toUpperCase(),
-                                                                                    textAlign: TextAlign.start,
-                                                                                    style: TextStyle(
-                                                                                      fontSize: 8.5,
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                                Container(
-                                                                                    padding: EdgeInsets.symmetric(horizontal: 4),
-                                                                                    margin: EdgeInsets.only(bottom: 10),
-                                                                                    child: Text(
-                                                                                      data['price'],
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: TextStyle(color: secondaryColor, fontSize: 9),
-                                                                                    ))
-                                                                              ],
-                                                                            ),
-                                                                          )
-                                                                        ]),
-                                                                  ),
-                                                                ],
+                                                        // padding:
+                                                        //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                                        child: Column(
+                                                            children: [
+                                                              Image.network(
+                                                                data['image'],
+                                                                fit: BoxFit
+                                                                    .contain,
                                                               ),
-                                                            );
-                                                          },
-                                                        ),
+                                                              Container(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .all(5),
+                                                                child: Column(
+                                                                  children: [
+                                                                    Container(
+                                                                      margin: EdgeInsets.only(
+                                                                          bottom:
+                                                                              10),
+                                                                      child:
+                                                                          Text(
+                                                                        data['name']
+                                                                            .toString()
+                                                                            .toUpperCase(),
+                                                                        textAlign:
+                                                                            TextAlign.start,
+                                                                        style:
+                                                                            TextStyle(
+                                                                          fontSize:
+                                                                              8.5,
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                        padding: EdgeInsets.symmetric(
+                                                                            horizontal:
+                                                                                4),
+                                                                        margin: EdgeInsets.only(
+                                                                            bottom:
+                                                                                10),
+                                                                        child:
+                                                                            Text(
+                                                                          data[
+                                                                              'price'],
+                                                                          textAlign:
+                                                                              TextAlign.start,
+                                                                          style: TextStyle(
+                                                                              color: secondaryColor,
+                                                                              fontSize: 9),
+                                                                        ))
+                                                                  ],
+                                                                ),
+                                                              )
+                                                            ]),
                                                       ),
-                                                    ]))
-                                          ])),
-                                ]),
-                          ),
+                                                    ],
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        ]))
+                                  ])),
+
+                          // Container(
+                          //   width: double.infinity,
+                          //   child: Column(
+                          //       crossAxisAlignment: CrossAxisAlignment.stretch,
+                          //       children: <Widget>[
+                          //         // SizedBox(height: 10.0),
+                          //         ]),
+                          // ),
                         ],
                       ),
                     )
