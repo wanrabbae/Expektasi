@@ -94,131 +94,125 @@ class _VoucherViewState extends State<VoucherView> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 15),
-            child: Column(
-              children: [
-                Card(
-                  elevation: 0,
-                  child: InkWell(
-                    splashColor: secondaryColor.withAlpha(30),
-                    onTap: () {
-                      debugPrint("Card on Tapped");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(12)),
-                      child: SizedBox(
-                          width: 300,
-                          height: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                child: Transform.rotate(
-                                  angle: 90 * math.pi / 180,
-                                  child: new LayoutBuilder(
-                                    builder: (context, constraints) {
-                                      return new Icon(
-                                        PhosphorIcons.ticket,
-                                        color: secondaryColor,
-                                        size: 125,
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 60),
-                                margin: EdgeInsets.only(top: 13),
-                                child: Align(
-                                  alignment: Alignment.topRight,
-                                  child: Text(
-                                    "Khusus Pengguna  Baru",
-                                    style: TextStyle(
-                                        color: secondaryColor, fontSize: 9),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )),
-                    ),
+            margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Card(
+              elevation: 0,
+              child: InkWell(
+                splashColor: secondaryColor.withAlpha(30),
+                onTap: () {
+                  debugPrint("Card on Tapped");
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
                   ),
-                )
-              ],
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Transform.rotate(
+                          angle: 90 * math.pi / 180,
+                          child: new LayoutBuilder(
+                            builder: (context, constraints) {
+                              return new Icon(
+                                PhosphorIcons.ticket,
+                                color: secondaryColor,
+                                size: 125,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.only(left: 74),
+                              margin: EdgeInsets.only(bottom: 100),
+                              child: Text(
+                                "Khusus Pengguna Baru",
+                                style: TextStyle(
+                                    color: secondaryColor, fontSize: 9),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
           ),
           Container(
-            margin: EdgeInsets.only(bottom: 15),
-            child: Column(
-              children: [
-                Card(
-                  elevation: 0,
-                  child: InkWell(
-                    splashColor: secondaryColor.withAlpha(30),
-                    onTap: () {
-                      debugPrint("Card on Tapped");
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(12)),
-                      child: SizedBox(
-                          width: 300,
-                          height: 150,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              Container(
-                                child: Transform.rotate(
-                                  angle: 90 * math.pi / 180,
-                                  child: new LayoutBuilder(
-                                    builder: (context, constraints) {
-                                      return new Icon(
-                                        PhosphorIcons.ticket,
-                                        color: secondaryColor,
-                                        size: 125,
-                                      );
-                                    },
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 60),
-                                margin: EdgeInsets.only(top: 13),
-                                child: Align(
-                                  alignment: Alignment.topRight,
-                                  child: Text(
-                                    "Khusus Pengguna  Baru",
-                                    style: TextStyle(
-                                        color: secondaryColor, fontSize: 9),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.only(left: 10),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [],
-                                ),
-                              )
-                            ],
-                          )),
-                    ),
+            margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Card(
+              elevation: 0,
+              child: InkWell(
+                splashColor: secondaryColor.withAlpha(30),
+                onTap: () {
+                  debugPrint("Card on Tapped");
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
                   ),
-                )
-              ],
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Transform.rotate(
+                          angle: 90 * math.pi / 180,
+                          child: new LayoutBuilder(
+                            builder: (context, constraints) {
+                              return new Icon(
+                                PhosphorIcons.ticket,
+                                color: secondaryColor,
+                                size: 125,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.only(left: 74),
+                              margin: EdgeInsets.only(bottom: 100),
+                              child: Text(
+                                "Khusus Pengguna Baru",
+                                style: TextStyle(
+                                    color: secondaryColor, fontSize: 9),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
-          )
+          ),
         ],
       ),
     );
