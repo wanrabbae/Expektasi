@@ -25,7 +25,36 @@ class _ProfileViewState extends State<ProfileView> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () => showDialog<String>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      content: const Text(
+                        'Apakah anda ingin LogOut?',
+                        textAlign: TextAlign.center,
+                      ),
+                      actions: <Widget>[
+                        TextButton(
+                          onPressed: () => Navigator.pop(context, 'Ya'),
+                          child: const Text(
+                            'Ya',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ),
+                        TextButton(
+                          style: ButtonStyle(
+                              backgroundColor:
+                                  MaterialStateProperty.all(secondaryColor),
+                              padding: MaterialStateProperty.all(
+                                  EdgeInsets.all(10.0))),
+                          onPressed: () => Navigator.pop(context, 'Tidak'),
+                          child: const Text(
+                            'Tidak',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
               icon: Icon(
                 PhosphorIcons.signOutBold,
                 size: 32.0,

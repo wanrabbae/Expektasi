@@ -1,4 +1,4 @@
-#Thu Aug 18 13:44:05 WIB 2022
+#Sat Aug 20 07:20:53 WIB 2022
 base.0=/home/alwan/Documents/ALWAN_PKL_2022/Projects/expektasi/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
