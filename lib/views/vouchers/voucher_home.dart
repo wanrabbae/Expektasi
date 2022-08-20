@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -39,51 +41,172 @@ class _VoucherViewState extends State<VoucherView> {
               TextSpan(text: 'Voucher', style: TextStyle(color: Colors.black))
             ])),
           ),
-          Card(
-            elevation: 0,
-            margin: EdgeInsets.only(top: 15, bottom: 15),
-            child: InkWell(
-              splashColor: secondaryColor.withAlpha(30),
-              onTap: () {
-                debugPrint('Card tapped');
-              },
-              child: Container(
-                margin: EdgeInsets.only(left: 3, right: 3),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Color.fromARGB(255, 229, 221, 221),
-                    width: 2,
+          Container(
+            alignment: Alignment.topLeft,
+            padding: EdgeInsets.all(32),
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                  child: new OutlinedButton.icon(
+                    style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.only(top: 20, bottom: 20, left: 10),
+                        textStyle: TextStyle(fontSize: 11),
+                        primary: Colors.black,
+                        side: BorderSide(
+                          width: 2,
+                          color: Colors.grey,
+                        )),
+                    onPressed: () {
+                      debugPrint('The Button Pressed');
+                    },
+                    icon: Icon(
+                      PhosphorIcons.ticket,
+                      color: secondaryColor,
+                      size: 26.0,
+                    ),
+                    label: Text("Masukan kode Voucher",
+                        style: TextStyle(fontSize: 11)),
                   ),
-                  borderRadius: BorderRadius.circular(12),
                 ),
-                child: SizedBox(
-                  height: 65,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                Expanded(
+                  child: new OutlinedButton.icon(
+                    style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.only(top: 20, bottom: 20, left: 10),
+                        textStyle: TextStyle(fontSize: 11),
+                        primary: Colors.black,
+                        side: BorderSide(width: 2, color: Colors.grey)),
+                    onPressed: () {
+                      debugPrint('The Button Pressed');
+                    },
+                    icon: Icon(
+                      PhosphorIcons.plusCircleBold,
+                      color: secondaryColor,
+                      size: 26.0,
+                    ),
+                    label: Text("Dapatkan Voucher Lainnya",
+                        style: TextStyle(fontSize: 11)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Card(
+              elevation: 0,
+              child: InkWell(
+                splashColor: secondaryColor.withAlpha(30),
+                onTap: () {
+                  debugPrint("Card on Tapped");
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
+                  ),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
                       Container(
-                        padding: EdgeInsets.all(10),
-                        child: Icon(
-                          PhosphorIcons.ticket,
-                          size: 25.0,
-                          color: secondaryColor,
+                        child: Transform.rotate(
+                          angle: 90 * math.pi / 180,
+                          child: new LayoutBuilder(
+                            builder: (context, constraints) {
+                              return new Icon(
+                                PhosphorIcons.ticket,
+                                color: secondaryColor,
+                                size: 125,
+                              );
+                            },
+                          ),
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 10),
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Masukan Voucher ",
-                              style:
-                                  TextStyle(fontSize: 14, color: Colors.black),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.only(left: 74),
+                              margin: EdgeInsets.only(bottom: 100),
+                              child: Text(
+                                "Khusus Pengguna Baru",
+                                style: TextStyle(
+                                    color: secondaryColor, fontSize: 9),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Card(
+              elevation: 0,
+              child: InkWell(
+                splashColor: secondaryColor.withAlpha(30),
+                onTap: () {
+                  debugPrint("Card on Tapped");
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
+                  ),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        child: Transform.rotate(
+                          angle: 90 * math.pi / 180,
+                          child: new LayoutBuilder(
+                            builder: (context, constraints) {
+                              return new Icon(
+                                PhosphorIcons.ticket,
+                                color: secondaryColor,
+                                size: 125,
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                      Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Container(
+                              padding: EdgeInsets.only(left: 74),
+                              margin: EdgeInsets.only(bottom: 100),
+                              child: Text(
+                                "Khusus Pengguna Baru",
+                                style: TextStyle(
+                                    color: secondaryColor, fontSize: 9),
+                              ),
                             )
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
