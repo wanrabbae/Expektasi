@@ -1,4 +1,5 @@
 import 'package:expektasi/views/kategori/kategori.dart';
+import 'package:expektasi/views/product/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -68,28 +69,28 @@ List<Map<String, dynamic>> listProducts = [
     "image":
         'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
     "price": "Rp100.000",
-    "link": ''
+    "link": ProductView()
   },
   {
     "name": "SWEATER PRIA - ESOBOY HOODIE JUMPER",
     "image":
         'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
     "price": "Rp100.000",
-    "link": ''
+    "link": ProductView()
   },
   {
     "name": "SWEATER PRIA - ESOBOY HOODIE JUMPER",
     "image":
         'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
     "price": "Rp100.000",
-    "link": ''
+    "link": ProductView()
   },
   {
     "name": "SWEATER PRIA - ESOBOY HOODIE JUMPER",
     "image":
         'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
     "price": "Rp100.000",
-    "link": ''
+    "link": ProductView()
   },
 ];
 

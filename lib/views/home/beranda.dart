@@ -591,8 +591,12 @@ class _BerandaViewState extends State<BerandaView> {
                                                   splashColor: secondaryColor
                                                       .withAlpha(30),
                                                   onTap: () {
-                                                    // Navigator.push(context,
-                                                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                                                    Navigator.push(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                (data[
+                                                                    'link'])));
                                                   },
                                                   child: Column(
                                                     children: [
