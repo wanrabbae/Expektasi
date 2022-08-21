@@ -1,5 +1,8 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/mulai_jual/atur_informasi.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 class MulaiJual extends StatefulWidget {
   const MulaiJual({Key? key}) : super(key: key);
@@ -69,38 +72,5 @@ class _MulaiJualState extends State<MulaiJual> {
         ],
       ),
     );
-  }
-}
-
-class AturInformasiToko extends StatefulWidget {
-  const AturInformasiToko({Key? key}) : super(key: key);
-
-  @override
-  State<AturInformasiToko> createState() => _AturInformasiTokoState();
-}
-
-class _AturInformasiTokoState extends State<AturInformasiToko> {
-  final formKey = GlobalKey<FormState>();
-  String name = "";
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.white,
-          elevation: 0,
-          title: Text(
-            "Atur Informasi Toko",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Colors.black, fontSize: 16.7),
-          ),
-          leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-            onPressed: () => Navigator.pop(context),
-          ),
-        ),
-        body: Container());
   }
 }
