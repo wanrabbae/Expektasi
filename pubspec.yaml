@@ -38,6 +38,7 @@ dependencies:
   intro_slider: ^3.0.4
   phosphor_flutter: ^1.4.0
   date_time_picker: "^2.1.0"
+  image_picker: ^0.8.5+3
 
 dev_dependencies:
   flutter_test:

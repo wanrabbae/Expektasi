@@ -16,7 +16,7 @@ class AturInformasiToko extends StatefulWidget {
 }
 
 class _AturInformasiTokoState extends State<AturInformasiToko> {
-  bool isTextFormFieldFilled = false;
+  bool isTextFormFieldFilled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +47,8 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                     Focus(
                       child: new TextFormField(
                           textInputAction: TextInputAction.next,
+                          controller:
+                              new TextEditingController(text: "Asep Shop"),
                           autofocus: false,
                           style: TextStyle(color: Colors.black),
                           decoration: new InputDecoration(
@@ -66,6 +68,8 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                     Focus(
                       child: new TextFormField(
                           textInputAction: TextInputAction.next,
+                          controller: new TextEditingController(
+                              text: "Jln. Kemerdekaan no. 17"),
                           autofocus: false,
                           style: TextStyle(color: Colors.black),
                           decoration: new InputDecoration(
@@ -85,6 +89,8 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                     Focus(
                       child: new TextFormField(
                           textInputAction: TextInputAction.next,
+                          controller: new TextEditingController(
+                              text: "asepsuper123@gmail.com"),
                           autofocus: false,
                           style: TextStyle(color: Colors.black),
                           decoration: new InputDecoration(
