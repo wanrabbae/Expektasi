@@ -180,3 +180,11 @@ List<Map<String, dynamic>> listSizeProduct = [
   {"size": "XL"},
   {"size": "XXL"},
 ];
+
+Object listRincianProduct = {
+  "Stok": "205",
+  "Panjang Lengan": "Lengan Panjang",
+  "Bahan": "Katun",
+  "Negara Asal": "Indonesia",
+  "Dikirim dari": "KOTA JAKARTA SELATAN - KEBAYORAN LAMA, DKI  JAKARTA"
+};

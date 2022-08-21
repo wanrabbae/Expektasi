@@ -201,7 +201,7 @@ class _DompetasiHomeState extends State<DompetasiHome> {
               children: [
                 Center(
                   child: Icon(
-                    PhosphorIcons.handWavingFill,
+                    PhosphorIcons.clockCounterClockwiseFill,
                     size: 200,
                     color: secondaryColor,
                   ),

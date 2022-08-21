@@ -34,7 +34,7 @@ class _RiwayatViewState extends State<RiwayatView> {
           children: [
             Center(
               child: Icon(
-                PhosphorIcons.handWavingFill,
+                PhosphorIcons.clockCounterClockwiseBold,
                 size: 200,
                 color: secondaryColor,
               ),

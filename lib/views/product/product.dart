@@ -44,348 +44,490 @@ class _ProductViewState extends State<ProductView> {
               padding: EdgeInsets.symmetric(horizontal: 15, vertical: 20),
               alignment: Alignment.centerLeft,
               width: double.infinity,
-              child: Column(children: [
-                Text(
-                  "SWEATER PRIA - ESOBOY HOODIE JUMPER",
-                  style: TextStyle(fontSize: 15),
-                ),
-                Padding(padding: EdgeInsets.symmetric(vertical: 7)),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    "Rp85.500",
-                    style: TextStyle(color: secondaryColor, fontSize: 13),
-                    textAlign: TextAlign.left,
+              child: Column(
+                children: [
+                  Text(
+                    "SWEATER PRIA - ESOBOY HOODIE JUMPER",
+                    style: TextStyle(fontSize: 15),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    "Rp100.000",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 13,
-                        decoration: TextDecoration.lineThrough),
-                    textAlign: TextAlign.left,
+                  Padding(padding: EdgeInsets.symmetric(vertical: 7)),
+                  Container(
+                    width: double.infinity,
+                    child: Text(
+                      "Rp85.500",
+                      style: TextStyle(color: secondaryColor, fontSize: 13),
+                      textAlign: TextAlign.left,
+                    ),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          child: Row(
-                            children: [
-                              Icon(
-                                PhosphorIcons.starFill,
-                                color: secondaryColor,
-                                size: 15,
-                              ),
-                              Icon(
-                                PhosphorIcons.starFill,
-                                color: secondaryColor,
-                                size: 15,
-                              ),
-                              Icon(
-                                PhosphorIcons.starFill,
-                                color: secondaryColor,
-                                size: 15,
-                              ),
-                              Icon(
-                                PhosphorIcons.starFill,
-                                color: secondaryColor,
-                                size: 15,
-                              ),
-                              Icon(
-                                PhosphorIcons.starFill,
-                                color: secondaryColor,
-                                size: 15,
-                              )
-                            ],
-                          ),
-                        ),
-                        Text(
-                          "4.8 | ",
-                          style: TextStyle(fontSize: 13),
-                        ),
-                        Text(
-                          "217 Terjual",
-                          style: TextStyle(fontSize: 13),
-                        ),
-                        Container(
-                          child: Row(
-                            children: [
-                              IconButton(
-                                  padding: EdgeInsets.all(0),
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    PhosphorIcons.heartBold,
-                                    color: Colors.black,
-                                    size: 20,
-                                  )),
-                              IconButton(
-                                  padding: EdgeInsets.all(0),
-                                  onPressed: () {},
-                                  icon: Icon(
-                                    PhosphorIcons.shareBold,
-                                    color: Colors.black,
-                                    size: 20,
-                                  )),
-                            ],
-                          ),
-                        )
-                      ]),
-                ),
-                Container(
-                  margin: EdgeInsets.only(top: 5),
-                  decoration: BoxDecoration(
-                      border: Border(
-                    top: BorderSide(color: Colors.grey.shade300, width: 3),
-                    bottom: BorderSide(color: Colors.grey.shade300, width: 3),
-                  )),
-                  padding: EdgeInsets.symmetric(vertical: 10),
-                  child: InkWell(
-                    splashColor: secondaryColor,
-                    onTap: () {},
+                  Container(
+                    width: double.infinity,
+                    child: Text(
+                      "Rp100.000",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 13,
+                          decoration: TextDecoration.lineThrough),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          RichText(
-                              text: TextSpan(children: [
-                            WidgetSpan(
-                                child: Container(
-                                    padding: EdgeInsets.only(right: 7),
-                                    child: Icon(
-                                      PhosphorIcons.walletFill,
+                          Container(
+                            child: Row(
+                              children: [
+                                Icon(
+                                  PhosphorIcons.starFill,
+                                  color: secondaryColor,
+                                  size: 15,
+                                ),
+                                Icon(
+                                  PhosphorIcons.starFill,
+                                  color: secondaryColor,
+                                  size: 15,
+                                ),
+                                Icon(
+                                  PhosphorIcons.starFill,
+                                  color: secondaryColor,
+                                  size: 15,
+                                ),
+                                Icon(
+                                  PhosphorIcons.starFill,
+                                  color: secondaryColor,
+                                  size: 15,
+                                ),
+                                Icon(
+                                  PhosphorIcons.starFill,
+                                  color: secondaryColor,
+                                  size: 15,
+                                )
+                              ],
+                            ),
+                          ),
+                          Text(
+                            "4.8 | ",
+                            style: TextStyle(fontSize: 13),
+                          ),
+                          Text(
+                            "217 Terjual",
+                            style: TextStyle(fontSize: 13),
+                          ),
+                          Container(
+                            child: Row(
+                              children: [
+                                IconButton(
+                                    padding: EdgeInsets.all(0),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      PhosphorIcons.heartBold,
+                                      color: Colors.black,
                                       size: 20,
-                                      color: secondaryColor,
-                                    ))),
-                            TextSpan(
-                                text: "DompetKu",
-                                style: TextStyle(
-                                    fontSize: 15, color: Colors.black)),
-                          ])),
-                          Icon(PhosphorIcons.caretRightBold, size: 15)
+                                    )),
+                                IconButton(
+                                    padding: EdgeInsets.all(0),
+                                    onPressed: () {},
+                                    icon: Icon(
+                                      PhosphorIcons.shareBold,
+                                      color: Colors.black,
+                                      size: 20,
+                                    )),
+                              ],
+                            ),
+                          )
                         ]),
                   ),
-                ),
-                Container(
-                  width: double.infinity,
-                  margin: EdgeInsets.only(top: 20),
-                  child: Column(children: [
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Pilih Variasi",
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(top: 15),
-                      width: double.infinity,
-                      child: Column(children: [
-                        Container(
-                          margin: EdgeInsets.only(bottom: 7),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Warna",
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ),
-                        Row(
+                  Container(
+                    margin: EdgeInsets.only(top: 5),
+                    decoration: BoxDecoration(
+                        border: Border(
+                      top: BorderSide(color: Colors.grey.shade300, width: 5),
+                      bottom: BorderSide(color: Colors.grey.shade300, width: 5),
+                    )),
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    child: InkWell(
+                      splashColor: secondaryColor,
+                      onTap: () {},
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
+                            RichText(
+                                text: TextSpan(children: [
+                              WidgetSpan(
+                                  child: Container(
+                                      padding: EdgeInsets.only(right: 7),
+                                      child: Icon(
+                                        PhosphorIcons.walletFill,
+                                        size: 20,
+                                        color: secondaryColor,
+                                      ))),
+                              TextSpan(
+                                  text: "DompetKu",
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.black)),
+                            ])),
+                            Icon(PhosphorIcons.caretRightBold, size: 15)
+                          ]),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    margin: EdgeInsets.only(top: 20),
+                    child: Column(children: [
+                      Container(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          "Pilih Variasi",
+                          style: TextStyle(fontSize: 12),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 15),
+                        width: double.infinity,
+                        child: Column(children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 7),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Warna",
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              OutlinedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "Hitam",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      color: secondaryColor, fontSize: 12),
+                                ),
+                                style: ButtonStyle(
+                                  side: MaterialStateProperty.all(BorderSide(
+                                      color: secondaryColor, width: 1)),
+                                ),
+                              )
+                            ],
+                          )
+                        ]),
+                      ),
+                      Container(
+                        padding: EdgeInsets.only(top: 15),
+                        width: double.infinity,
+                        child: Column(children: [
+                          Container(
+                            margin: EdgeInsets.only(bottom: 7),
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              "Ukuran",
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                OutlinedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    "XL",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: secondaryColor, fontSize: 12),
+                                  ),
+                                  style: ButtonStyle(
+                                    side: MaterialStateProperty.all(BorderSide(
+                                        color: secondaryColor, width: 1)),
+                                  ),
+                                ),
+                                OutlinedButton(
+                                  onPressed: () {},
+                                  child: Text(
+                                    "XL",
+                                    textAlign: TextAlign.left,
+                                    style: TextStyle(
+                                        color: secondaryColor, fontSize: 12),
+                                  ),
+                                  style: ButtonStyle(
+                                    side: MaterialStateProperty.all(BorderSide(
+                                        color: secondaryColor, width: 1)),
+                                  ),
+                                ),
+                              ])
+                        ]),
+                      )
+                    ]),
+                  ),
+                  Container(
+                      margin: EdgeInsets.only(top: 10),
+                      alignment: Alignment.centerLeft,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          border: Border(
+                        top: BorderSide(color: Colors.grey.shade300, width: 5),
+                        bottom:
+                            BorderSide(color: Colors.grey.shade300, width: 5),
+                      )),
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Container(
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50)),
+                                  child: Image.network(
+                                      'https://cdn.discordapp.com/attachments/1008921423915532368/1010710138216271912/image_22.png'),
+                                ),
+                                Container(
+                                  width: 150,
+                                  child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Container(
+                                          child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                Icon(
+                                                  PhosphorIcons.storefrontBold,
+                                                  size: 25,
+                                                  color: secondaryColor,
+                                                ),
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 5)),
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.start,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Text("John Shop",
+                                                        style: TextStyle(
+                                                            fontSize: 11,
+                                                            color:
+                                                                secondaryColor,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .bold)),
+                                                    Text("Kota Cirebon",
+                                                        style: TextStyle(
+                                                            fontSize: 11,
+                                                            color:
+                                                                Colors.black)),
+                                                  ],
+                                                ),
+                                              ]),
+                                        ),
+                                        Container(
+                                          margin: EdgeInsets.only(top: 5),
+                                          child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.center,
+                                              children: [
+                                                RichText(
+                                                    text: TextSpan(children: [
+                                                  TextSpan(
+                                                      text: "28 ",
+                                                      style: TextStyle(
+                                                          fontSize: 12,
+                                                          color:
+                                                              secondaryColor)),
+                                                  TextSpan(
+                                                      text: "Produk",
+                                                      style: TextStyle(
+                                                          fontSize: 12,
+                                                          color: Colors.black)),
+                                                ])),
+                                                Padding(
+                                                    padding: EdgeInsets.only(
+                                                        right: 5)),
+                                                RichText(
+                                                    text: TextSpan(children: [
+                                                  TextSpan(
+                                                      text: "4.7 ",
+                                                      style: TextStyle(
+                                                          fontSize: 12,
+                                                          color:
+                                                              secondaryColor)),
+                                                  TextSpan(
+                                                      text: "Produk",
+                                                      style: TextStyle(
+                                                          fontSize: 12,
+                                                          color: Colors.black)),
+                                                ]))
+                                              ]),
+                                        )
+                                      ]),
+                                )
+                              ],
+                            ),
                             OutlinedButton(
                               onPressed: () {},
                               child: Text(
-                                "Hitam",
+                                "Mampir",
                                 textAlign: TextAlign.left,
                                 style: TextStyle(
-                                    color: secondaryColor, fontSize: 12),
+                                    color: secondaryColor, fontSize: 10),
                               ),
                               style: ButtonStyle(
-                                side: MaterialStateProperty.all(BorderSide(
-                                    color: secondaryColor, width: 1)),
-                              ),
-                            )
-                          ],
-                        )
-                      ]),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(top: 15),
-                      width: double.infinity,
-                      child: Column(children: [
-                        Container(
-                          margin: EdgeInsets.only(bottom: 7),
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            "Ukuran",
-                            style: TextStyle(fontSize: 10),
-                          ),
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              OutlinedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "XL",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: secondaryColor, fontSize: 12),
-                                ),
-                                style: ButtonStyle(
                                   side: MaterialStateProperty.all(BorderSide(
-                                      color: secondaryColor, width: 1)),
-                                ),
-                              ),
-                              OutlinedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "XL",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: secondaryColor, fontSize: 12),
-                                ),
-                                style: ButtonStyle(
-                                  side: MaterialStateProperty.all(BorderSide(
-                                      color: secondaryColor, width: 1)),
-                                ),
-                              ),
-                            ])
-                      ]),
-                    )
-                  ]),
-                ),
-                Container(
+                                      color: secondaryColor, width: 1.5)),
+                                  shape: MaterialStateProperty.all<
+                                          RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10.0),
+                                  ))),
+                            ),
+                          ])),
+                  Container(
                     margin: EdgeInsets.only(top: 10),
-                    alignment: Alignment.centerLeft,
                     width: double.infinity,
+                    alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
                         border: Border(
-                      top: BorderSide(color: Colors.grey.shade300, width: 3),
-                      bottom: BorderSide(color: Colors.grey.shade300, width: 3),
+                      bottom: BorderSide(color: Colors.grey.shade300, width: 5),
                     )),
-                    padding: EdgeInsets.symmetric(vertical: 15),
-                    child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50)),
-                                child: Image.network(
-                                    'https://cdn.discordapp.com/attachments/1008921423915532368/1010710138216271912/image_22.png'),
-                              ),
-                              Container(
-                                width: 150,
-                                child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              Icon(
-                                                PhosphorIcons.storefrontBold,
-                                                size: 25,
-                                                color: secondaryColor,
-                                              ),
-                                              Padding(
-                                                  padding: EdgeInsets.only(
-                                                      right: 5)),
-                                              Column(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.start,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text("John Shop",
-                                                      style: TextStyle(
-                                                          fontSize: 11,
-                                                          color: secondaryColor,
-                                                          fontWeight:
-                                                              FontWeight.bold)),
-                                                  Text("Kota Cirebon",
-                                                      style: TextStyle(
-                                                          fontSize: 11,
-                                                          color: Colors.black)),
-                                                ],
-                                              ),
-                                            ]),
+                    child: Column(children: [
+                      Text(
+                        "Produk lain dari Toko ini",
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      Container(
+                        width: double.infinity,
+                        height: 200,
+                        margin: EdgeInsets.only(top: 10),
+                        child: GridView.builder(
+                          itemCount: listProducts.length,
+                          scrollDirection: Axis.horizontal,
+                          shrinkWrap: true,
+                          physics: AlwaysScrollableScrollPhysics(),
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 1, childAspectRatio: 1.75),
+                          itemBuilder: (products, index) {
+                            var data = listProducts[index];
+                            return InkWell(
+                              splashColor: secondaryColor.withAlpha(30),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => (data['link'])));
+                              },
+                              child: Column(
+                                children: [
+                                  Container(
+                                    padding: EdgeInsets.all(0),
+                                    margin: EdgeInsets.symmetric(horizontal: 5),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                          bottomLeft: Radius.circular(10),
+                                          bottomRight: Radius.circular(10)),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Color.fromRGBO(0, 0, 0, 0.1),
+                                          blurRadius: 10,
+                                          offset: Offset(0, 3),
+                                        ),
+                                      ],
+                                    ),
+                                    // padding:
+                                    //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                    child: Column(children: [
+                                      Image.network(
+                                        data['image'],
+                                        fit: BoxFit.contain,
                                       ),
                                       Container(
-                                        margin: EdgeInsets.only(top: 5),
-                                        child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              RichText(
-                                                  text: TextSpan(children: [
-                                                TextSpan(
-                                                    text: "28 ",
-                                                    style: TextStyle(
-                                                        fontSize: 12,
-                                                        color: secondaryColor)),
-                                                TextSpan(
-                                                    text: "Produk",
-                                                    style: TextStyle(
-                                                        fontSize: 12,
-                                                        color: Colors.black)),
-                                              ])),
-                                              Padding(
-                                                  padding: EdgeInsets.only(
-                                                      right: 5)),
-                                              RichText(
-                                                  text: TextSpan(children: [
-                                                TextSpan(
-                                                    text: "4.7 ",
-                                                    style: TextStyle(
-                                                        fontSize: 12,
-                                                        color: secondaryColor)),
-                                                TextSpan(
-                                                    text: "Produk",
-                                                    style: TextStyle(
-                                                        fontSize: 12,
-                                                        color: Colors.black)),
-                                              ]))
-                                            ]),
+                                        padding: EdgeInsets.all(5),
+                                        child: Column(
+                                          children: [
+                                            Container(
+                                              margin:
+                                                  EdgeInsets.only(bottom: 10),
+                                              child: Text(
+                                                data['name']
+                                                    .toString()
+                                                    .toUpperCase(),
+                                                textAlign: TextAlign.start,
+                                                style: TextStyle(
+                                                  fontSize: 8.5,
+                                                ),
+                                              ),
+                                            ),
+                                            Container(
+                                                padding: EdgeInsets.symmetric(
+                                                    horizontal: 4),
+                                                margin:
+                                                    EdgeInsets.only(bottom: 10),
+                                                child: Text(
+                                                  data['price'],
+                                                  textAlign: TextAlign.start,
+                                                  style: TextStyle(
+                                                      color: secondaryColor,
+                                                      fontSize: 9),
+                                                ))
+                                          ],
+                                        ),
                                       )
                                     ]),
-                              )
-                            ],
-                          ),
-                          OutlinedButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Mampir",
-                              textAlign: TextAlign.left,
-                              style: TextStyle(
-                                  color: secondaryColor, fontSize: 10),
-                            ),
-                            style: ButtonStyle(
-                                side: MaterialStateProperty.all(BorderSide(
-                                    color: secondaryColor, width: 1.5)),
-                                shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10.0),
-                                ))),
-                          ),
-                        ]))
-              ]),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        ),
+                      ),
+                    ]),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    width: double.infinity,
+                    alignment: Alignment.topLeft,
+                    child: Column(children: [
+                      Text(
+                        "Rincian Produk",
+                        textAlign: TextAlign.left,
+                      ),
+                      Container(
+                        height: 300,
+                        decoration: BoxDecoration(
+                            border: Border(
+                          top:
+                              BorderSide(color: Colors.grey.shade300, width: 1),
+                          bottom:
+                              BorderSide(color: Colors.grey.shade300, width: 1),
+                        )),
+                      )
+                    ]),
+                  ),
+                  // Deskripsi Product
+                  Container(
+                    alignment: Alignment.topLeft,
+                    width: double.infinity,
+                    child: Text(
+                      "BAHAN REAL 100%PLECEE Catton: kain paling unggul di banding jenis yang lainnya.... tekstur nya lembut , juga tidak membuat agan/sis kegerahan bila di pake siang ,dan sudah tentu hangat saat malam ..itulah sebab, hoodie/sweater kami mengunakan bahan plecee catton... SABLON PolyfleX -Jenis sablon dengan ketahanan yang sudah tidak di ragukan lagi -menjadikan gambar lebih rapih dan persisi JAHITAN -Dibuat oleh tenaga kerja yang ahli di bidangnya, dengan mengunakan pola jahitan overdek/interlock, sehingga menghasilkan produk BERKUALITAS premium ,cocok untuk pria ataupun wanita-SIZE CHARTPANJANG X LEBARS : (63 cm x 52 cm)M :(66 cm x 56cm)L : (70 cm x 58 cm)XL:(74 cm x 63 cm )XXL:(78 cm x 65 cm)NOTE:cantumkan warna,ukuran,Nama pemesan ,Alamat serta nomor telepon pada kolom pemesan....bila menginginkan warna di luar picture harap tanyakan dulu.Terimakasih.........selamat berbelanja",
+                      style: TextStyle(fontSize: 11),
+                    ),
+                  )
+                ],
+              ),
             )
           ],
         ),
