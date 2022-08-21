@@ -159,18 +159,12 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                               new Expanded(
                                   child: OutlinedButton(
                                 style: OutlinedButton.styleFrom(
-                                    padding: EdgeInsets.only(
-                                      top: 20,
-                                      bottom: 20,
-                                    ),
-                                    textStyle: TextStyle(
-                                      fontSize: 13,
-                                    ),
-                                    primary: Colors.black,
-                                    side: BorderSide(
-                                      width: 2,
-                                      color: Colors.grey,
-                                    )),
+                                  padding: EdgeInsets.symmetric(vertical: 15),
+                                  textStyle: TextStyle(
+                                    fontSize: 13,
+                                  ),
+                                  primary: Colors.black,
+                                ),
                                 onPressed: () {
                                   Navigator.push(
                                       context,
@@ -189,22 +183,16 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                               new Expanded(
                                   child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    padding: EdgeInsets.only(
-                                      top: 20,
-                                      bottom: 20,
-                                    ),
-                                    textStyle: TextStyle(
-                                        fontSize: 13,
-                                        color: isTextFormFieldFilled
-                                            ? Colors.white
-                                            : Color.fromARGB(255, 94, 70, 70)),
-                                    primary: isTextFormFieldFilled
-                                        ? secondaryColor
-                                        : Colors.grey[400],
-                                    side: BorderSide(
-                                      width: 1,
-                                      color: Colors.grey,
-                                    )),
+                                  padding: EdgeInsets.symmetric(vertical: 15),
+                                  textStyle: TextStyle(
+                                      fontSize: 13,
+                                      color: isTextFormFieldFilled
+                                          ? Colors.white
+                                          : Color.fromARGB(255, 94, 70, 70)),
+                                  primary: isTextFormFieldFilled
+                                      ? secondaryColor
+                                      : Colors.grey[400],
+                                ),
                                 onPressed: () {
                                   Navigator.push(
                                       context,

@@ -18,7 +18,7 @@ class TemplateMainView extends StatefulWidget {
 class _TemplateMainViewState extends State<TemplateMainView> {
   List<Widget> listWidget = [
     BerandaView(),
-    CartView(),
+    CartView(0),
     ProfileView(),
   ];
   void val(int index) {

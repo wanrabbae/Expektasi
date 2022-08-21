@@ -1,65 +1,110 @@
 import 'package:expektasi/views/kategori/kategori.dart';
 import 'package:expektasi/views/product/product.dart';
+import 'package:expektasi/views/product/product_categories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
 GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
 List<Map<String, dynamic>> listMenu = [
-  {"name": "Penampilan", "icon": PhosphorIcons.tShirtFill, 'link': ''},
+  {
+    "name": "Penampilan",
+    "icon": PhosphorIcons.tShirtFill,
+    'link': ProductCategoriesView()
+  },
   {
     "name": "Peralatan Gaming",
     "icon": PhosphorIcons.gameControllerFill,
-    "link": ''
+    "link": ProductCategoriesView()
   },
-  {"name": "Elektronik", "icon": PhosphorIcons.cpuFill, 'link': ''},
+  {
+    "name": "Elektronik",
+    "icon": PhosphorIcons.cpuFill,
+    'link': ProductCategoriesView()
+  },
   {
     "name": "Makanan & Minuman",
     "icon": PhosphorIcons.forkKnifeFill,
-    'link': ''
+    'link': ProductCategoriesView()
   },
   {
     "name": "Perawatan & Kecantikan",
     "icon": PhosphorIcons.pillFill,
-    'link': ''
+    'link': ProductCategoriesView()
   },
-  {"name": "Alat Tulis", "icon": PhosphorIcons.pencilCircleFill, "link": ''},
-  {"name": "Olahraga", "icon": PhosphorIcons.volleyballFill, "link": ''},
+  {
+    "name": "Alat Tulis",
+    "icon": PhosphorIcons.pencilCircleFill,
+    "link": ProductCategoriesView()
+  },
+  {
+    "name": "Olahraga",
+    "icon": PhosphorIcons.volleyballFill,
+    "link": ProductCategoriesView()
+  },
   {"name": "Lain Lain", "icon": PhosphorIcons.listBold, "link": KategoriView()},
 ];
 
 List<Map<String, dynamic>> listCategory = [
-  {"name": "Penampilan", "icon": PhosphorIcons.tShirtFill, 'link': ''},
+  {
+    "name": "Penampilan",
+    "icon": PhosphorIcons.tShirtFill,
+    'link': ProductCategoriesView()
+  },
   {
     "name": "Peralatan Gaming",
     "icon": PhosphorIcons.gameControllerFill,
-    "link": ''
+    "link": ProductCategoriesView()
   },
-  {"name": "Elektronik", "icon": PhosphorIcons.cpuFill, 'link': ''},
+  {
+    "name": "Elektronik",
+    "icon": PhosphorIcons.cpuFill,
+    'link': ProductCategoriesView()
+  },
   {
     "name": "Makanan & Minuman",
     "icon": PhosphorIcons.forkKnifeFill,
-    'link': ''
+    'link': ProductCategoriesView()
   },
-  {"name": "Kecantikan", "icon": PhosphorIcons.pillFill, 'link': ''},
-  {"name": "Olahraga", "icon": PhosphorIcons.volleyballFill, "link": ''},
-  {"name": "Kesehatan", "icon": PhosphorIcons.pencilCircleFill, "link": ''},
+  {
+    "name": "Kecantikan",
+    "icon": PhosphorIcons.pillFill,
+    'link': ProductCategoriesView()
+  },
+  {
+    "name": "Olahraga",
+    "icon": PhosphorIcons.volleyballFill,
+    "link": ProductCategoriesView()
+  },
+  {
+    "name": "Kesehatan",
+    "icon": PhosphorIcons.pencilCircleFill,
+    "link": ProductCategoriesView()
+  },
   {
     "name": "Pulsa & Token Listrik",
     "icon": PhosphorIcons.phoneSlashBold,
-    "link": ''
+    "link": ProductCategoriesView()
   },
   {
     "name": "Peralatan Tulis",
     "icon": PhosphorIcons.pencilCircleFill,
-    "link": ''
+    "link": ProductCategoriesView()
   },
-  {"name": "Peralatan Music", "icon": PhosphorIcons.musicNote, "link": ''},
-  {"name": "Peralatan Seni", "icon": PhosphorIcons.articleBold, "link": ''},
+  {
+    "name": "Peralatan Music",
+    "icon": PhosphorIcons.musicNote,
+    "link": ProductCategoriesView()
+  },
+  {
+    "name": "Peralatan Seni",
+    "icon": PhosphorIcons.articleBold,
+    "link": ProductCategoriesView()
+  },
   {
     "name": "Peralatan Rumah Tangga",
     "icon": PhosphorIcons.houseSimpleBold,
-    "link": ''
+    "link": ProductCategoriesView()
   },
 ];
 
@@ -125,4 +170,13 @@ List<Map<String, dynamic>> listBrands = [
         "https://res.cloudinary.com/touchme/image/upload/v1660268991/Ellipse_5_dpdtwo.png",
     "link": ''
   },
+];
+
+List<Map<String, dynamic>> listSizeProduct = [
+  {
+    "size": "S",
+  },
+  {"size": "L"},
+  {"size": "XL"},
+  {"size": "XXL"},
 ];

@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -199,7 +200,8 @@ class _ProductViewState extends State<ProductView> {
                               child: Text(
                                 "Hitam",
                                 textAlign: TextAlign.left,
-                                style: TextStyle(color: secondaryColor),
+                                style: TextStyle(
+                                    color: secondaryColor, fontSize: 12),
                               ),
                               style: ButtonStyle(
                                 side: MaterialStateProperty.all(BorderSide(
@@ -223,21 +225,35 @@ class _ProductViewState extends State<ProductView> {
                           ),
                         ),
                         Row(
-                          children: [
-                            OutlinedButton(
-                              onPressed: () {},
-                              child: Text(
-                                "XL",
-                                textAlign: TextAlign.left,
-                                style: TextStyle(color: secondaryColor),
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              OutlinedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "XL",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      color: secondaryColor, fontSize: 12),
+                                ),
+                                style: ButtonStyle(
+                                  side: MaterialStateProperty.all(BorderSide(
+                                      color: secondaryColor, width: 1)),
+                                ),
                               ),
-                              style: ButtonStyle(
-                                side: MaterialStateProperty.all(BorderSide(
-                                    color: secondaryColor, width: 1)),
+                              OutlinedButton(
+                                onPressed: () {},
+                                child: Text(
+                                  "XL",
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(
+                                      color: secondaryColor, fontSize: 12),
+                                ),
+                                style: ButtonStyle(
+                                  side: MaterialStateProperty.all(BorderSide(
+                                      color: secondaryColor, width: 1)),
+                                ),
                               ),
-                            )
-                          ],
-                        )
+                            ])
                       ]),
                     )
                   ]),
@@ -245,6 +261,7 @@ class _ProductViewState extends State<ProductView> {
                 Container(
                     margin: EdgeInsets.only(top: 10),
                     alignment: Alignment.centerLeft,
+                    width: double.infinity,
                     decoration: BoxDecoration(
                         border: Border(
                       top: BorderSide(color: Colors.grey.shade300, width: 3),
@@ -253,8 +270,10 @@ class _ProductViewState extends State<ProductView> {
                     padding: EdgeInsets.symmetric(vertical: 15),
                     child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
                                 width: 50,
@@ -263,8 +282,108 @@ class _ProductViewState extends State<ProductView> {
                                 child: Image.network(
                                     'https://cdn.discordapp.com/attachments/1008921423915532368/1010710138216271912/image_22.png'),
                               ),
+                              Container(
+                                width: 150,
+                                child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                PhosphorIcons.storefrontBold,
+                                                size: 25,
+                                                color: secondaryColor,
+                                              ),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 5)),
+                                              Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text("John Shop",
+                                                      style: TextStyle(
+                                                          fontSize: 11,
+                                                          color: secondaryColor,
+                                                          fontWeight:
+                                                              FontWeight.bold)),
+                                                  Text("Kota Cirebon",
+                                                      style: TextStyle(
+                                                          fontSize: 11,
+                                                          color: Colors.black)),
+                                                ],
+                                              ),
+                                            ]),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.only(top: 5),
+                                        child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.center,
+                                            children: [
+                                              RichText(
+                                                  text: TextSpan(children: [
+                                                TextSpan(
+                                                    text: "28 ",
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: secondaryColor)),
+                                                TextSpan(
+                                                    text: "Produk",
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.black)),
+                                              ])),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 5)),
+                                              RichText(
+                                                  text: TextSpan(children: [
+                                                TextSpan(
+                                                    text: "4.7 ",
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: secondaryColor)),
+                                                TextSpan(
+                                                    text: "Produk",
+                                                    style: TextStyle(
+                                                        fontSize: 12,
+                                                        color: Colors.black)),
+                                              ]))
+                                            ]),
+                                      )
+                                    ]),
+                              )
                             ],
-                          )
+                          ),
+                          OutlinedButton(
+                            onPressed: () {},
+                            child: Text(
+                              "Mampir",
+                              textAlign: TextAlign.left,
+                              style: TextStyle(
+                                  color: secondaryColor, fontSize: 10),
+                            ),
+                            style: ButtonStyle(
+                                side: MaterialStateProperty.all(BorderSide(
+                                    color: secondaryColor, width: 1.5)),
+                                shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                    RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                ))),
+                          ),
                         ]))
               ]),
             )

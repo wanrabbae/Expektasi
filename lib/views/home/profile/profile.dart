@@ -549,7 +549,7 @@ class _ProfileViewState extends State<ProfileView> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => (CartView())));
+                                    builder: (context) => (CartView(1))));
                           },
                           child: Container(
                               margin: EdgeInsets.only(left: 20),

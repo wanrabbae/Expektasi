@@ -37,8 +37,10 @@ class _KategoriViewState extends State<KategoriView> {
                 return InkWell(
                   splashColor: secondaryColor.withAlpha(30),
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => (data['link'])));
                   },
                   child: Column(
                     children: [
@@ -86,8 +88,10 @@ class _KategoriViewState extends State<KategoriView> {
                 return InkWell(
                   splashColor: secondaryColor.withAlpha(30),
                   onTap: () {
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (context) => (data['link'])));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => (data['link'])));
                   },
                   child: Column(
                     children: [

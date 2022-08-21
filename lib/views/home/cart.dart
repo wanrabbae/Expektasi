@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatefulWidget {
-  const CartView({Key? key}) : super(key: key);
+  // const CartView({Key? key}) : super(key: key);
+  int selectedPage;
+  CartView(this.selectedPage);
 
   @override
   State<CartView> createState() => _CartViewState();
@@ -15,6 +17,7 @@ class _CartViewState extends State<CartView> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: DefaultTabController(
+        initialIndex: widget.selectedPage,
         length: 3,
         child: Scaffold(
           appBar: AppBar(
