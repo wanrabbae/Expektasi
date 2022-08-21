@@ -168,7 +168,104 @@ class _ProductViewState extends State<ProductView> {
                           Icon(PhosphorIcons.caretRightBold, size: 15)
                         ]),
                   ),
-                )
+                ),
+                Container(
+                  width: double.infinity,
+                  margin: EdgeInsets.only(top: 20),
+                  child: Column(children: [
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "Pilih Variasi",
+                        style: TextStyle(fontSize: 12),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 15),
+                      width: double.infinity,
+                      child: Column(children: [
+                        Container(
+                          margin: EdgeInsets.only(bottom: 7),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Warna",
+                            style: TextStyle(fontSize: 10),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "Hitam",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: secondaryColor),
+                              ),
+                              style: ButtonStyle(
+                                side: MaterialStateProperty.all(BorderSide(
+                                    color: secondaryColor, width: 1)),
+                              ),
+                            )
+                          ],
+                        )
+                      ]),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 15),
+                      width: double.infinity,
+                      child: Column(children: [
+                        Container(
+                          margin: EdgeInsets.only(bottom: 7),
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            "Ukuran",
+                            style: TextStyle(fontSize: 10),
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            OutlinedButton(
+                              onPressed: () {},
+                              child: Text(
+                                "XL",
+                                textAlign: TextAlign.left,
+                                style: TextStyle(color: secondaryColor),
+                              ),
+                              style: ButtonStyle(
+                                side: MaterialStateProperty.all(BorderSide(
+                                    color: secondaryColor, width: 1)),
+                              ),
+                            )
+                          ],
+                        )
+                      ]),
+                    )
+                  ]),
+                ),
+                Container(
+                    margin: EdgeInsets.only(top: 10),
+                    alignment: Alignment.centerLeft,
+                    decoration: BoxDecoration(
+                        border: Border(
+                      top: BorderSide(color: Colors.grey.shade300, width: 3),
+                      bottom: BorderSide(color: Colors.grey.shade300, width: 3),
+                    )),
+                    padding: EdgeInsets.symmetric(vertical: 15),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Row(
+                            children: [
+                              Container(
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: Image.network(
+                                    'https://cdn.discordapp.com/attachments/1008921423915532368/1010710138216271912/image_22.png'),
+                              ),
+                            ],
+                          )
+                        ]))
               ]),
             )
           ],
