@@ -1,5 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
-import 'package:expektasi/views/home/chat.dart';
+import 'package:expektasi/views/home/chat/chat.dart';
 import 'package:expektasi/views/home/login.dart';
 import 'package:expektasi/views/home/notification.dart';
 import 'package:expektasi/views/home/register/register.dart';

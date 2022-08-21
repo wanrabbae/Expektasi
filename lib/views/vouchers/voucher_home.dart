@@ -98,135 +98,232 @@ class _VoucherViewState extends State<VoucherView> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                child: Card(
-                  elevation: 0,
+                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1,
+                    ),
+                  ),
                   child: InkWell(
-                    splashColor: secondaryColor.withAlpha(30),
-                    onTap: () {
-                      debugPrint("Card on Tapped");
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 15,
-                      ),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 1.5,
-                          ),
-                          borderRadius: BorderRadius.circular(12)),
+                      onTap: () {},
+                      splashColor: secondaryColor,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                              child: Row(
-                            children: [
-                              Transform.rotate(
-                                angle: 90 * math.pi / 180,
-                                child: new LayoutBuilder(
-                                  builder: (context, constraints) {
-                                    return new Icon(
-                                      PhosphorIcons.ticket,
-                                      color: secondaryColor,
-                                      size: 125,
-                                    );
-                                  },
-                                ),
-                              ),
-                              Text(
-                                "Voucher Gratis Ongkir",
-                                style: TextStyle(fontSize: 10),
-                              )
-                            ],
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                              child: Container(
+                            height: double.infinity,
+                            child: Image.network(
+                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
+                              fit: BoxFit.fill,
+                            ),
                           )),
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  margin: EdgeInsets.only(bottom: 100),
-                                  child: Text(
-                                    "Khusus Pengguna Baru",
+                          Padding(padding: EdgeInsets.only(right: 4)),
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                  child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Voucher Gratis Ongkir",
                                     style: TextStyle(
-                                        color: secondaryColor, fontSize: 9),
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                    textAlign: TextAlign.center,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
+                                  Text(
+                                    "Hingga 25.09.2022",
+                                    style: TextStyle(fontSize: 10),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              )
+                                  // RichText(text: TextSpan(children: [
+                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  // ]),)
+                                  )),
+                          Expanded(
+                              child: Container(
+                                  padding: EdgeInsets.only(top: 5),
+                                  height: double.infinity,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Khsusus pengguna baru',
+                                        style: TextStyle(
+                                            color: secondaryColor, fontSize: 6),
+                                      ),
+                                      TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Gunakan >",
+                                            style: TextStyle(
+                                                color: secondaryColor,
+                                                fontSize: 11),
+                                          ))
+                                    ],
+                                  )))
                         ],
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+                      ))),
               Container(
-                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                child: Card(
-                  elevation: 0,
-                  child: InkWell(
-                    splashColor: secondaryColor.withAlpha(30),
-                    onTap: () {
-                      debugPrint("Card on Tapped");
-                    },
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                        vertical: 15,
-                      ),
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.grey,
-                            width: 1.5,
-                          ),
-                          borderRadius: BorderRadius.circular(12)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            child: Transform.rotate(
-                              angle: 90 * math.pi / 180,
-                              child: new LayoutBuilder(
-                                builder: (context, constraints) {
-                                  return new Icon(
-                                    PhosphorIcons.ticket,
-                                    color: secondaryColor,
-                                    size: 125,
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                          Container(
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Container(
-                                  padding: EdgeInsets.only(left: 74),
-                                  margin: EdgeInsets.only(bottom: 100),
-                                  child: Text(
-                                    "Khusus Pengguna Baru",
-                                    style: TextStyle(
-                                        color: secondaryColor, fontSize: 9),
-                                  ),
-                                )
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
+                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1,
                     ),
                   ),
-                ),
-              ),
+                  child: InkWell(
+                      onTap: () {},
+                      splashColor: secondaryColor,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                              child: Container(
+                            height: double.infinity,
+                            child: Image.network(
+                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
+                              fit: BoxFit.fill,
+                            ),
+                          )),
+                          Padding(padding: EdgeInsets.only(right: 4)),
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                  child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Voucher Gratis Ongkir",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    "Hingga 25.09.2022",
+                                    style: TextStyle(fontSize: 10),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              )
+                                  // RichText(text: TextSpan(children: [
+                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  // ]),)
+                                  )),
+                          Expanded(
+                              child: Container(
+                                  padding: EdgeInsets.only(top: 5),
+                                  height: double.infinity,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Khsusus pengguna baru',
+                                        style: TextStyle(
+                                            color: secondaryColor, fontSize: 6),
+                                      ),
+                                      TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Gunakan >",
+                                            style: TextStyle(
+                                                color: secondaryColor,
+                                                fontSize: 11),
+                                          ))
+                                    ],
+                                  )))
+                        ],
+                      ))),
+              Container(
+                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.grey,
+                      width: 1,
+                    ),
+                  ),
+                  child: InkWell(
+                      onTap: () {},
+                      splashColor: secondaryColor,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                              child: Container(
+                            height: double.infinity,
+                            child: Image.network(
+                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
+                              fit: BoxFit.fill,
+                            ),
+                          )),
+                          Padding(padding: EdgeInsets.only(right: 4)),
+                          Expanded(
+                              flex: 2,
+                              child: Container(
+                                  child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    "Voucher Gratis Ongkir",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                  Text(
+                                    "Hingga 25.09.2022",
+                                    style: TextStyle(fontSize: 10),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              )
+                                  // RichText(text: TextSpan(children: [
+                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                                  // ]),)
+                                  )),
+                          Expanded(
+                              child: Container(
+                                  padding: EdgeInsets.only(top: 5),
+                                  height: double.infinity,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        'Khsusus pengguna baru',
+                                        style: TextStyle(
+                                            color: secondaryColor, fontSize: 6),
+                                      ),
+                                      TextButton(
+                                          onPressed: () {},
+                                          child: Text(
+                                            "Gunakan >",
+                                            style: TextStyle(
+                                                color: secondaryColor,
+                                                fontSize: 11),
+                                          ))
+                                    ],
+                                  )))
+                        ],
+                      ))),
             ],
           ),
         ));
   }
 }
-
-
