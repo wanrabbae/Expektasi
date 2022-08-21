@@ -194,22 +194,30 @@ class _ProductViewState extends State<ProductView> {
                               style: TextStyle(fontSize: 10),
                             ),
                           ),
-                          Row(
-                            children: [
-                              OutlinedButton(
-                                onPressed: () {},
-                                child: Text(
-                                  "Hitam",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: secondaryColor, fontSize: 12),
-                                ),
-                                style: ButtonStyle(
-                                  side: MaterialStateProperty.all(BorderSide(
-                                      color: secondaryColor, width: 1)),
-                                ),
-                              )
-                            ],
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: listWarnaProduct.map((data) {
+                                  return Container(
+                                      padding: EdgeInsets.only(right: 5),
+                                      child: OutlinedButton(
+                                        onPressed: () {},
+                                        child: Text(
+                                          data["warna"],
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                              color: secondaryColor,
+                                              fontSize: 12),
+                                        ),
+                                        style: ButtonStyle(
+                                          side: MaterialStateProperty.all(
+                                              BorderSide(
+                                                  color: secondaryColor,
+                                                  width: 1)),
+                                        ),
+                                      ));
+                                }).toList()),
                           )
                         ]),
                       ),
@@ -225,42 +233,37 @@ class _ProductViewState extends State<ProductView> {
                               style: TextStyle(fontSize: 10),
                             ),
                           ),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              children: [
-                                OutlinedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "XL",
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        color: secondaryColor, fontSize: 12),
-                                  ),
-                                  style: ButtonStyle(
-                                    side: MaterialStateProperty.all(BorderSide(
-                                        color: secondaryColor, width: 1)),
-                                  ),
-                                ),
-                                OutlinedButton(
-                                  onPressed: () {},
-                                  child: Text(
-                                    "XL",
-                                    textAlign: TextAlign.left,
-                                    style: TextStyle(
-                                        color: secondaryColor, fontSize: 12),
-                                  ),
-                                  style: ButtonStyle(
-                                    side: MaterialStateProperty.all(BorderSide(
-                                        color: secondaryColor, width: 1)),
-                                  ),
-                                ),
-                              ])
+                          SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: listSizeProduct.map((data) {
+                                  return Container(
+                                      padding: EdgeInsets.only(right: 5),
+                                      child: OutlinedButton(
+                                        onPressed: () {},
+                                        child: Text(
+                                          data["size"],
+                                          textAlign: TextAlign.left,
+                                          style: TextStyle(
+                                              color: secondaryColor,
+                                              fontSize: 12),
+                                        ),
+                                        style: ButtonStyle(
+                                          side: MaterialStateProperty.all(
+                                              BorderSide(
+                                                  color: secondaryColor,
+                                                  width: 1)),
+                                        ),
+                                      ));
+                                }).toList()),
+                          )
                         ]),
                       )
                     ]),
                   ),
                   Container(
-                      margin: EdgeInsets.only(top: 10),
+                      margin: EdgeInsets.only(top: 20),
                       alignment: Alignment.centerLeft,
                       width: double.infinity,
                       decoration: BoxDecoration(

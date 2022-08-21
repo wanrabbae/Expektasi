@@ -179,6 +179,21 @@ List<Map<String, dynamic>> listSizeProduct = [
   {"size": "L"},
   {"size": "XL"},
   {"size": "XXL"},
+  {"size": "XXL"},
+  {"size": "XXL"},
+  {"size": "XXL"},
+];
+
+List<Map<String, dynamic>> listWarnaProduct = [
+  {
+    "warna": "Merah",
+  },
+  {"warna": "Kuning"},
+  {"warna": "Hijau"},
+  {"warna": "Biru"},
+  {"warna": "Ungu"},
+  {"warna": "Coklat"},
+  {"warna": "Mocha"},
 ];
 
 Object listRincianProduct = {
