@@ -188,3 +188,66 @@ Object listRincianProduct = {
   "Negara Asal": "Indonesia",
   "Dikirim dari": "KOTA JAKARTA SELATAN - KEBAYORAN LAMA, DKI  JAKARTA"
 };
+
+List<Map<String, dynamic>> listVouchers = [
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png",
+    "name": "Voucher gratis ongkir",
+    "date": "25.09.2022",
+  },
+];

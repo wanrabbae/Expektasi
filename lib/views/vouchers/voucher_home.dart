@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/constant.dart';
 import 'package:expektasi/views/vouchers/voucher_add.dart';
 import 'package:expektasi/views/vouchers/voucher_other.dart';
 import 'package:flutter/material.dart';
@@ -106,225 +107,84 @@ class _VoucherViewState extends State<VoucherView> {
                 ),
               ),
               Container(
-                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  width: double.infinity,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 1,
-                    ),
-                  ),
-                  child: InkWell(
-                      onTap: () {},
-                      splashColor: secondaryColor,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: double.infinity,
-                            child: Image.network(
-                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
-                              fit: BoxFit.fill,
-                            ),
-                          )),
-                          Padding(padding: EdgeInsets.only(right: 4)),
-                          Expanded(
-                              flex: 2,
-                              child: Container(
-                                  child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Voucher Gratis Ongkir",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    "Hingga 25.09.2022",
-                                    style: TextStyle(fontSize: 10),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              )
-                                  // RichText(text: TextSpan(children: [
-                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  // ]),)
-                                  )),
-                          Expanded(
-                              child: Container(
-                                  padding: EdgeInsets.only(top: 5),
+                child: Column(
+                  children: listVouchers.map((data) {
+                    return Container(
+                        margin:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                        width: double.infinity,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.grey,
+                            width: 1,
+                          ),
+                        ),
+                        child: InkWell(
+                            onTap: () {},
+                            splashColor: secondaryColor,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                    child: Container(
                                   height: double.infinity,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Khsusus pengguna baru',
-                                        style: TextStyle(
-                                            color: secondaryColor, fontSize: 6),
-                                      ),
-                                      TextButton(
-                                          onPressed: () {},
-                                          child: Text(
-                                            "Gunakan >",
-                                            style: TextStyle(
-                                                color: secondaryColor,
-                                                fontSize: 11),
-                                          ))
-                                    ],
-                                  )))
-                        ],
-                      ))),
-              Container(
-                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  width: double.infinity,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 1,
-                    ),
-                  ),
-                  child: InkWell(
-                      onTap: () {},
-                      splashColor: secondaryColor,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: double.infinity,
-                            child: Image.network(
-                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
-                              fit: BoxFit.fill,
-                            ),
-                          )),
-                          Padding(padding: EdgeInsets.only(right: 4)),
-                          Expanded(
-                              flex: 2,
-                              child: Container(
-                                  child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Voucher Gratis Ongkir",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
-                                    textAlign: TextAlign.center,
+                                  child: Image.network(
+                                    data["image"],
+                                    fit: BoxFit.fill,
                                   ),
-                                  Text(
-                                    "Hingga 25.09.2022",
-                                    style: TextStyle(fontSize: 10),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              )
-                                  // RichText(text: TextSpan(children: [
-                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  // ]),)
-                                  )),
-                          Expanded(
-                              child: Container(
-                                  padding: EdgeInsets.only(top: 5),
-                                  height: double.infinity,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Khsusus pengguna baru',
-                                        style: TextStyle(
-                                            color: secondaryColor, fontSize: 6),
-                                      ),
-                                      TextButton(
-                                          onPressed: () {},
-                                          child: Text(
-                                            "Gunakan >",
-                                            style: TextStyle(
-                                                color: secondaryColor,
-                                                fontSize: 11),
-                                          ))
-                                    ],
-                                  )))
-                        ],
-                      ))),
-              Container(
-                  margin: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-                  width: double.infinity,
-                  height: 150,
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.grey,
-                      width: 1,
-                    ),
-                  ),
-                  child: InkWell(
-                      onTap: () {},
-                      splashColor: secondaryColor,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                              child: Container(
-                            height: double.infinity,
-                            child: Image.network(
-                              'https://cdn.discordapp.com/attachments/1008921423915532368/1010792959890952243/Vector.png',
-                              fit: BoxFit.fill,
-                            ),
-                          )),
-                          Padding(padding: EdgeInsets.only(right: 4)),
-                          Expanded(
-                              flex: 2,
-                              child: Container(
-                                  child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Voucher Gratis Ongkir",
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                  Text(
-                                    "Hingga 25.09.2022",
-                                    style: TextStyle(fontSize: 10),
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ],
-                              ))),
-                          Expanded(
-                              child: Container(
-                                  padding: EdgeInsets.only(top: 5),
-                                  height: double.infinity,
-                                  child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        'Khsusus pengguna baru',
-                                        style: TextStyle(
-                                            color: secondaryColor, fontSize: 6),
-                                      ),
-                                      TextButton(
-                                          onPressed: () {},
-                                          child: Text(
-                                            "Gunakan >",
-                                            style: TextStyle(
-                                                color: secondaryColor,
-                                                fontSize: 11),
-                                          ))
-                                    ],
-                                  )))
-                        ],
-                      ))),
+                                )),
+                                Padding(padding: EdgeInsets.only(right: 4)),
+                                Expanded(
+                                    flex: 2,
+                                    child: Container(
+                                        child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          data["name"],
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 12),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        Text(
+                                          "Hingga ${data["date"]}",
+                                          style: TextStyle(fontSize: 10),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ],
+                                    ))),
+                                Expanded(
+                                    child: Container(
+                                        padding: EdgeInsets.only(top: 5),
+                                        height: double.infinity,
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Text(
+                                              'Khsusus pengguna baru',
+                                              style: TextStyle(
+                                                  color: secondaryColor,
+                                                  fontSize: 6),
+                                            ),
+                                            TextButton(
+                                                onPressed: () {},
+                                                child: Text(
+                                                  "Gunakan >",
+                                                  style: TextStyle(
+                                                      color: secondaryColor,
+                                                      fontSize: 11),
+                                                ))
+                                          ],
+                                        )))
+                              ],
+                            )));
+                  }).toList(),
+                ),
+              )
             ],
           ),
         ));
