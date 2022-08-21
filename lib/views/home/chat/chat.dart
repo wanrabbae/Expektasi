@@ -57,7 +57,6 @@ class _ChatViewState extends State<ChatView> {
                   ),
                   DefaultTabController(
                       length: 2, // length of tabs
-                      initialIndex: 0,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: <Widget>[

@@ -1,6 +1,8 @@
 import 'dart:math' as math;
 import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/vouchers/voucher_add.dart';
+import 'package:expektasi/views/vouchers/voucher_other.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -62,7 +64,10 @@ class _VoucherViewState extends State<VoucherView> {
                               color: Colors.grey,
                             )),
                         onPressed: () {
-                          debugPrint('The Button Pressed');
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (VoucherAddView())));
                         },
                         icon: Icon(
                           PhosphorIcons.ticket,
@@ -83,7 +88,10 @@ class _VoucherViewState extends State<VoucherView> {
                             primary: Colors.black,
                             side: BorderSide(width: 1, color: Colors.grey)),
                         onPressed: () {
-                          debugPrint('The Button Pressed');
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (VoucherOthersView())));
                         },
                         icon: Icon(
                           PhosphorIcons.plusCircleBold,
@@ -291,12 +299,7 @@ class _VoucherViewState extends State<VoucherView> {
                                     textAlign: TextAlign.center,
                                   ),
                                 ],
-                              )
-                                  // RichText(text: TextSpan(children: [
-                                  //   TextSpan(text: "Voucher Gratis Ongkir", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  //   TextSpan(text: "Hingga 25.09.2022", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
-                                  // ]),)
-                                  )),
+                              ))),
                           Expanded(
                               child: Container(
                                   padding: EdgeInsets.only(top: 5),
