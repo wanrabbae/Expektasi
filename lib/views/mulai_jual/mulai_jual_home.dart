@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/profile/profile.dart';
 import 'package:expektasi/views/mulai_jual/atur_informasi.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -28,7 +29,10 @@ class _MulaiJualState extends State<MulaiJual> {
             Icons.arrow_back,
             color: Colors.black,
           ),
-          onPressed: () => Navigator.pop(context),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => (ProfileView()))));
+          },
         ),
       ),
       body: Column(

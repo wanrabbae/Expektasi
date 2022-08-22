@@ -34,7 +34,10 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
               Icons.arrow_back,
               color: Colors.black,
             ),
-            onPressed: () => Navigator.pop(context),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: ((context) => (MulaiJual()))));
+            },
           ),
         ),
         body: SingleChildScrollView(
