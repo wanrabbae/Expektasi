@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/constant.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +15,38 @@ class ProductView extends StatefulWidget {
 }
 
 class _ProductViewState extends State<ProductView> {
+  Widget stars() {
+    return Row(
+      children: [
+        Icon(
+          PhosphorIcons.starFill,
+          color: secondaryColor,
+          size: 15,
+        ),
+        Icon(
+          PhosphorIcons.starFill,
+          color: secondaryColor,
+          size: 15,
+        ),
+        Icon(
+          PhosphorIcons.starFill,
+          color: secondaryColor,
+          size: 15,
+        ),
+        Icon(
+          PhosphorIcons.starFill,
+          color: secondaryColor,
+          size: 15,
+        ),
+        Icon(
+          PhosphorIcons.starFill,
+          color: secondaryColor,
+          size: 15,
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,33 +111,7 @@ class _ProductViewState extends State<ProductView> {
                         children: [
                           Container(
                             child: Row(
-                              children: [
-                                Icon(
-                                  PhosphorIcons.starFill,
-                                  color: secondaryColor,
-                                  size: 15,
-                                ),
-                                Icon(
-                                  PhosphorIcons.starFill,
-                                  color: secondaryColor,
-                                  size: 15,
-                                ),
-                                Icon(
-                                  PhosphorIcons.starFill,
-                                  color: secondaryColor,
-                                  size: 15,
-                                ),
-                                Icon(
-                                  PhosphorIcons.starFill,
-                                  color: secondaryColor,
-                                  size: 15,
-                                ),
-                                Icon(
-                                  PhosphorIcons.starFill,
-                                  color: secondaryColor,
-                                  size: 15,
-                                )
-                              ],
+                              children: [stars()],
                             ),
                           ),
                           Text(
@@ -142,12 +150,11 @@ class _ProductViewState extends State<ProductView> {
                     margin: EdgeInsets.only(top: 5),
                     decoration: BoxDecoration(
                         border: Border(
-                      top: BorderSide(color: Colors.grey.shade300, width: 5),
-                      bottom: BorderSide(color: Colors.grey.shade300, width: 5),
+                      top: BorderSide(color: Colors.grey.shade200, width: 5),
+                      bottom: BorderSide(color: Colors.grey.shade200, width: 5),
                     )),
                     padding: EdgeInsets.symmetric(vertical: 10),
                     child: InkWell(
-                      splashColor: secondaryColor,
                       onTap: () {},
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -208,7 +215,7 @@ class _ProductViewState extends State<ProductView> {
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                               color: secondaryColor,
-                                              fontSize: 12),
+                                              fontSize: 10),
                                         ),
                                         style: ButtonStyle(
                                           side: MaterialStateProperty.all(
@@ -247,7 +254,7 @@ class _ProductViewState extends State<ProductView> {
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                               color: secondaryColor,
-                                              fontSize: 12),
+                                              fontSize: 10),
                                         ),
                                         style: ButtonStyle(
                                           side: MaterialStateProperty.all(
@@ -268,9 +275,9 @@ class _ProductViewState extends State<ProductView> {
                       width: double.infinity,
                       decoration: BoxDecoration(
                           border: Border(
-                        top: BorderSide(color: Colors.grey.shade300, width: 5),
+                        top: BorderSide(color: Colors.grey.shade200, width: 5),
                         bottom:
-                            BorderSide(color: Colors.grey.shade300, width: 5),
+                            BorderSide(color: Colors.grey.shade200, width: 5),
                       )),
                       padding: EdgeInsets.symmetric(vertical: 15),
                       child: Row(
@@ -288,12 +295,12 @@ class _ProductViewState extends State<ProductView> {
                                       'https://cdn.discordapp.com/attachments/1008921423915532368/1010710138216271912/image_22.png'),
                                 ),
                                 Container(
-                                  width: 150,
+                                  padding: EdgeInsets.symmetric(horizontal: 10),
                                   child: Column(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.center,
+                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.center,
+                                          CrossAxisAlignment.start,
                                       children: [
                                         Container(
                                           child: Row(
@@ -302,11 +309,6 @@ class _ProductViewState extends State<ProductView> {
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.center,
                                               children: [
-                                                Icon(
-                                                  PhosphorIcons.storefrontBold,
-                                                  size: 25,
-                                                  color: secondaryColor,
-                                                ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
                                                         right: 5)),
@@ -319,16 +321,15 @@ class _ProductViewState extends State<ProductView> {
                                                     Text("John Shop",
                                                         style: TextStyle(
                                                             fontSize: 11,
-                                                            color:
-                                                                secondaryColor,
+                                                            color: Colors.black,
                                                             fontWeight:
                                                                 FontWeight
                                                                     .bold)),
                                                     Text("Kota Cirebon",
                                                         style: TextStyle(
                                                             fontSize: 11,
-                                                            color:
-                                                                Colors.black)),
+                                                            color: Colors.grey
+                                                                .shade400)),
                                                   ],
                                                 ),
                                               ]),
@@ -346,13 +347,13 @@ class _ProductViewState extends State<ProductView> {
                                                   TextSpan(
                                                       text: "28 ",
                                                       style: TextStyle(
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           color:
                                                               secondaryColor)),
                                                   TextSpan(
                                                       text: "Produk",
                                                       style: TextStyle(
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           color: Colors.black)),
                                                 ])),
                                                 Padding(
@@ -363,13 +364,13 @@ class _ProductViewState extends State<ProductView> {
                                                   TextSpan(
                                                       text: "4.7 ",
                                                       style: TextStyle(
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           color:
                                                               secondaryColor)),
                                                   TextSpan(
                                                       text: "Produk",
                                                       style: TextStyle(
-                                                          fontSize: 12,
+                                                          fontSize: 10,
                                                           color: Colors.black)),
                                                 ]))
                                               ]),
@@ -402,123 +403,246 @@ class _ProductViewState extends State<ProductView> {
                     alignment: Alignment.topLeft,
                     decoration: BoxDecoration(
                         border: Border(
-                      bottom: BorderSide(color: Colors.grey.shade300, width: 5),
+                      bottom: BorderSide(color: Colors.grey.shade200, width: 5),
                     )),
-                    child: Column(children: [
-                      Text(
-                        "Produk lain dari Toko ini",
-                        textAlign: TextAlign.left,
-                        style: TextStyle(fontSize: 12),
-                      ),
-                      Container(
-                        width: double.infinity,
-                        height: 200,
-                        margin: EdgeInsets.only(top: 10),
-                        child: GridView.builder(
-                          itemCount: listProducts.length,
-                          scrollDirection: Axis.horizontal,
-                          shrinkWrap: true,
-                          physics: AlwaysScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                                  crossAxisCount: 1, childAspectRatio: 1.75),
-                          itemBuilder: (products, index) {
-                            var data = listProducts[index];
-                            return InkWell(
-                              splashColor: secondaryColor.withAlpha(30),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => (data['link'])));
-                              },
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding: EdgeInsets.all(0),
-                                    margin: EdgeInsets.symmetric(horizontal: 5),
-                                    decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.only(
-                                          bottomLeft: Radius.circular(10),
-                                          bottomRight: Radius.circular(10)),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          color: Color.fromRGBO(0, 0, 0, 0.1),
-                                          blurRadius: 10,
-                                          offset: Offset(0, 3),
-                                        ),
-                                      ],
-                                    ),
-                                    // padding:
-                                    //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                                    child: Column(children: [
-                                      Image.network(
-                                        data['image'],
-                                        fit: BoxFit.contain,
-                                      ),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Produk lain dari Toko ini",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          Container(
+                            width: double.infinity,
+                            height: 200,
+                            margin: EdgeInsets.only(top: 10),
+                            child: GridView.builder(
+                              itemCount: listProducts.length,
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              physics: AlwaysScrollableScrollPhysics(),
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                      crossAxisCount: 1,
+                                      childAspectRatio: 1.75),
+                              itemBuilder: (products, index) {
+                                var data = listProducts[index];
+                                return InkWell(
+                                  splashColor: secondaryColor.withAlpha(30),
+                                  onTap: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                (data['link'])));
+                                  },
+                                  child: Column(
+                                    children: [
                                       Container(
-                                        padding: EdgeInsets.all(5),
-                                        child: Column(
-                                          children: [
-                                            Container(
-                                              margin:
-                                                  EdgeInsets.only(bottom: 10),
-                                              child: Text(
-                                                data['name']
-                                                    .toString()
-                                                    .toUpperCase(),
-                                                textAlign: TextAlign.start,
-                                                style: TextStyle(
-                                                  fontSize: 8.5,
-                                                ),
-                                              ),
+                                        padding: EdgeInsets.all(0),
+                                        margin:
+                                            EdgeInsets.symmetric(horizontal: 5),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(10),
+                                              bottomRight: Radius.circular(10)),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Color.fromRGBO(0, 0, 0, 0.1),
+                                              blurRadius: 10,
+                                              offset: Offset(0, 3),
                                             ),
-                                            Container(
-                                                padding: EdgeInsets.symmetric(
-                                                    horizontal: 4),
-                                                margin:
-                                                    EdgeInsets.only(bottom: 10),
-                                                child: Text(
-                                                  data['price'],
-                                                  textAlign: TextAlign.start,
-                                                  style: TextStyle(
-                                                      color: secondaryColor,
-                                                      fontSize: 9),
-                                                ))
                                           ],
                                         ),
-                                      )
-                                    ]),
+                                        // padding:
+                                        //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                                        child: Column(children: [
+                                          Image.network(
+                                            data['image'],
+                                            fit: BoxFit.contain,
+                                          ),
+                                          Container(
+                                            padding: EdgeInsets.all(5),
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      bottom: 10),
+                                                  child: Text(
+                                                    data['name']
+                                                        .toString()
+                                                        .toUpperCase(),
+                                                    textAlign: TextAlign.start,
+                                                    style: TextStyle(
+                                                      fontSize: 8.5,
+                                                    ),
+                                                  ),
+                                                ),
+                                                Container(
+                                                    padding:
+                                                        EdgeInsets.symmetric(
+                                                            horizontal: 4),
+                                                    margin: EdgeInsets.only(
+                                                        bottom: 10),
+                                                    child: Text(
+                                                      data['price'],
+                                                      textAlign:
+                                                          TextAlign.start,
+                                                      style: TextStyle(
+                                                          color: secondaryColor,
+                                                          fontSize: 9),
+                                                    ))
+                                              ],
+                                            ),
+                                          )
+                                        ]),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ]),
+                                );
+                              },
+                            ),
+                          ),
+                        ]),
                   ),
                   Container(
                     padding: EdgeInsets.symmetric(vertical: 15),
                     width: double.infinity,
                     alignment: Alignment.topLeft,
-                    child: Column(children: [
-                      Text(
-                        "Rincian Produk",
-                        textAlign: TextAlign.left,
-                      ),
-                      Container(
-                        height: 300,
-                        decoration: BoxDecoration(
-                            border: Border(
-                          top:
-                              BorderSide(color: Colors.grey.shade300, width: 1),
-                          bottom:
-                              BorderSide(color: Colors.grey.shade300, width: 1),
-                        )),
-                      )
-                    ]),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Rincian Produk",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          Padding(
+                              padding: EdgeInsets.only(
+                            bottom: 10,
+                          )),
+                          Container(
+                              width: double.infinity,
+                              alignment: Alignment.topLeft,
+                              padding: EdgeInsets.only(top: 10),
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                top: BorderSide(
+                                    color: Colors.grey.shade200, width: 1),
+                                bottom: BorderSide(
+                                    color: Colors.grey.shade200, width: 1),
+                              )),
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Stok",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 50)),
+                                      Text("205",
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Panjang Lengan",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 50)),
+                                      Text("Lengan Panjang",
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Bahan",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 50)),
+                                      Text("Katun",
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Negara Asal",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 50)),
+                                      Text("Indonesia",
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10)),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        "Dikirim dari",
+                                        style: TextStyle(fontSize: 12),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              horizontal: 50)),
+                                      Text(
+                                          "KOTA JAKARTA\n SELATAN -\n KEBAYORAN LAMA,\n DKI  JAKARTA",
+                                          style: TextStyle(fontSize: 12))
+                                    ],
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(vertical: 10)),
+                                ],
+                              )),
+                          // ListView.builder(itemBuilder: (context, index))
+                          //     GridView.builder(
+                          //   padding: EdgeInsets.only(top: 10),
+                          //   physics: NeverScrollableScrollPhysics(),
+                          //   shrinkWrap: true,
+                          //   itemCount: listRincianProduct.length,
+                          //   gridDelegate:
+                          //       SliverGridDelegateWithFixedCrossAxisCount(
+                          //     crossAxisCount: 1,
+                          //     childAspectRatio: 7,
+                          //   ),
+                          //   itemBuilder: (context, index) {
+                          //     var data = listRincianProduct[index];
+                          //     return Text("TEST");
+                          //   },
+                          // )),
+                        ]),
                   ),
                   // Deskripsi Product
                   Container(
@@ -528,7 +652,222 @@ class _ProductViewState extends State<ProductView> {
                       "BAHAN REAL 100%PLECEE Catton: kain paling unggul di banding jenis yang lainnya.... tekstur nya lembut , juga tidak membuat agan/sis kegerahan bila di pake siang ,dan sudah tentu hangat saat malam ..itulah sebab, hoodie/sweater kami mengunakan bahan plecee catton... SABLON PolyfleX -Jenis sablon dengan ketahanan yang sudah tidak di ragukan lagi -menjadikan gambar lebih rapih dan persisi JAHITAN -Dibuat oleh tenaga kerja yang ahli di bidangnya, dengan mengunakan pola jahitan overdek/interlock, sehingga menghasilkan produk BERKUALITAS premium ,cocok untuk pria ataupun wanita-SIZE CHARTPANJANG X LEBARS : (63 cm x 52 cm)M :(66 cm x 56cm)L : (70 cm x 58 cm)XL:(74 cm x 63 cm )XXL:(78 cm x 65 cm)NOTE:cantumkan warna,ukuran,Nama pemesan ,Alamat serta nomor telepon pada kolom pemesan....bila menginginkan warna di luar picture harap tanyakan dulu.Terimakasih.........selamat berbelanja",
                       style: TextStyle(fontSize: 11),
                     ),
-                  )
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 20),
+                    padding: EdgeInsets.symmetric(vertical: 10),
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        border: Border(
+                      top: BorderSide(color: Colors.grey.shade200, width: 5),
+                    )),
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Penilaian Produk",
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontSize: 12),
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 10)),
+                          Row(
+                            children: [
+                              stars(),
+                              Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 5)),
+                              Text("4.8/5 (189 Ulasan)",
+                                  style: TextStyle(fontSize: 11)),
+                            ],
+                          ),
+                          Padding(padding: EdgeInsets.only(top: 15)),
+                          Column(
+                            children: [
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.network(
+                                    'https://cdn.discordapp.com/attachments/1008921423915532368/1011125369782407228/Ellipse_21.png',
+                                    width: 50,
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5)),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("Maemunah123"),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      stars(),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Text(
+                                        "Variasi: Hitam, L",
+                                        style: TextStyle(
+                                            color: Colors.grey[400],
+                                            fontSize: 10),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Container(
+                                        width: 250,
+                                        child: Text(
+                                          "Bagus banget hoodie nya sesuai dengan pesanan. Rekomended bangetttt pokoknya dah.",
+                                          style: TextStyle(fontSize: 12),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey.shade200,
+                                                  width: 1)),
+                                          child: Row(
+                                            children: [
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 10)),
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 10)),
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                            ],
+                                          )),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Text("22-07-2022 12.00",
+                                          style: TextStyle(
+                                              color: Colors.grey[400],
+                                              fontSize: 10)),
+                                    ],
+                                  )
+                                ],
+                              ),
+                              Padding(
+                                  padding: EdgeInsets.symmetric(vertical: 10)),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Image.network(
+                                    'https://cdn.discordapp.com/attachments/1008921423915532368/1011125369782407228/Ellipse_21.png',
+                                    width: 50,
+                                  ),
+                                  Padding(
+                                      padding:
+                                          EdgeInsets.symmetric(horizontal: 5)),
+                                  Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    children: [
+                                      Text("Maemunah123"),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      stars(),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Text(
+                                        "Variasi: Hitam, L",
+                                        style: TextStyle(
+                                            color: Colors.grey[400],
+                                            fontSize: 10),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Container(
+                                        width: 250,
+                                        child: Text(
+                                          "Bagus banget hoodie nya sesuai dengan pesanan. Rekomended bangetttt pokoknya dah.",
+                                          style: TextStyle(fontSize: 12),
+                                        ),
+                                      ),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.grey.shade200,
+                                                  width: 1)),
+                                          child: Row(
+                                            children: [
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 10)),
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                              Padding(
+                                                  padding: EdgeInsets.only(
+                                                      right: 10)),
+                                              Image.network(
+                                                  "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+                                                  width: 70),
+                                            ],
+                                          )),
+                                      Padding(
+                                          padding: EdgeInsets.symmetric(
+                                              vertical: 3)),
+                                      Text("22-07-2022 12.00",
+                                          style: TextStyle(
+                                              color: Colors.grey[400],
+                                              fontSize: 10)),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          ),
+                          Container(
+                              margin: EdgeInsets.only(top: 10),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                top: BorderSide(
+                                    color: Colors.grey.shade200, width: 1),
+                              )),
+                              alignment: Alignment.center,
+                              padding: EdgeInsets.all(10),
+                              child: InkWell(
+                                onTap: () {},
+                                child: Text("Lihat Semua Ulasan (189) >"),
+                              )
+                              // ButtonTheme(
+                              //   minWidth: double.infinity,
+                              //   child: MaterialButton(
+                              //     // side: Border(top: BorderSide(color: Colors.grey.shade400, width: 1))),
+                              //     onPressed: () {},
+                              //     child: Text('Lihat Semua Ulasan (189) >'),
+                              //   ),
+                              // ),
+                              )
+                        ]),
+                  ),
+                  Text("-------- Kamu Mungkin Juga Suka --------",
+                      style: TextStyle(color: Colors.grey))
                 ],
               ),
             )
@@ -539,13 +878,6 @@ class _ProductViewState extends State<ProductView> {
         // padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.black.withOpacity(0.1),
-          //     blurRadius: 5,
-          //     spreadRadius: 5,
-          //   ),
-          // ],
         ),
         child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
           IconButton(

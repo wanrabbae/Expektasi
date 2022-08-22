@@ -44,11 +44,7 @@ class _TokoState extends State<Toko> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      home: Scaffold(
+    return Scaffold(
           appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
@@ -78,7 +74,6 @@ class _TokoState extends State<Toko> {
             children: [
               new Container(
                   width: 450,
-                  height: 200,
                   color: Color.fromARGB(255, 228, 222, 222),
                   child: InkWell(
                     onTap: () => pickImage(),
@@ -272,7 +267,7 @@ class _TokoState extends State<Toko> {
                 ],
               ),
             ],
-          ))),
+          ))
     );
   }
 }

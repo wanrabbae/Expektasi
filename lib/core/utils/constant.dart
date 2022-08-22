@@ -196,13 +196,21 @@ List<Map<String, dynamic>> listWarnaProduct = [
   {"warna": "Mocha"},
 ];
 
-Object listRincianProduct = {
-  "Stok": "205",
-  "Panjang Lengan": "Lengan Panjang",
-  "Bahan": "Katun",
-  "Negara Asal": "Indonesia",
-  "Dikirim dari": "KOTA JAKARTA SELATAN - KEBAYORAN LAMA, DKI  JAKARTA"
-};
+// Map<String, String> listRincianProduct = {
+//   "Stok": "205",
+//   "Panjang Lengan": "Lengan Panjang",
+//   "Bahan": "Katun",
+//   "Negara Asal": "Indonesia",
+//   "Dikirim dari": "KOTA JAKARTA SELATAN - KEBAYORAN LAMA, DKI  JAKARTA"
+// };
+
+List<Map<String, dynamic>> listRincianProduct = [
+  {"Stok": 205},
+  {"Panjang Lengan": "Lengan Panjang"},
+  {"Bahan": "Katun"},
+  {"Negara Asal": "Indonesia"},
+  {"Dikirim dari": "KOTA JAKARTA SELATAN - KEBAYORAN LAMA, DKI  JAKARTA"}
+];
 
 List<Map<String, dynamic>> listVouchers = [
   {
