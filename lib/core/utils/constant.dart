@@ -137,6 +137,20 @@ List<Map<String, dynamic>> listProducts = [
     "price": "Rp100.000",
     "link": ProductView()
   },
+  {
+    "name": "SWEATER PRIA - ESOBOY HOODIE JUMPER",
+    "image":
+        'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
+    "price": "Rp100.000",
+    "link": ProductView()
+  },
+  {
+    "name": "SWEATER PRIA - ESOBOY HOODIE JUMPER",
+    "image":
+        'https://res.cloudinary.com/touchme/image/upload/v1660013480/Rectangle_24_ouwybv.png',
+    "price": "Rp100.000",
+    "link": ProductView()
+  },
 ];
 
 List<Map<String, dynamic>> listBrands = [

@@ -842,32 +842,103 @@ class _ProductViewState extends State<ProductView> {
                             ],
                           ),
                           Container(
-                              margin: EdgeInsets.only(top: 10),
-                              width: double.infinity,
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                top: BorderSide(
-                                    color: Colors.grey.shade200, width: 1),
-                              )),
-                              alignment: Alignment.center,
-                              padding: EdgeInsets.all(10),
-                              child: InkWell(
-                                onTap: () {},
-                                child: Text("Lihat Semua Ulasan (189) >"),
-                              )
-                              // ButtonTheme(
-                              //   minWidth: double.infinity,
-                              //   child: MaterialButton(
-                              //     // side: Border(top: BorderSide(color: Colors.grey.shade400, width: 1))),
-                              //     onPressed: () {},
-                              //     child: Text('Lihat Semua Ulasan (189) >'),
-                              //   ),
-                              // ),
-                              )
+                            margin: EdgeInsets.only(top: 10),
+                            width: double.infinity,
+                            decoration: BoxDecoration(
+                                border: Border(
+                              top: BorderSide(
+                                  color: Colors.grey.shade200, width: 1),
+                            )),
+                            alignment: Alignment.center,
+                            padding: EdgeInsets.all(10),
+                            child:
+                                // InkWell(
+                                //   onTap: () {},
+                                //   child: Text("Lihat Semua Ulasan (189) >"),
+                                // )
+                                ButtonTheme(
+                              minWidth: double.infinity,
+                              child: MaterialButton(
+                                // side: Border(top: BorderSide(color: Colors.grey.shade400, width: 1))),
+                                onPressed: () {},
+                                child: Text('Lihat Semua Ulasan (189) >'),
+                              ),
+                            ),
+                          )
                         ]),
                   ),
                   Text("-------- Kamu Mungkin Juga Suka --------",
-                      style: TextStyle(color: Colors.grey))
+                      style: TextStyle(color: Colors.grey)),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 20),
+                    child: GridView.builder(
+                      itemCount: listProducts.length,
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 5,
+                        mainAxisSpacing: 15,
+                      ),
+                      itemBuilder: (products, index) {
+                        var data = listProducts[index];
+                        return InkWell(
+                          splashColor: secondaryColor.withAlpha(30),
+                          onTap: () {
+                            // Navigator.push(context,
+                            //     MaterialPageRoute(builder: (context) => (data['link'])));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Color.fromRGBO(0, 0, 0, 0.1),
+                                  blurRadius: 10,
+                                  offset: Offset(0, 3),
+                                ),
+                              ],
+                            ),
+                            // padding:
+                            //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                            child: Column(children: [
+                              Image.network(
+                                data['image'],
+                                fit: BoxFit.fill,
+                              ),
+                              Container(
+                                padding: EdgeInsets.all(10),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Text(
+                                        data['name'].toString().toUpperCase(),
+                                        style: TextStyle(
+                                          fontSize: 8.5,
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                        padding:
+                                            EdgeInsets.symmetric(vertical: 4),
+                                        // margin: EdgeInsets.only(bottom: 10),
+                                        child: Text(
+                                          data['price'],
+                                          style: TextStyle(
+                                              color: secondaryColor,
+                                              fontSize: 9),
+                                        ))
+                                  ],
+                                ),
+                              )
+                            ]),
+                          ),
+                        );
+                      },
+                    ),
+                  )
                 ],
               ),
             )
