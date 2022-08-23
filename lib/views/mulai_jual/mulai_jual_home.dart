@@ -47,12 +47,11 @@ class _MulaiJualState extends State<MulaiJual> {
           ),
           new Container(
             padding: EdgeInsets.all(32),
-            child: Expanded(
-                child: Text(
+            child: Text(
               "Untuk Mulai berjualan, daftar sebagai penjual dengan Melengkapi informasi yang diperlukan",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-            )),
+            ),
           ),
           Expanded(
             child: Align(
