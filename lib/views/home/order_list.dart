@@ -4,15 +4,15 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
-class OrderView extends StatefulWidget {
+class OrderViewList extends StatefulWidget {
   int selectedPage;
-  OrderView(this.selectedPage);
+  OrderViewList(this.selectedPage);
 
   @override
-  State<OrderView> createState() => _OrderViewState();
+  State<OrderViewList> createState() => _OrderViewListState();
 }
 
-class _OrderViewState extends State<OrderView> {
+class _OrderViewListState extends State<OrderViewList> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

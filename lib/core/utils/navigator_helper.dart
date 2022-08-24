@@ -8,7 +8,7 @@ Future goBack([args]) async =>
 Future goRemove(Widget widget) async =>
     Navigator.of(navigatorKey.currentContext!).pushAndRemoveUntil(
       MaterialPageRoute(builder: (context) => widget),
-          (route) => false,
+      (route) => false,
     );
 
 Future goPush(Widget widget) async =>

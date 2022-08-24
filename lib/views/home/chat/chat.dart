@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/chat/chatting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -91,10 +92,9 @@ class _ChatViewState extends State<ChatView> {
                                 ],
                               )),
                           Container(
-                              height: double.infinity, //height of TabBarView
+                              height: 400, // height of TabBarView
                               child: TabBarView(children: <Widget>[
                                 Container(
-                                  width: double.infinity,
                                   child: Column(children: [
                                     Container(
                                       padding:
@@ -103,11 +103,17 @@ class _ChatViewState extends State<ChatView> {
                                       decoration: BoxDecoration(
                                         border: Border(
                                             bottom: BorderSide(
-                                                color: Colors.grey, width: 1)),
+                                                color: Colors.grey.shade300,
+                                                width: 1)),
                                       ),
                                       child: InkWell(
-                                        onTap: () {},
-                                        splashColor: secondaryColor,
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      (ChattingView())));
+                                        },
                                         child: Row(children: [
                                           Expanded(
                                               child: Container(
@@ -134,6 +140,10 @@ class _ChatViewState extends State<ChatView> {
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
+                                                  Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              vertical: 3)),
                                                   Text(
                                                     'Hi, Terima kasih sudah daftar aplikasi...',
                                                     style: TextStyle(
@@ -165,10 +175,17 @@ class _ChatViewState extends State<ChatView> {
                                       decoration: BoxDecoration(
                                         border: Border(
                                             bottom: BorderSide(
-                                                color: Colors.grey, width: 1)),
+                                                color: Colors.grey.shade300,
+                                                width: 1)),
                                       ),
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      (ChattingView())));
+                                        },
                                         splashColor: secondaryColor,
                                         child: Row(children: [
                                           Expanded(
@@ -196,6 +213,10 @@ class _ChatViewState extends State<ChatView> {
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
+                                                  Padding(
+                                                      padding:
+                                                          EdgeInsets.symmetric(
+                                                              vertical: 3)),
                                                   Text(
                                                     'Hi, Terima kasih sudah daftar aplikasi...',
                                                     style: TextStyle(
