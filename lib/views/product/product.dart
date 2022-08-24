@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/constant.dart';
+import 'package:expektasi/views/home/cart.dart';
+import 'package:expektasi/views/order/order_1.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -848,6 +850,8 @@ class _ProductViewState extends State<ProductView> {
                                 border: Border(
                               top: BorderSide(
                                   color: Colors.grey.shade200, width: 1),
+                              bottom: BorderSide(
+                                  color: Colors.grey.shade200, width: 2),
                             )),
                             alignment: Alignment.center,
                             padding: EdgeInsets.all(10),
@@ -949,57 +953,74 @@ class _ProductViewState extends State<ProductView> {
         // padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              blurRadius: 5,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
         ),
-        child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-          IconButton(
-            icon: Icon(
-              PhosphorIcons.chat,
-              color: secondaryColor,
+        child: Container(
+          padding: EdgeInsets.all(5),
+          child:
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
+            IconButton(
+              icon: Icon(
+                PhosphorIcons.chat,
+                color: secondaryColor,
+              ),
+              onPressed: () {},
+              iconSize: 40,
             ),
-            onPressed: () {},
-            iconSize: 40,
-          ),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-                border: Border(
-                    right: BorderSide(
-              color: Colors.black.withOpacity(0.1),
-              width: 1,
-            ))),
-          ),
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-              color: secondaryColor,
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black.withOpacity(0.1),
+                width: 1,
+              ))),
             ),
-            onPressed: () {},
-            iconSize: 40,
-          ),
-          Container(
-            height: 50,
-            decoration: BoxDecoration(
-                border: Border(
-                    right: BorderSide(
-              color: Colors.black.withOpacity(0.1),
-              width: 1,
-            ))),
-          ),
-          TextButton(
-            style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(secondaryColor),
-              padding: MaterialStateProperty.all(EdgeInsets.all(20)),
+            IconButton(
+              icon: Icon(
+                Icons.shopping_cart,
+                color: secondaryColor,
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => (CartView(0))));
+              },
+              iconSize: 40,
             ),
-            onPressed: () {},
-            child: Text(
-              "Beli Sekarang",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16,
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                  border: Border(
+                      right: BorderSide(
+                color: Colors.black.withOpacity(0.1),
+                width: 1,
+              ))),
+            ),
+            TextButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(secondaryColor),
+                padding: MaterialStateProperty.all(EdgeInsets.all(15)),
+              ),
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => (OrderView1())));
+              },
+              child: Text(
+                "Beli Sekarang",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
               ),
             ),
-          ),
-        ]),
+          ]),
+        ),
       ),
     );
   }

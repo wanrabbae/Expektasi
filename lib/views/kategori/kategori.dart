@@ -63,7 +63,7 @@ class _KategoriViewState extends State<KategoriView> {
                         data['name'].toString().toUpperCase(),
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 8.5,
                         ),
                       ),
                     ],

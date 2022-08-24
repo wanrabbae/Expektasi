@@ -288,3 +288,19 @@ List<Map<String, dynamic>> listVouchers = [
     "date": "25.09.2022",
   },
 ];
+
+List<Map<String, dynamic>> listPayment = [
+  {"image": "", "name": "COD (Bayar di Tempat)", "subName": "Cash On Delivery"},
+  {
+    "image": "",
+    "name": "PayLater",
+    "subName": "Beli sekarang dan bayar bulan depan! "
+  },
+  {"image": "", "name": "Transfer Bank", "subName": ""},
+  {"image": "", "name": "Kartu Kredit/Debit", "subName": ""},
+  {"image": "", "name": "BMI Direct Debit", "subName": ""},
+  {"image": "", "name": "BAT OneClick!", "subName": "Debit Instan"},
+  {"image": "", "name": "Bayar Tunai di Mitra/Agen", "subName": ""},
+  {"image": "", "name": "Alfamart / Alfamidi / Dan+Dan", "subName": ""},
+  {"image": "", "name": "Indomaret /  i.saku", "subName": ""},
+];
