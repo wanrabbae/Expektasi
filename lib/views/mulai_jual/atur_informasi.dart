@@ -129,25 +129,28 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                                 ),
                                 Align(
                                   alignment: Alignment.topRight,
-                                  child: TextButton.icon(
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: ((context) =>
-                                                  (NomorTelepon()))));
-                                    },
-                                    label: Text(
-                                      "Atur",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: Colors.grey[400]),
-                                    ),
-                                    icon: Icon(
-                                      PhosphorIcons.plusBold,
-                                      color: Colors.black,
-                                    ),
-                                  ),
+                                  child: new Directionality(
+                                      textDirection: TextDirection.rtl,
+                                      child: TextButton.icon(
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: ((context) =>
+                                                      (NomorTelepon()))));
+                                        },
+                                        label: Text(
+                                          "Atur",
+                                          style: TextStyle(
+                                              fontSize: 12,
+                                              color: Colors.grey[400]),
+                                        ),
+                                        icon: Icon(
+                                          Icons.keyboard_arrow_right,
+                                          size: 35,
+                                          color: Colors.black,
+                                        ),
+                                      )),
                                 )
                               ],
                             ),

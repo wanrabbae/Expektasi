@@ -92,6 +92,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_masked_text2",
+      "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_masked_text2-0.9.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "flutter_native_splash",
       "rootUri": "file:///C:/src/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.1.6",
       "packageUri": "lib/",
@@ -320,7 +326,7 @@
       "languageVersion": "2.16"
     }
   ],
-  "generated": "2022-08-23T09:08:34.446156Z",
+  "generated": "2022-08-24T03:03:33.409032Z",
   "generator": "pub",
   "generatorVersion": "2.17.6"
 }

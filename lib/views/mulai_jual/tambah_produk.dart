@@ -4,6 +4,7 @@ import 'package:expektasi/views/mulai_jual/toko.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_masked_text2/flutter_masked_text2.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -16,6 +17,10 @@ class TambahProduk extends StatefulWidget {
 
 class _TambahProdukState extends State<TambahProduk> {
   File? image;
+  bool onTap = false;
+
+  final _controller = new MoneyMaskedTextController(
+      decimalSeparator: '.', thousandSeparator: ',', leftSymbol: 'Rp');
 
   Future pickImage(ImageSource source) async {
     try {
@@ -117,6 +122,267 @@ class _TambahProdukState extends State<TambahProduk> {
                               TextStyle(fontSize: 12, color: Colors.grey[400]),
                         ),
                       ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      new TextFormField(
+                        autofocus: false,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          labelText: "Deskripsi Produk",
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintText: "masukan deskripsi produk",
+                          hintStyle:
+                              TextStyle(fontSize: 12, color: Colors.grey[400]),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      new TextFormField(
+                        autofocus: false,
+                        controller: _controller,
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          labelText: "Harga Produk",
+                          labelStyle: TextStyle(color: Colors.black),
+                        ),
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                      ),
+                      const SizedBox(
+                        height: 10.0,
+                      ),
+                      new TextFormField(
+                        autofocus: false,
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(color: Colors.black),
+                        decoration: InputDecoration(
+                          labelText: "Stock Produk",
+                          labelStyle: TextStyle(color: Colors.black),
+                          hintText: "0",
+                          hintStyle:
+                              TextStyle(fontSize: 12, color: Colors.grey[400]),
+                        ),
+                        inputFormatters: <TextInputFormatter>[
+                          FilteringTextInputFormatter.digitsOnly
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            new Container(
+              color: secondaryColor,
+              child: new Row(
+                children: [
+                  Padding(padding: new EdgeInsets.all(15.0)),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: Text(
+                      "Kategori Produk",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 130.0,
+                  ),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: new Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: TextButton.icon(
+                        onPressed: () => print("Text"),
+                        icon: Icon(
+                          Icons.keyboard_arrow_right,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          "Pilih",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            new Container(
+              color: secondaryColor,
+              child: new Row(
+                children: [
+                  Padding(padding: new EdgeInsets.all(15.0)),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: Text(
+                      "Variasi Produk",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 130.0,
+                  ),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: new Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: TextButton.icon(
+                        onPressed: () => print("Text"),
+                        icon: Icon(
+                          Icons.keyboard_arrow_right,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          "Atur",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            new Container(
+              alignment: Alignment.center,
+              child: new Row(children: [
+                Padding(padding: new EdgeInsets.all(15.0)),
+                new Container(
+                  child: Text(
+                    "Kondisi",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                  ),
+                ),
+                new SizedBox(
+                  width: 60.0,
+                ),
+                new Container(
+                  padding: EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: BorderRadius.circular(50)),
+                  child: new InkWell(
+                    onTap: () => print("Tapped"),
+                    child: Text(
+                      "Baru",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                new Container(
+                  padding: EdgeInsets.all(15.0),
+                  decoration: BoxDecoration(
+                      color: secondaryColor,
+                      borderRadius: BorderRadius.circular(50)),
+                  child: new InkWell(
+                    onTap: () => print("Tapped"),
+                    child: Text(
+                      "Pernah Dipakai",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ]),
+            ),
+            const SizedBox(
+              height: 30.0,
+            ),
+            new Container(
+              color: secondaryColor,
+              child: new Row(
+                children: [
+                  Padding(padding: new EdgeInsets.all(15.0)),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: Text(
+                      "Ongkos Kirim",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 130.0,
+                  ),
+                  new Container(
+                    padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
+                    child: new Directionality(
+                      textDirection: TextDirection.rtl,
+                      child: TextButton.icon(
+                        onPressed: () => print("Text"),
+                        icon: Icon(
+                          Icons.keyboard_arrow_right,
+                          size: 35,
+                          color: Colors.white,
+                        ),
+                        label: Text(
+                          "Atur",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: <Widget>[
+                Container(
+                  width: double.infinity,
+                  padding: new EdgeInsets.only(top: 100),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      new Expanded(
+                          child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          textStyle: TextStyle(
+                            fontSize: 13,
+                          ),
+                          primary: Colors.black,
+                        ),
+                        onPressed: () {
+                          debugPrint("Tapped");
+                        },
+                        child: Text(
+                          "Kembali",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      )),
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                      new Expanded(
+                          child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          textStyle: TextStyle(
+                              fontSize: 13,
+                              color: Color.fromARGB(255, 94, 70, 70)),
+                          primary: Colors.grey[400],
+                        ),
+                        onPressed: () {
+                          debugPrint("Tapped");
+                        },
+                        child: Text(
+                          "Lanjut",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ))
                     ],
                   ),
                 )
