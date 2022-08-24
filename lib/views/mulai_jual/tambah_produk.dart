@@ -17,6 +17,8 @@ class TambahProduk extends StatefulWidget {
 
 class _TambahProdukState extends State<TambahProduk> {
   File? image;
+  var _selectFromGalery;
+  var _selectedFormCamera;
   bool onTap = false;
 
   final _controller = new MoneyMaskedTextController(
@@ -72,7 +74,7 @@ class _TambahProdukState extends State<TambahProduk> {
                           color: Color.fromARGB(255, 224, 218, 218),
                           borderRadius: BorderRadius.circular(50)),
                       child: new InkWell(
-                        onTap: () => pickImage(ImageSource.gallery),
+                        onTap: () => _onPressedButton(),
                         child: Icon(
                           PhosphorIcons.plusBold,
                           size: 40,
@@ -392,5 +394,59 @@ class _TambahProdukState extends State<TambahProduk> {
         ),
       ),
     );
+  }
+
+  void _onPressedButton() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 120,
+            color: Colors.transparent,
+            child: Container(
+              child: _buildNavigationMenu(),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).canvasColor,
+                  borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(20),
+                      topRight: const Radius.circular(20))),
+            ),
+          );
+        });
+  }
+
+  Column _buildNavigationMenu() {
+    return new Column(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(
+            PhosphorIcons.camera,
+            size: 20,
+          ),
+          title: Text("Ambil Gambar"),
+          onTap: () => _selectImage(),
+        ),
+        ListTile(
+          leading: Icon(
+            PhosphorIcons.image,
+            size: 20,
+          ),
+          title: Text("Pilih Gambar"),
+          onTap: () => _selectVideo(),
+        )
+      ],
+    );
+  }
+
+  void _selectImage() {
+    setState(() {
+      _selectFromGalery = pickImage(ImageSource.gallery);
+    });
+  }
+
+  void _selectVideo() {
+    setState(() {
+      _selectedFormCamera = pickImage(ImageSource.camera);
+    });
   }
 }
