@@ -30,7 +30,8 @@ class _MulaiJualState extends State<MulaiJual> {
             color: Colors.black,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(context,
+                MaterialPageRoute(builder: ((context) => (ProfileView()))));
           },
         ),
       ),

@@ -18,11 +18,8 @@ class Toko extends StatefulWidget {
 
 class _TokoState extends State<Toko> {
   File? image;
-  File? foto1;
-  File? foto2;
-  File? foto3;
-  File? foto4;
-  File? foto5;
+  var _selectFromGalery;
+  var _selectedFormCamera;
 
   Future pickImage(ImageSource source) async {
     try {
@@ -31,66 +28,6 @@ class _TokoState extends State<Toko> {
 
       final imageTemporary = File(image.path);
       setState(() => this.image = imageTemporary);
-    } on PlatformException catch (e) {
-      print("Failed to pick a image : $e");
-    }
-  }
-
-  Future pickPhoto1() async {
-    try {
-      final foto1 = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (foto1 == null) return;
-
-      final fotoTmp = File(foto1.path);
-      setState(() => this.foto1 = fotoTmp);
-    } on PlatformException catch (e) {
-      print("Failed to pick a image : $e");
-    }
-  }
-
-  Future pickPhoto2() async {
-    try {
-      final foto2 = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (foto2 == null) return;
-
-      final fotoTmp = File(foto2.path);
-      setState(() => this.foto2 = fotoTmp);
-    } on PlatformException catch (e) {
-      print("Failed to pick a image : $e");
-    }
-  }
-
-  Future pickPhoto3() async {
-    try {
-      final foto3 = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (foto3 == null) return;
-
-      final fotoTmp = File(foto3.path);
-      setState(() => this.foto3 = fotoTmp);
-    } on PlatformException catch (e) {
-      print("Failed to pick a image : $e");
-    }
-  }
-
-  Future pickPhoto4() async {
-    try {
-      final foto4 = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (foto4 == null) return;
-
-      final fotoTmp = File(foto4.path);
-      setState(() => this.foto4 = fotoTmp);
-    } on PlatformException catch (e) {
-      print("Failed to pick a image : $e");
-    }
-  }
-
-  Future pickPhoto5() async {
-    try {
-      final foto5 = await ImagePicker().pickImage(source: ImageSource.gallery);
-      if (foto5 == null) return;
-
-      final fotoTmp = File(foto5.path);
-      setState(() => this.foto5 = fotoTmp);
     } on PlatformException catch (e) {
       print("Failed to pick a image : $e");
     }
@@ -132,7 +69,7 @@ class _TokoState extends State<Toko> {
                 height: 200,
                 color: Color.fromARGB(255, 228, 222, 222),
                 child: InkWell(
-                  onTap: () => pickImage(ImageSource.gallery),
+                  onTap: () => _onPressedButton(),
                   child: Column(
                     children: [
                       new Container(
@@ -302,82 +239,138 @@ class _TokoState extends State<Toko> {
                       new SizedBox(
                         height: 15,
                       ),
-                      new Row(
-                        children: [
-                          new Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 224, 218, 218),
-                                borderRadius: BorderRadius.circular(50)),
-                            child: IconButton(
-                              onPressed: () => pickPhoto1(),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
+                      SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: new Row(
+                          children: [
+                            new Container(
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: image != null
+                                    ? ClipOval(
+                                        child: Image.file(
+                                          image!,
+                                          width: 50,
+                                          height: 50,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : IconButton(
+                                        onPressed: _onPressedButton,
+                                        icon: Icon(
+                                          PhosphorIcons.plusBold,
+                                          color: secondaryColor,
+                                        ),
+                                      )),
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
                               ),
                             ),
-                          ),
-                          new SizedBox(
-                            width: 20,
-                          ),
-                          new Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 224, 218, 218),
-                                borderRadius: BorderRadius.circular(50)),
-                            child: IconButton(
-                              onPressed: () => pickPhoto2(),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
                               ),
                             ),
-                          ),
-                          new SizedBox(
-                            width: 20,
-                          ),
-                          new Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 224, 218, 218),
-                                borderRadius: BorderRadius.circular(50)),
-                            child: IconButton(
-                              onPressed: () => pickPhoto3(),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
                               ),
                             ),
-                          ),
-                          new SizedBox(
-                            width: 20,
-                          ),
-                          new Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 224, 218, 218),
-                                borderRadius: BorderRadius.circular(50)),
-                            child: IconButton(
-                              onPressed: () => pickPhoto4(),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
                               ),
                             ),
-                          ),
-                          new SizedBox(
-                            width: 20,
-                          ),
-                          new Container(
-                            decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 224, 218, 218),
-                                borderRadius: BorderRadius.circular(50)),
-                            child: IconButton(
-                              onPressed: () => pickPhoto5(),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
-                      ),
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
+                              ),
+                            ),
+                            new SizedBox(
+                              width: 20,
+                            ),
+                            new Container(
+                              decoration: BoxDecoration(
+                                  color: Color.fromARGB(255, 224, 218, 218),
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: IconButton(
+                                onPressed: () => _onPressedButton(),
+                                icon: Icon(
+                                  PhosphorIcons.plusBold,
+                                  color: secondaryColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 )
@@ -439,5 +432,59 @@ class _TokoState extends State<Toko> {
             )
           ],
         )));
+  }
+
+  void _onPressedButton() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Container(
+            height: 120,
+            color: Colors.transparent,
+            child: Container(
+              child: _buildNavigationMenu(),
+              decoration: BoxDecoration(
+                  color: Theme.of(context).canvasColor,
+                  borderRadius: BorderRadius.only(
+                      topLeft: const Radius.circular(20),
+                      topRight: const Radius.circular(20))),
+            ),
+          );
+        });
+  }
+
+  Column _buildNavigationMenu() {
+    return new Column(
+      children: <Widget>[
+        ListTile(
+          leading: Icon(
+            PhosphorIcons.camera,
+            size: 20,
+          ),
+          title: Text("Ambil Gambar"),
+          onTap: () => _selectImage(),
+        ),
+        ListTile(
+          leading: Icon(
+            PhosphorIcons.image,
+            size: 20,
+          ),
+          title: Text("Pilih Gambar"),
+          onTap: () => _selectVideo(),
+        )
+      ],
+    );
+  }
+
+  void _selectImage() {
+    setState(() {
+      _selectFromGalery = pickImage(ImageSource.gallery);
+    });
+  }
+
+  void _selectVideo() {
+    setState(() {
+      _selectedFormCamera = pickImage(ImageSource.camera);
+    });
   }
 }

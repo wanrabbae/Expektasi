@@ -22,6 +22,7 @@ class _KategoriViewState extends State<KategoriView> {
       body: SingleChildScrollView(
           child: Column(
         children: [
+          // copy yg ini
           Container(
             width: double.infinity,
             margin: EdgeInsets.symmetric(vertical: 50),
