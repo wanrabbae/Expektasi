@@ -17,6 +17,14 @@ class ProductCategoriesView extends StatefulWidget {
 class _ProductCategoriesViewState extends State<ProductCategoriesView> {
   int _selectedIndex = 0;
 
+  Widget borderCustom() {
+    return Container(
+        margin: EdgeInsets.only(top: 20),
+        decoration: BoxDecoration(
+            border: Border(
+                top: BorderSide(color: Colors.grey.shade300, width: 6))));
+  }
+
   @override
   Widget build(BuildContext context) {
     void _onItemTapped(int index) {
@@ -31,68 +39,50 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
 
     return Scaffold(
         endDrawer: Drawer(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
-            width: 100,
+          elevation: 2,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(40)),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 50),
             child: Column(
                 children: listCategory.map((data) {
-              return InkWell(
-                onTap: () {},
-                splashColor: secondaryColor,
-                child: Row(
-                  children: [
-                    Icon(
-                      data['icon'],
-                      size: 17,
+              return Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                        bottom:
+                            BorderSide(color: Colors.grey.shade300, width: 2))),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          data['icon'],
+                          size: 17,
+                          color: secondaryColor,
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                        Container(
+                          width: 150,
+                          child: Text(
+                            data["name"].toString().toUpperCase(),
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+                        )
+                      ],
                     ),
-                    Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
-                    Text(
-                      data["name"].toString().toUpperCase(),
-                      style: TextStyle(
-                        fontSize: 16,
-                      ),
-                    )
-                  ],
+                  ),
                 ),
               );
             }).toList()),
           ),
         ),
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () => Navigator.pop(context),
-          ),
-          backgroundColor: secondaryColor,
-          title: Container(
-            width: double.infinity,
-            height: 35,
-            // decoration: BoxDecoration(
-            //     color: Colors.white, borderRadius: BorderRadius.circular(5)),
-            child: TextFormField(
-              decoration: InputDecoration(
-                fillColor: Colors.white,
-                contentPadding: EdgeInsets.symmetric(vertical: 0),
-                filled: true,
-                prefixIcon: const Icon(Icons.search),
-                suffixIcon: IconButton(
-                  icon: const Icon(Icons.camera_alt),
-                  onPressed: () {
-                    /* Clear the search field */
-                  },
-                ),
-                hintText: 'Mau nyari barang apa?',
-                hintStyle: TextStyle(fontSize: 13),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(8.0),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
-          ),
-          elevation: 0,
-          toolbarHeight: 70,
-        ),
+        appBar: customAppBar5(context),
         body: SingleChildScrollView(
             child: Container(
           padding: EdgeInsets.symmetric(vertical: 10),
@@ -125,6 +115,7 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
                   fit: BoxFit.cover,
                 ),
               ),
+              borderCustom(),
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
@@ -150,10 +141,10 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
                 height: 205,
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: GridView.builder(
-                  itemCount: listProducts.length,
+                  itemCount: 3,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  physics: AlwaysScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 1, childAspectRatio: 1.75),
                   itemBuilder: (products, index) {
@@ -226,6 +217,10 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
                 ),
               ),
               Container(
+                decoration: BoxDecoration(
+                    border: Border(
+                        top:
+                            BorderSide(color: Colors.grey.shade300, width: 6))),
                 padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -250,10 +245,10 @@ class _ProductCategoriesViewState extends State<ProductCategoriesView> {
                 height: 205,
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: GridView.builder(
-                  itemCount: listProducts.length,
+                  itemCount: 3,
                   scrollDirection: Axis.horizontal,
                   shrinkWrap: true,
-                  physics: AlwaysScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 1, childAspectRatio: 1.75),
                   itemBuilder: (products, index) {
