@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/home/beranda.dart';
+import 'package:expektasi/views/home/profile/profile.dart';
 import 'package:expektasi/views/mulai_jual/atur_informasi.dart';
 import 'package:expektasi/views/mulai_jual/tambah_produk.dart';
 import 'package:flutter/material.dart';
@@ -68,15 +70,11 @@ class _TokoState extends State<Toko> {
             style: TextStyle(color: Colors.black, fontSize: 16.7),
           ),
           leading: IconButton(
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-            onPressed: () => Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: ((context) => (AturInformasiToko())))),
-          ),
+              icon: Icon(
+                Icons.arrow_back,
+                color: Colors.black,
+              ),
+              onPressed: () => Navigator.pop(context)),
         ),
         body: new SingleChildScrollView(
             child: new Column(

@@ -35,8 +35,7 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
               color: Colors.black,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => (MulaiJual()))));
+              Navigator.pop(context);
             },
           ),
         ),

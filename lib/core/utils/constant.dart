@@ -290,17 +290,58 @@ List<Map<String, dynamic>> listVouchers = [
 ];
 
 List<Map<String, dynamic>> listPayment = [
-  {"image": "", "name": "COD (Bayar di Tempat)", "subName": "Cash On Delivery"},
   {
-    "image": "",
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266360744714250/Vector.png",
+    "name": "COD (Bayar di Tempat)",
+    "subName": "Cash On Delivery"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266493817401414/ant-design_field-time-outlined.png",
     "name": "PayLater",
     "subName": "Beli sekarang dan bayar bulan depan! "
   },
-  {"image": "", "name": "Transfer Bank", "subName": ""},
-  {"image": "", "name": "Kartu Kredit/Debit", "subName": ""},
-  {"image": "", "name": "BMI Direct Debit", "subName": ""},
-  {"image": "", "name": "BAT OneClick!", "subName": "Debit Instan"},
-  {"image": "", "name": "Bayar Tunai di Mitra/Agen", "subName": ""},
-  {"image": "", "name": "Alfamart / Alfamidi / Dan+Dan", "subName": ""},
-  {"image": "", "name": "Indomaret /  i.saku", "subName": ""},
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266492554903582/Group_39.png",
+    "name": "Transfer Bank",
+    "subName": ""
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266493536370759/ep_credit-card.png",
+    "name": "Kartu Kredit/Debit",
+    "subName": ""
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266493175681105/Group_35.png",
+    "name": "BMI Direct Debit",
+    "subName": ""
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266492886265856/Group_36.png",
+    "name": "BAT OneClick!",
+    "subName": "Debit Instan"
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266492554903582/Group_39.png",
+    "name": "Bayar Tunai di Mitra/Agen",
+    "subName": ""
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266361084461076/Rectangle_473.png",
+    "name": "Alfamart / Alfamidi / Dan+Dan",
+    "subName": ""
+  },
+  {
+    "image":
+        "https://cdn.discordapp.com/attachments/1008921423915532368/1012266361394823258/image_19.png",
+    "name": "Indomaret /  i.saku",
+    "subName": ""
+  },
 ];

@@ -1,5 +1,7 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/constant.dart';
+import 'package:expektasi/core/utils/navigator_helper.dart';
+import 'package:expektasi/views/order/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -86,7 +88,7 @@ class _VoucherChooseState extends State<VoucherChoose> {
                                     children: [
                                       TextButton(
                                           onPressed: () {
-                                            Navigator.pop(context);
+                                            goRemove(OrderView1(), context);
                                           },
                                           style: ButtonStyle(
                                               padding:

@@ -1,5 +1,8 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/navigator_helper.dart';
 import 'package:expektasi/views/order/choose_voucher.dart';
+import 'package:expektasi/views/order/payments.dart';
+import 'package:expektasi/views/order/pengiriman.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -146,7 +149,9 @@ class _OrderView1State extends State<OrderView1> {
             Container(
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    goPush(PengirimanView(), context);
+                  },
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -260,7 +265,9 @@ class _OrderView1State extends State<OrderView1> {
                   horizontal: 20,
                 ),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    goPush(PaymentsView(), context);
+                  },
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.center,

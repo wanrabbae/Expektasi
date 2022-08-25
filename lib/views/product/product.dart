@@ -2,8 +2,10 @@ import 'dart:math';
 
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/constant.dart';
+import 'package:expektasi/core/utils/navigator_helper.dart';
 import 'package:expektasi/views/home/cart.dart';
-import 'package:expektasi/views/order/order_1.dart';
+import 'package:expektasi/views/home/chat/chatting.dart';
+import 'package:expektasi/views/order/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -889,11 +891,15 @@ class _ProductViewState extends State<ProductView> {
                         return InkWell(
                           splashColor: secondaryColor.withAlpha(30),
                           onTap: () {
-                            // Navigator.push(context,
-                            //     MaterialPageRoute(builder: (context) => (data['link'])));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => (data['link'])));
                           },
                           child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 10),
+                            margin: EdgeInsets.symmetric(
+                              horizontal: 10,
+                            ),
                             decoration: BoxDecoration(
                               color: Colors.white,
                               boxShadow: [
@@ -907,9 +913,16 @@ class _ProductViewState extends State<ProductView> {
                             // padding:
                             //     EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                             child: Column(children: [
-                              Image.network(
-                                data['image'],
-                                fit: BoxFit.fill,
+                              Container(
+                                width: double.infinity,
+                                height: 100,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: Colors.black, width: 1)),
+                                child: Image.network(
+                                  data['image'],
+                                  fit: BoxFit.fill,
+                                ),
                               ),
                               Container(
                                 padding: EdgeInsets.all(10),
@@ -970,7 +983,9 @@ class _ProductViewState extends State<ProductView> {
                 PhosphorIcons.chat,
                 color: secondaryColor,
               ),
-              onPressed: () {},
+              onPressed: () {
+                goPush(ChattingView(), context);
+              },
               iconSize: 40,
             ),
             Container(
