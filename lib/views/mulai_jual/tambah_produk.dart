@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/mulai_jual/kategori_produk.dart';
 import 'package:expektasi/views/mulai_jual/toko.dart';
+import 'package:expektasi/views/mulai_jual/variasi_produk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -200,7 +202,10 @@ class _TambahProdukState extends State<TambahProduk> {
                     child: new Directionality(
                       textDirection: TextDirection.rtl,
                       child: TextButton.icon(
-                        onPressed: () => print("Text"),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => (KategoriProduk())))),
                         icon: Icon(
                           Icons.keyboard_arrow_right,
                           size: 35,
@@ -239,7 +244,10 @@ class _TambahProdukState extends State<TambahProduk> {
                     child: new Directionality(
                       textDirection: TextDirection.rtl,
                       child: TextButton.icon(
-                        onPressed: () => print("Text"),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => (VariasiProduk())))),
                         icon: Icon(
                           Icons.keyboard_arrow_right,
                           size: 35,

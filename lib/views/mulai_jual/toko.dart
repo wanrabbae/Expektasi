@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'dart:ui';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/mulai_jual/atur_informasi.dart';
 import 'package:expektasi/views/mulai_jual/tambah_produk.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:video_player/video_player.dart';
 
 class Toko extends StatefulWidget {
   const Toko({Key? key}) : super(key: key);
@@ -16,6 +18,7 @@ class Toko extends StatefulWidget {
 
 class _TokoState extends State<Toko> {
   File? image;
+  File? foto1;
   var _selectFromGalery;
   var _selectedFormCamera;
 
@@ -26,6 +29,18 @@ class _TokoState extends State<Toko> {
 
       final imageTemporary = File(image.path);
       setState(() => this.image = imageTemporary);
+    } on PlatformException catch (e) {
+      print("Failed to pick a image : $e");
+    }
+  }
+
+  Future pickPhoto1(ImageSource source) async {
+    try {
+      final foto1 = await ImagePicker().pickImage(source: source);
+      if (foto1 == null) return;
+
+      final image1Temporary = File(foto1.path);
+      setState(() => this.foto1 = image1Temporary);
     } on PlatformException catch (e) {
       print("Failed to pick a image : $e");
     }
@@ -71,7 +86,7 @@ class _TokoState extends State<Toko> {
                 height: 200,
                 color: Color.fromARGB(255, 228, 222, 222),
                 child: InkWell(
-                  onTap: () => _onPressedButton(),
+                  onTap: () => pickImage(ImageSource.gallery),
                   child: Column(
                     children: [
                       new Container(
@@ -249,126 +264,94 @@ class _TokoState extends State<Toko> {
                                 decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 224, 218, 218),
                                     borderRadius: BorderRadius.circular(50)),
-                                child: image != null
+                                child: foto1 != null
                                     ? ClipOval(
                                         child: Image.file(
-                                          image!,
+                                          foto1!,
                                           width: 50,
                                           height: 50,
                                           fit: BoxFit.cover,
                                         ),
                                       )
                                     : IconButton(
-                                        onPressed: _onPressedButton,
+                                        onPressed: _onPressedButton1,
                                         icon: Icon(
                                           PhosphorIcons.plusBold,
                                           color: secondaryColor,
                                         ),
                                       )),
                             new SizedBox(
-                              width: 20,
+                              width: 15,
                             ),
                             new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: IconButton(
+                                  onPressed: _onPressedButton1,
+                                  icon: Icon(
+                                    PhosphorIcons.plusBold,
+                                    color: secondaryColor,
+                                  ),
+                                )),
                             new SizedBox(
-                              width: 20,
+                              width: 15,
                             ),
                             new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: IconButton(
+                                  onPressed: _onPressedButton1,
+                                  icon: Icon(
+                                    PhosphorIcons.plusBold,
+                                    color: secondaryColor,
+                                  ),
+                                )),
                             new SizedBox(
-                              width: 20,
+                              width: 15,
                             ),
                             new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: IconButton(
+                                  onPressed: _onPressedButton1,
+                                  icon: Icon(
+                                    PhosphorIcons.plusBold,
+                                    color: secondaryColor,
+                                  ),
+                                )),
                             new SizedBox(
-                              width: 20,
+                              width: 15,
                             ),
                             new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: IconButton(
+                                  onPressed: _onPressedButton1,
+                                  icon: Icon(
+                                    PhosphorIcons.plusBold,
+                                    color: secondaryColor,
+                                  ),
+                                )),
                             new SizedBox(
-                              width: 20,
+                              width: 15,
                             ),
                             new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
+                                decoration: BoxDecoration(
+                                    color: Color.fromARGB(255, 224, 218, 218),
+                                    borderRadius: BorderRadius.circular(50)),
+                                child: IconButton(
+                                  onPressed: _onPressedButton1,
+                                  icon: Icon(
+                                    PhosphorIcons.plusBold,
+                                    color: secondaryColor,
+                                  ),
+                                )),
                             new SizedBox(
-                              width: 20,
-                            ),
-                            new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
-                            ),
-                            new SizedBox(
-                              width: 20,
-                            ),
-                            new Container(
-                              decoration: BoxDecoration(
-                                  color: Color.fromARGB(255, 224, 218, 218),
-                                  borderRadius: BorderRadius.circular(50)),
-                              child: IconButton(
-                                onPressed: () => _onPressedButton(),
-                                icon: Icon(
-                                  PhosphorIcons.plusBold,
-                                  color: secondaryColor,
-                                ),
-                              ),
+                              width: 15,
                             ),
                           ],
                         ),
@@ -436,57 +419,43 @@ class _TokoState extends State<Toko> {
         )));
   }
 
-  void _onPressedButton() {
+  void _onPressedButton1() {
     showModalBottomSheet(
         context: context,
         builder: (context) {
-          return Container(
+          return new Container(
             height: 120,
-            color: Colors.transparent,
-            child: Container(
-              child: _buildNavigationMenu(),
-              decoration: BoxDecoration(
-                  color: Theme.of(context).canvasColor,
-                  borderRadius: BorderRadius.only(
-                      topLeft: const Radius.circular(20),
-                      topRight: const Radius.circular(20))),
-            ),
+            child: _buildBottemSheet1(),
           );
         });
   }
 
-  Column _buildNavigationMenu() {
+  Column _buildBottemSheet1() {
     return new Column(
-      children: <Widget>[
+      children: [
         ListTile(
-          leading: Icon(
-            PhosphorIcons.camera,
-            size: 20,
-          ),
+          leading: Icon(PhosphorIcons.camera),
           title: Text("Ambil Gambar"),
-          onTap: () => _selectImage(),
+          onTap: () => _selectCamera1(),
         ),
         ListTile(
-          leading: Icon(
-            PhosphorIcons.image,
-            size: 20,
-          ),
+          leading: Icon(PhosphorIcons.image),
           title: Text("Pilih Gambar"),
-          onTap: () => _selectVideo(),
-        )
+          onTap: () => _selectGalery1(),
+        ),
       ],
     );
   }
 
-  void _selectImage() {
+  void _selectCamera1() {
     setState(() {
-      _selectFromGalery = pickImage(ImageSource.gallery);
+      _selectedFormCamera = pickPhoto1(ImageSource.camera);
     });
   }
 
-  void _selectVideo() {
+  void _selectGalery1() {
     setState(() {
-      _selectedFormCamera = pickImage(ImageSource.camera);
+      _selectFromGalery = pickPhoto1(ImageSource.gallery);
     });
   }
 }
