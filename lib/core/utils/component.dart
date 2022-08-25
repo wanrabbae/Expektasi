@@ -8,7 +8,7 @@ import 'package:phosphor_flutter/phosphor_flutter.dart';
 Color secondaryColor = Color(0xffFDD100);
 File? foto1;
 
-Future pickPhoto1() async {
+Future pickPhoto1(ImageSource camera) async {
   try {
     final foto1 = await ImagePicker().pickImage(source: ImageSource.camera);
     if (foto1 == null) return;
@@ -38,7 +38,7 @@ AppBar customAppBar({PreferredSizeWidget? bottom, List<Widget>? actions}) =>
                 icon: const Icon(Icons.camera_alt),
                 onPressed: () async {
                   /* Clear the search field */
-                  await pickPhoto1();
+                  await pickPhoto1(ImageSource.camera);
                 },
               ),
               hintText: 'Hari ini mau nyari apa nih?..',
@@ -155,7 +155,7 @@ AppBar customAppBar5(context) => AppBar(
               icon: const Icon(Icons.camera_alt),
               onPressed: () async {
                 /* Clear the search field */
-                await pickPhoto1();
+                await pickPhoto1(ImageSource.camera);
               },
             ),
             hintText: 'Mau nyari barang apa?',
