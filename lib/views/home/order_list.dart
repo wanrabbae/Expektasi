@@ -1,4 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/navigator_helper.dart';
+import 'package:expektasi/views/home/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -25,7 +27,7 @@ class _OrderViewListState extends State<OrderViewList> {
               icon: Icon(Icons.arrow_back),
               color: Colors.black,
               onPressed: () {
-                Navigator.pop(context);
+                goPush(ProfileView(), context);
               },
             ),
             toolbarHeight: 80,

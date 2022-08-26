@@ -3,6 +3,7 @@ import 'package:expektasi/core/utils/navigator_helper.dart';
 import 'package:expektasi/views/order/choose_voucher.dart';
 import 'package:expektasi/views/order/payments.dart';
 import 'package:expektasi/views/order/pengiriman.dart';
+import 'package:expektasi/views/order/rincian_order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -302,7 +303,9 @@ class _OrderView1State extends State<OrderView1> {
       )),
       bottomNavigationBar: BottomAppBar(
           child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          goPush(RincianOrderView(), context);
+        },
         child: Text("BUAT PESANAN"),
         style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(secondaryColor),
