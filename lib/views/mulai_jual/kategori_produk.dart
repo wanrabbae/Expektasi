@@ -50,12 +50,7 @@ class _KategoriProdukState extends State<KategoriProduk> {
                     var data = listCategory[index];
                     return InkWell(
                       splashColor: secondaryColor.withAlpha(30),
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => (data['link'])));
-                      },
+                      onTap: () => print("Tapped"),
                       child: Column(
                         children: [
                           Container(

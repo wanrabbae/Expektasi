@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/mulai_jual/kategori_produk.dart';
+import 'package:expektasi/views/mulai_jual/lanjutan_variasi.dart';
 import 'package:expektasi/views/mulai_jual/toko.dart';
 import 'package:expektasi/views/mulai_jual/variasi_produk.dart';
 import 'package:flutter/cupertino.dart';
@@ -47,7 +48,7 @@ class _TambahProdukState extends State<TambahProduk> {
         title: Text(
           "Tambah Produk",
           textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.black, fontSize: 16.7),
+          style: TextStyle(color: Colors.black, fontSize: 20),
         ),
         leading: IconButton(
           icon: Icon(
@@ -55,7 +56,8 @@ class _TambahProdukState extends State<TambahProduk> {
             color: Colors.black,
           ),
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.push(
+                context, MaterialPageRoute(builder: ((context) => (Toko()))));
           },
         ),
       ),
@@ -236,7 +238,7 @@ class _TambahProdukState extends State<TambahProduk> {
                     ),
                   ),
                   const SizedBox(
-                    width: 130.0,
+                    width: 140.0,
                   ),
                   new Container(
                     padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -282,7 +284,7 @@ class _TambahProdukState extends State<TambahProduk> {
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                       color: secondaryColor,
-                      borderRadius: BorderRadius.circular(50)),
+                      borderRadius: BorderRadius.circular(10)),
                   child: new InkWell(
                     onTap: () => print("Tapped"),
                     child: Text(
@@ -298,7 +300,7 @@ class _TambahProdukState extends State<TambahProduk> {
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
                       color: secondaryColor,
-                      borderRadius: BorderRadius.circular(50)),
+                      borderRadius: BorderRadius.circular(10)),
                   child: new InkWell(
                     onTap: () => print("Tapped"),
                     child: Text(
@@ -325,7 +327,7 @@ class _TambahProdukState extends State<TambahProduk> {
                     ),
                   ),
                   const SizedBox(
-                    width: 130.0,
+                    width: 140.0,
                   ),
                   new Container(
                     padding: new EdgeInsets.only(top: 10.0, bottom: 10.0),
@@ -385,7 +387,10 @@ class _TambahProdukState extends State<TambahProduk> {
                           primary: Colors.grey[400],
                         ),
                         onPressed: () {
-                          debugPrint("Tapped");
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => (VariasiView()))));
                         },
                         child: Text(
                           "Lanjut",
