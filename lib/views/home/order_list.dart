@@ -1,5 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/navigator_helper.dart';
+import 'package:expektasi/core/utils/product_card.dart';
 import 'package:expektasi/views/home/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
@@ -27,7 +28,8 @@ class _OrderViewListState extends State<OrderViewList> {
               icon: Icon(Icons.arrow_back),
               color: Colors.black,
               onPressed: () {
-                goPush(ProfileView(), context);
+                // goPush(ProfileView(), context);
+                Navigator.pop(context);
               },
             ),
             toolbarHeight: 80,
@@ -54,24 +56,12 @@ class _OrderViewListState extends State<OrderViewList> {
           ),
           body: TabBarView(
             children: <Widget>[
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
-              Container(
-                child: Icon(PhosphorIcons.bellSimpleFill),
-              ),
+              ProductOrderPendingCard(),
+              ProductOrderAcceptedCard(),
+              ProductOrderOTWCard(),
+              ProductOrderFinishedCard(),
+              ProductOrderCancelledCard(),
+              ProductOrderRefundCard()
             ],
           ),
         ),

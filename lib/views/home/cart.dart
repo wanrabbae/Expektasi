@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/core/utils/product_card.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -13,6 +14,8 @@ class CartView extends StatefulWidget {
 }
 
 class _CartViewState extends State<CartView> {
+  int count = 1;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -40,10 +43,10 @@ class _CartViewState extends State<CartView> {
               style: TextStyle(color: Colors.black),
             )),
           ),
-          body: const TabBarView(
-            children: [
-              Icon(Icons.directions_car),
-              Icon(Icons.directions_transit),
+          body: TabBarView(
+            children: <Widget>[
+              ProductCartAll(count, setState),
+              ProductFavouriteAll(),
               Icon(Icons.directions_bike),
             ],
           ),
