@@ -1,5 +1,6 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/recieved_message.dart';
+import 'package:expektasi/core/utils/send_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -65,7 +66,7 @@ class _ChattingViewState extends State<ChattingView> {
           )),
       body: SingleChildScrollView(
           child: Container(
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        child: Column(children: [
           Container(
             alignment: Alignment.center,
             child: Container(
@@ -83,119 +84,9 @@ class _ChattingViewState extends State<ChattingView> {
           ),
           Padding(padding: EdgeInsets.symmetric(vertical: 10)),
           // RecievedMsg()
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-            child: Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    color: Colors.grey.shade300,
-                    borderRadius: BorderRadius.circular(7)),
-                child: Column(
-                  children: [
-                    Text(
-                      '''Hi, Terima kasih sudah daftar aplikas kami. Kami tunggu pesanan anda.''',
-                      style: TextStyle(color: Colors.black, fontSize: 12),
-                      textAlign: TextAlign.left,
-                    ),
-                    Text(
-                      "10.02 AM",
-                      style: TextStyle(color: Colors.white, fontSize: 9),
-                      textAlign: TextAlign.right,
-                    ),
-                  ],
-                )),
-          ),
-          Container(
-              margin: EdgeInsets.symmetric(vertical: 15, horizontal: 50),
-              padding: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                  color: Colors.grey.shade300,
-                  borderRadius: BorderRadius.circular(7)),
-              child: Column(
-                children: [
-                  Text(
-                    '''Hi, Terima kasih sudah daftar aplikas kami. Kami tunggu pesanan anda.''',
-                    style: TextStyle(color: Colors.black, fontSize: 12),
-                    textAlign: TextAlign.left,
-                  ),
-                  Text(
-                    "10.02 AM",
-                    style: TextStyle(color: Colors.white, fontSize: 9),
-                    textAlign: TextAlign.right,
-                  ),
-                ],
-              ))
 
-          // Column(
-          //   crossAxisAlignment: CrossAxisAlignment.start,
-          //   mainAxisAlignment: MainAxisAlignment.start,
-          //   children: [
-          //     Container(
-          //       alignment: Alignment.centerLeft,
-          //       child: Padding(
-          //         padding: EdgeInsets.symmetric(horizontal: 50),
-          //         child: Container(
-          //           // width: 50,
-          //           alignment: Alignment.centerLeft,
-          //           margin: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          //           padding: EdgeInsets.all(10),
-          //           decoration: BoxDecoration(
-          //               color: Colors.grey.shade300,
-          //               borderRadius: BorderRadius.circular(7)),
-          //           child: Column(
-          //               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 Text(
-          //                   "Hi, Terima kasih sudah daftar aplikas kami. Kami tunggu pesanan anda.",
-          //                   style: TextStyle(color: Colors.black, fontSize: 13),
-          //                 ),
-          //                 Text(
-          //                   "10.02 AM",
-          //                   style: TextStyle(color: Colors.white, fontSize: 9),
-          //                   textAlign: TextAlign.right,
-          //                 ),
-          //               ]),
-          //         ),
-          //       ),
-          //     ),
-          //   ],
-          // )
-
-          // ListView.builder(
-          //   shrinkWrap: true,
-          //   physics: NeverScrollableScrollPhysics(),
-          //   itemCount: 1,
-          //   itemBuilder: (context, index) {
-          //     return Container(
-          //       width: double.infinity,
-          //       alignment: Alignment.topLeft,
-          //       child: Padding(
-          //         padding: EdgeInsets.symmetric(horizontal: 50),
-          //         child: Container(
-          //           // width: 50,
-          //           margin: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-          //           padding: EdgeInsets.all(10),
-          //           decoration: BoxDecoration(
-          //               color: Colors.grey.shade300,
-          //               borderRadius: BorderRadius.circular(7)),
-          //           child: Column(
-          //               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //               children: [
-          //                 Text(
-          //                   "Hi, Terima kasih sudah daftar aplikas kami. Kami tunggu pesanan anda.",
-          //                   style: TextStyle(color: Colors.black, fontSize: 13),
-          //                 ),
-          //                 Text(
-          //                   "10.02 AM",
-          //                   style: TextStyle(color: Colors.white, fontSize: 9),
-          //                   textAlign: TextAlign.right,
-          //                 ),
-          //               ]),
-          //         ),
-          //       ),
-          //     );
-          //   },
-          // ),
+          SentMessage(message: "Moshimoshh"),
+          RecievedMsg(message: "Minnasan Koni jiwaa")
         ]),
       )),
       bottomNavigationBar: BottomAppBar(
