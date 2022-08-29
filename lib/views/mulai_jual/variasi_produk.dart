@@ -3,6 +3,7 @@ import 'package:dotted_border/dotted_border.dart';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/mulai_jual/tambah_produk.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
@@ -84,169 +85,29 @@ class _VariasiProdukState extends State<VariasiProduk> {
                     new Expanded(
                       child: new Container(
                         padding: EdgeInsets.all(20),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(233, 234, 215, 104),
-                            borderRadius: BorderRadius.circular(15.0)),
                         child: new Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            TextButton.icon(
-                              onPressed: () {
-                                showModalBottomSheet(
-                                    backgroundColor: Colors.white,
-                                    context: context,
-                                    isScrollControlled: true,
-                                    builder: ((context) {
-                                      return Wrap(
-                                        children: [
-                                          Container(
-                                            padding: EdgeInsets.all(8),
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                  bottom: MediaQuery.of(context)
-                                                      .viewInsets
-                                                      .bottom),
-                                              child: TextFormField(
-                                                  cursorColor: secondaryColor,
-                                                  maxLength: 10,
-                                                  decoration: const InputDecoration(
-                                                      icon: Icon(PhosphorIcons
-                                                          .paintBucketBold),
-                                                      labelText:
-                                                          "Tambah Variasi Warna",
-                                                      labelStyle: TextStyle(
-                                                          color: Colors.black),
-                                                      hintText: "Warna",
-                                                      hintStyle: TextStyle(
-                                                          color: Colors.grey),
-                                                      suffixIcon: Icon(
-                                                          PhosphorIcons
-                                                              .checkCircle))),
-                                            ),
-                                          ),
-                                          new Container(
-                                            padding: EdgeInsets.all(20),
-                                            alignment: Alignment.center,
-                                            child: new Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [
-                                                new Expanded(
-                                                  child: new Container(
-                                                      padding:
-                                                          EdgeInsets.all(30.0),
-                                                      decoration: BoxDecoration(
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              224,
-                                                              218,
-                                                              218),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      50)),
-                                                      child: new InkWell(
-                                                          onTap: () =>
-                                                              pickImage(
-                                                                  ImageSource
-                                                                      .camera),
-                                                          child: new Column(
-                                                            children: <Widget>[
-                                                              Icon(
-                                                                PhosphorIcons
-                                                                    .cameraBold,
-                                                                size: 60,
-                                                                color:
-                                                                    Colors.grey,
-                                                              ),
-                                                              Text('Ambil Foto',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        17,
-                                                                    color: Colors
-                                                                        .grey,
-                                                                  ))
-                                                            ],
-                                                          ))),
-                                                ),
-                                                new Padding(
-                                                    padding: EdgeInsets.only(
-                                                        left: 20)),
-                                                new Expanded(
-                                                  child: new Container(
-                                                      padding:
-                                                          EdgeInsets.all(30.0),
-                                                      decoration: BoxDecoration(
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              224,
-                                                              218,
-                                                              218),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      50)),
-                                                      child: new InkWell(
-                                                          onTap: () =>
-                                                              pickImage(
-                                                                  ImageSource
-                                                                      .gallery),
-                                                          child: new Column(
-                                                            children: <Widget>[
-                                                              Icon(
-                                                                PhosphorIcons
-                                                                    .imageBold,
-                                                                size: 60,
-                                                                color:
-                                                                    Colors.grey,
-                                                              ),
-                                                              Text(
-                                                                  'Dari Galeri',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        17,
-                                                                    color: Colors
-                                                                        .grey,
-                                                                  ))
-                                                            ],
-                                                          ))),
-                                                )
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      );
-                                    }));
-                              },
-                              label: Text(
-                                "Tambah",
+                            new Container(
+                              padding: EdgeInsets.all(10),
+                              width: double.infinity,
+                              decoration: BoxDecoration(
+                                  color: secondaryColor,
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(12),
+                                      topRight: Radius.circular(12))),
+                              child: Text(
+                                "Abu Abu",
+                                textAlign: TextAlign.center,
                                 style: TextStyle(color: Colors.white),
                               ),
-                              icon: Icon(
-                                PhosphorIcons.plusBold,
-                                color: secondaryColor,
-                              ),
                             ),
-                            DottedBorder(
-                              borderType: BorderType.RRect,
-                              radius: Radius.circular(15),
-                              dashPattern: [8, 4],
-                              color: Color.fromARGB(255, 91, 79, 79),
-                              padding: EdgeInsets.all(30.0),
-                              strokeWidth: 2,
-                              child: Column(
-                                children: [
-                                  Text(
-                                    "Foto",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                  Text(
-                                    "Variasi",
-                                    style: TextStyle(color: Colors.white),
-                                  ),
-                                ],
-                              ),
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                  bottomLeft: Radius.circular(12),
+                                  bottomRight: Radius.circular(12)),
+                              child: Image.network(
+                                  'https://cdn.discordapp.com/attachments/1008921423915532368/1013622483372474368/image_24.png'),
                             )
                           ],
                         ),
@@ -304,88 +165,70 @@ class _VariasiProdukState extends State<VariasiProduk> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                new Expanded(
-                                                  child: new Container(
-                                                      padding:
-                                                          EdgeInsets.all(30.0),
-                                                      decoration: BoxDecoration(
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              224,
-                                                              218,
-                                                              218),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      50)),
-                                                      child: new InkWell(
-                                                          onTap: () =>
-                                                              pickImage(
-                                                                  ImageSource
-                                                                      .camera),
-                                                          child: new Column(
-                                                            children: <Widget>[
-                                                              Icon(
-                                                                PhosphorIcons
-                                                                    .cameraBold,
-                                                                size: 60,
-                                                                color:
-                                                                    Colors.grey,
-                                                              ),
-                                                              Text('Ambil Foto',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        17,
-                                                                    color: Colors
-                                                                        .grey,
-                                                                  ))
-                                                            ],
-                                                          ))),
-                                                ),
+                                                new Container(
+                                                    padding:
+                                                        EdgeInsets.all(30.0),
+                                                    decoration: BoxDecoration(
+                                                        color: Color.fromARGB(
+                                                            255, 224, 218, 218),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50)),
+                                                    child: new InkWell(
+                                                        onTap: () => pickImage(
+                                                            ImageSource.camera),
+                                                        child: new Column(
+                                                          children: <Widget>[
+                                                            Icon(
+                                                              PhosphorIcons
+                                                                  .cameraBold,
+                                                              size: 60,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            Text('Ambil Foto',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 17,
+                                                                  color: Colors
+                                                                      .grey,
+                                                                ))
+                                                          ],
+                                                        ))),
                                                 new Padding(
                                                     padding: EdgeInsets.only(
                                                         left: 20)),
-                                                new Expanded(
-                                                  child: new Container(
-                                                      padding:
-                                                          EdgeInsets.all(30.0),
-                                                      decoration: BoxDecoration(
-                                                          color: Color.fromARGB(
-                                                              255,
-                                                              224,
-                                                              218,
-                                                              218),
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      50)),
-                                                      child: new InkWell(
-                                                          onTap: () =>
-                                                              pickImage(
-                                                                  ImageSource
-                                                                      .gallery),
-                                                          child: new Column(
-                                                            children: <Widget>[
-                                                              Icon(
-                                                                PhosphorIcons
-                                                                    .imageBold,
-                                                                size: 60,
-                                                                color:
-                                                                    Colors.grey,
-                                                              ),
-                                                              Text(
-                                                                  'Dari Galeri',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    fontSize:
-                                                                        17,
-                                                                    color: Colors
-                                                                        .grey,
-                                                                  ))
-                                                            ],
-                                                          ))),
-                                                )
+                                                new Container(
+                                                    padding:
+                                                        EdgeInsets.all(30.0),
+                                                    decoration: BoxDecoration(
+                                                        color: Color.fromARGB(
+                                                            255, 224, 218, 218),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(50)),
+                                                    child: new InkWell(
+                                                        onTap: () => pickImage(
+                                                            ImageSource
+                                                                .gallery),
+                                                        child: new Column(
+                                                          children: <Widget>[
+                                                            Icon(
+                                                              PhosphorIcons
+                                                                  .imageBold,
+                                                              size: 60,
+                                                              color:
+                                                                  Colors.grey,
+                                                            ),
+                                                            Text('Dari Galeri',
+                                                                style:
+                                                                    TextStyle(
+                                                                  fontSize: 17,
+                                                                  color: Colors
+                                                                      .grey,
+                                                                ))
+                                                          ],
+                                                        )))
                                               ],
                                             ),
                                           ),
@@ -458,60 +301,15 @@ class _VariasiProdukState extends State<VariasiProduk> {
                   children: <Widget>[
                     new Expanded(
                         child: new Container(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(20),
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(233, 234, 215, 104),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      child: new Column(
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  backgroundColor: Colors.white,
-                                  isScrollControlled: true,
-                                  context: context,
-                                  builder: ((context) {
-                                    return Wrap(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(8),
-                                          child: Padding(
-                                            padding: EdgeInsets.only(
-                                                bottom: MediaQuery.of(context)
-                                                    .viewInsets
-                                                    .bottom),
-                                            child: TextFormField(
-                                                cursorColor: secondaryColor,
-                                                maxLength: 10,
-                                                decoration: const InputDecoration(
-                                                    icon: Icon(PhosphorIcons
-                                                        .arrowsOutCardinalBold),
-                                                    labelText:
-                                                        "Tambah Variasi Ukuran",
-                                                    labelStyle: TextStyle(
-                                                        color: Colors.black),
-                                                    hintText: "Ukuran",
-                                                    hintStyle: TextStyle(
-                                                        color: Colors.grey),
-                                                    suffixIcon: Icon(
-                                                        PhosphorIcons
-                                                            .checkCircle))),
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  }));
-                            },
-                            label: Text(
-                              "Tambah",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            icon: Icon(
-                              PhosphorIcons.plusBold,
-                              color: secondaryColor,
-                            ),
-                          ),
-                        ],
+                        color: secondaryColor,
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
+                      child: Text(
+                        "L",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     )),
                     const SizedBox(

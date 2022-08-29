@@ -283,7 +283,7 @@ class _TambahProdukState extends State<TambahProduk> {
                 new Container(
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
-                      color: secondaryColor,
+                      color: Color.fromARGB(255, 199, 132, 31),
                       borderRadius: BorderRadius.circular(10)),
                   child: new InkWell(
                     onTap: () => print("Tapped"),
@@ -299,7 +299,7 @@ class _TambahProdukState extends State<TambahProduk> {
                 new Container(
                   padding: EdgeInsets.all(15.0),
                   decoration: BoxDecoration(
-                      color: secondaryColor,
+                      color: Colors.grey[400],
                       borderRadius: BorderRadius.circular(10)),
                   child: new InkWell(
                     onTap: () => print("Tapped"),
@@ -334,7 +334,10 @@ class _TambahProdukState extends State<TambahProduk> {
                     child: new Directionality(
                       textDirection: TextDirection.rtl,
                       child: TextButton.icon(
-                        onPressed: () => print("Text"),
+                        onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => (VariasiView())))),
                         icon: Icon(
                           Icons.keyboard_arrow_right,
                           size: 35,
@@ -390,7 +393,7 @@ class _TambahProdukState extends State<TambahProduk> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: ((context) => (VariasiView()))));
+                                  builder: ((context) => (Toko()))));
                         },
                         child: Text(
                           "Lanjut",
