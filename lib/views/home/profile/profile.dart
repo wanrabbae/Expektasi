@@ -1,10 +1,12 @@
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/views/dompetasi/dompetasi1.dart';
 import 'package:expektasi/views/home/cart.dart';
+import 'package:expektasi/views/home/login.dart';
 import 'package:expektasi/views/home/order_list.dart';
 import 'package:expektasi/views/home/profile/edit_profile.dart';
 import 'package:expektasi/views/home/profile/pusat_bantuan.dart';
 import 'package:expektasi/views/home/profile/riwayat.dart';
+import 'package:expektasi/views/home/register/register.dart';
 import 'package:expektasi/views/mulai_jual/mulai_jual_home.dart';
 import 'package:expektasi/views/template/main_template.dart';
 import 'package:expektasi/views/vouchers/voucher_home.dart';
@@ -20,6 +22,8 @@ class ProfileView extends StatefulWidget {
 }
 
 class _ProfileViewState extends State<ProfileView> {
+  bool user = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,32 +73,90 @@ class _ProfileViewState extends State<ProfileView> {
           child: Container(
         alignment: Alignment.center,
         child: Column(children: [
-          Image.asset(
-            'images/3.png',
-            width: 100,
-          ),
-          // Nama user
-          Text(
-            'asep123',
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          // Text new member
-          Container(
-            margin: EdgeInsets.only(top: 15),
-            padding: EdgeInsets.only(top: 2, bottom: 2, right: 15, left: 15),
-            decoration: BoxDecoration(
-                color: Colors.green, borderRadius: BorderRadius.circular(5)),
-            child: Text("New Member",
-                style: TextStyle(
-                  fontSize: 13,
-                  backgroundColor: Color(117438),
-                  color: Colors.white,
-                )),
-          ),
-
+          user
+              ? Column(
+                  children: [
+                    Image.asset(
+                      'images/3.png',
+                      width: 100,
+                    ),
+                    Text(
+                      'asep123',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(top: 15),
+                      padding: EdgeInsets.only(
+                          top: 2, bottom: 2, right: 15, left: 15),
+                      decoration: BoxDecoration(
+                          color: Colors.green,
+                          borderRadius: BorderRadius.circular(5)),
+                      child: Text("New Member",
+                          style: TextStyle(
+                            fontSize: 13,
+                            backgroundColor: Color(117438),
+                            color: Colors.white,
+                          )),
+                    ),
+                  ],
+                )
+              : Container(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (Register())));
+                        },
+                        color: Color(0xffEB9007),
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 30),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(10),
+                          bottomRight: Radius.circular(0),
+                        )),
+                        child: Text(
+                          'Buat Akun',
+                          style: TextStyle(color: Colors.white, fontSize: 10),
+                        ),
+                      ),
+                      Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+                      FlatButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => (Login())));
+                        },
+                        color: Colors.white,
+                        padding:
+                            EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(10),
+                          topRight: Radius.circular(10),
+                          bottomLeft: Radius.circular(0),
+                          bottomRight: Radius.circular(10),
+                        )),
+                        child: Text(
+                          'Masuk',
+                          style:
+                              TextStyle(color: Color(0xffEB9007), fontSize: 10),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
           Column(
             children: [
               Container(

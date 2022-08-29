@@ -47,7 +47,7 @@ class _CartViewState extends State<CartView> {
             children: <Widget>[
               ProductCartAll(count, setState),
               ProductFavouriteAll(),
-              Icon(Icons.directions_bike),
+              ProductBuyAgainAll()
             ],
           ),
         ),

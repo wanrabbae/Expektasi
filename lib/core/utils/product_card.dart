@@ -1,4 +1,5 @@
 import 'package:expektasi/core/utils/component.dart';
+import 'package:expektasi/views/order/nilai_product.dart';
 import 'package:flutter/material.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 
@@ -1202,6 +1203,101 @@ Widget ProductFavouriteAll() {
               size: 25,
               color: secondaryColor,
             )
+          ],
+        )
+      ]),
+    ),
+  );
+}
+
+Widget ProductBuyAgainAll() {
+  return SingleChildScrollView(
+    child: Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(7),
+        boxShadow: [
+          BoxShadow(
+            color: Color.fromRGBO(0, 0, 0, 0.1),
+            blurRadius: 10,
+            offset: Offset(0, 3),
+          ),
+        ],
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+      child: Column(children: [
+        Container(
+          alignment: Alignment.centerLeft,
+          child: RichText(
+              text: TextSpan(children: [
+            WidgetSpan(
+                child: Container(
+              margin: EdgeInsets.only(right: 3),
+              child: Icon(
+                PhosphorIcons.storefrontBold,
+                size: 15,
+                color: secondaryColor,
+              ),
+            )),
+            TextSpan(
+                text: "John Shop",
+                style: TextStyle(fontSize: 13, color: secondaryColor))
+          ])),
+        ),
+        Padding(padding: EdgeInsets.symmetric(vertical: 5)),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 90,
+              child: Image.network(
+                'https://cdn.discordapp.com/attachments/1008921423915532368/1011899536995786803/Rectangle_374.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(padding: EdgeInsets.symmetric(horizontal: 10)),
+            Expanded(
+              flex: 2,
+              child: Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "SWEATER PRIA - ESOBOY\n HOODIE JUMPER",
+                      style: TextStyle(fontSize: 12),
+                    ),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 3)),
+                    Text(
+                      "Ukuran L",
+                      style:
+                          TextStyle(fontSize: 9, color: Colors.grey.shade400),
+                    ),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 3)),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text("Rp85.500",
+                            style:
+                                TextStyle(fontSize: 10, color: secondaryColor)),
+                        Container(
+                          padding: EdgeInsets.all(0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: secondaryColor),
+                          child: IconButton(
+                            splashColor: secondaryColor,
+                            onPressed: () {},
+                            icon: Icon(PhosphorIcons.shoppingCart,
+                                size: 25.0, color: Colors.white),
+                          ),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Icon(PhosphorIcons.checkCircle, size: 25, color: Colors.black)
           ],
         )
       ]),
