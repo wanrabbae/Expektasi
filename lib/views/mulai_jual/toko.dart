@@ -76,8 +76,7 @@ class _TokoState extends State<Toko> {
               color: Colors.black,
             ),
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: ((context) => (MulaiJual()))));
+              Navigator.pop(context);
             },
           ),
         ),

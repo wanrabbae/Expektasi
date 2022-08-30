@@ -129,7 +129,6 @@ class _VariasiProdukState extends State<VariasiProduk> {
                                 showModalBottomSheet(
                                     backgroundColor: Colors.white,
                                     context: context,
-                                    isScrollControlled: true,
                                     builder: ((context) {
                                       return Wrap(
                                         children: [
@@ -142,7 +141,6 @@ class _VariasiProdukState extends State<VariasiProduk> {
                                                       .bottom),
                                               child: TextFormField(
                                                   cursorColor: secondaryColor,
-                                                  maxLength: 10,
                                                   decoration: const InputDecoration(
                                                       icon: Icon(PhosphorIcons
                                                           .paintBucketBold),
@@ -158,7 +156,7 @@ class _VariasiProdukState extends State<VariasiProduk> {
                                                               .checkCircle))),
                                             ),
                                           ),
-                                          new Container(
+                                          Container(
                                             padding: EdgeInsets.all(20),
                                             alignment: Alignment.center,
                                             child: new Row(

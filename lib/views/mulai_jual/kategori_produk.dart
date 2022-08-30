@@ -19,8 +19,9 @@ class _KategoriProdukState extends State<KategoriProduk> {
           elevation: 0,
           leading: IconButton(
             icon: Icon(Icons.arrow_back, color: Colors.black),
-            onPressed: () => Navigator.push(context,
-                MaterialPageRoute(builder: ((context) => (TambahProduk())))),
+            onPressed: () {
+              Navigator.pop(context);
+            }
           ),
         ),
         body: new SingleChildScrollView(

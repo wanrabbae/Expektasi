@@ -56,8 +56,7 @@ class _TambahProdukState extends State<TambahProduk> {
             color: Colors.black,
           ),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: ((context) => (Toko()))));
+            Navigator.pop(context);
           },
         ),
       ),
