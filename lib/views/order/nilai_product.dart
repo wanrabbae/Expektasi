@@ -1,8 +1,12 @@
+import 'dart:io';
+
 import 'package:expektasi/core/utils/component.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:phosphor_flutter/phosphor_flutter.dart';
 import 'package:rate_in_stars/rate_in_stars.dart';
 
@@ -14,6 +18,75 @@ class NilaiProductView extends StatefulWidget {
 }
 
 class _NilaiProductViewState extends State<NilaiProductView> {
+  File? image;
+  File? foto1;
+  var _selectFromGalery;
+  var _selectedFormCamera;
+
+  Future pickImage(ImageSource source) async {
+    try {
+      final image = await ImagePicker().pickImage(source: source);
+      if (image == null) return;
+
+      final imageTemporary = File(image.path);
+      setState(() => this.image = imageTemporary);
+    } on PlatformException catch (e) {
+      print("Failed to pick a image : $e");
+    }
+  }
+
+  Future pickPhoto1(ImageSource source) async {
+    try {
+      final foto1 = await ImagePicker().pickImage(source: source);
+      if (foto1 == null) return;
+
+      final image1Temporary = File(foto1.path);
+      setState(() => this.foto1 = image1Temporary);
+    } on PlatformException catch (e) {
+      print("Failed to pick a image : $e");
+    }
+  }
+
+  void _onPressedButton1() {
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return new Container(
+            height: 120,
+            child: _buildBottemSheet1(),
+          );
+        });
+  }
+
+  Column _buildBottemSheet1() {
+    return new Column(
+      children: [
+        ListTile(
+          leading: Icon(PhosphorIcons.camera),
+          title: Text("Ambil Gambar"),
+          onTap: () => _selectCamera1(),
+        ),
+        ListTile(
+          leading: Icon(PhosphorIcons.image),
+          title: Text("Pilih Gambar"),
+          onTap: () => _selectGalery1(),
+        ),
+      ],
+    );
+  }
+
+  void _selectCamera1() {
+    setState(() {
+      _selectedFormCamera = pickPhoto1(ImageSource.camera);
+    });
+  }
+
+  void _selectGalery1() {
+    setState(() {
+      _selectFromGalery = pickPhoto1(ImageSource.gallery);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -143,29 +216,32 @@ class _NilaiProductViewState extends State<NilaiProductView> {
                 ),
               ),
             ),
-            Container(
-              alignment: Alignment.center,
+            GestureDetector(
+              onTap: _onPressedButton1,
               child: Container(
-                margin: EdgeInsets.only(top: 20),
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
-                    border: Border.all(color: secondaryColor, width: 1.5),
-                    borderRadius: BorderRadius.circular(7)),
-                child: Column(children: [
-                  Icon(
-                    PhosphorIcons.plus,
-                    size: 50,
-                    color: secondaryColor,
-                  ),
-                  Padding(padding: EdgeInsets.symmetric(vertical: 4)),
-                  Text(
-                    "Tambah Foto",
-                    style: TextStyle(
-                        color: secondaryColor,
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold),
-                  )
-                ]),
+                alignment: Alignment.center,
+                child: Container(
+                  margin: EdgeInsets.only(top: 20),
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: secondaryColor, width: 1.5),
+                      borderRadius: BorderRadius.circular(7)),
+                  child: Column(children: [
+                    Icon(
+                      PhosphorIcons.plus,
+                      size: 50,
+                      color: secondaryColor,
+                    ),
+                    Padding(padding: EdgeInsets.symmetric(vertical: 4)),
+                    Text(
+                      "Tambah Foto",
+                      style: TextStyle(
+                          color: secondaryColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    )
+                  ]),
+                ),
               ),
             ),
             Container(

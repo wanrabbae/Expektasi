@@ -61,7 +61,7 @@ class _LoginState extends State<Login> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(bottom: 30),
+                    margin: EdgeInsets.only(bottom: 20),
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       style: TextStyle(fontSize: 12),
@@ -86,7 +86,6 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(bottom: 10),
                     padding: EdgeInsets.symmetric(horizontal: 20),
                     child: TextFormField(
                       style: TextStyle(fontSize: 12),
@@ -129,6 +128,17 @@ class _LoginState extends State<Login> {
               ),
             ),
             Container(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              alignment: Alignment.center,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Lupa Password?",
+                  style: TextStyle(color: Colors.black, fontSize: 9),
+                ),
+              ),
+            ),
+            Container(
               margin: EdgeInsets.only(bottom: 10),
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Row(
@@ -143,7 +153,7 @@ class _LoginState extends State<Login> {
                     },
                     child: Text(
                       "Daftar",
-                      style: TextStyle(color: secondaryColor, fontSize: 12),
+                      style: TextStyle(color: Colors.black, fontSize: 12),
                     ),
                   ),
                   SizedBox(
@@ -163,17 +173,44 @@ class _LoginState extends State<Login> {
                 ],
               ),
             ),
+            Padding(padding: EdgeInsets.symmetric(vertical: 10)),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              alignment: Alignment.centerLeft,
-              child: TextButton(
-                onPressed: () {},
-                child: Text(
-                  "Lupa Password?",
-                  style: TextStyle(color: secondaryColor, fontSize: 12),
+                child: Column(
+              children: [
+                Text(
+                  "Atau masuk dengan",
+                  style: TextStyle(fontSize: 11),
                 ),
-              ),
-            )
+                Padding(padding: EdgeInsets.symmetric(vertical: 3)),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.white),
+                      padding: MaterialStateProperty.all(EdgeInsets.all(0)),
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50),
+                      ))),
+                  child: Container(
+                    padding: EdgeInsets.all(10),
+                    width: 120,
+                    child: Row(
+                      children: [
+                        Image.network(
+                          'https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png',
+                          width: 20,
+                        ),
+                        Padding(padding: EdgeInsets.symmetric(horizontal: 2)),
+                        Text(
+                          "Google account",
+                          style: TextStyle(fontSize: 9, color: Colors.black),
+                        )
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ))
           ],
         ),
       ),

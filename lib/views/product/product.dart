@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:expektasi/core/utils/component.dart';
 import 'package:expektasi/core/utils/constant.dart';
 import 'package:expektasi/core/utils/navigator_helper.dart';
@@ -205,30 +206,46 @@ class _ProductViewState extends State<ProductView> {
                               style: TextStyle(fontSize: 10),
                             ),
                           ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: listWarnaProduct.map((data) {
-                                  return Container(
-                                      padding: EdgeInsets.only(right: 5),
-                                      child: OutlinedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          data["warna"],
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                              color: secondaryColor,
-                                              fontSize: 10),
-                                        ),
-                                        style: ButtonStyle(
-                                          side: MaterialStateProperty.all(
-                                              BorderSide(
-                                                  color: secondaryColor,
-                                                  width: 1)),
-                                        ),
-                                      ));
-                                }).toList()),
+                          CustomRadioButton(
+                            buttonTextStyle: ButtonTextStyle(
+                              selectedColor: Colors.white,
+                              unSelectedColor: Colors.black,
+                              textStyle: TextStyle(
+                                fontSize: 11,
+                              ),
+                            ),
+                            unSelectedColor: Colors.white,
+                            buttonLables: [
+                              "Merah",
+                              "Kuning",
+                              "Hijau",
+                              "Biru",
+                              "Ungu",
+                              "Hitam",
+                              "Putih",
+                            ],
+                            buttonValues: [
+                              "Merah",
+                              "Kuning",
+                              "Hijau",
+                              "Biru",
+                              "Ungu",
+                              "Hitam",
+                              "Putih",
+                            ],
+                            radioButtonValue: (values) {
+                              print(values);
+                            },
+                            spacing: 0,
+                            horizontal: false,
+                            enableButtonWrap: false,
+                            autoWidth: true,
+                            elevation: 0,
+                            absoluteZeroSpacing: false,
+                            selectedColor: secondaryColor,
+                            selectedBorderColor: secondaryColor,
+                            unSelectedBorderColor: secondaryColor,
+                            padding: 5,
                           )
                         ]),
                       ),
@@ -244,30 +261,40 @@ class _ProductViewState extends State<ProductView> {
                               style: TextStyle(fontSize: 10),
                             ),
                           ),
-                          SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: listSizeProduct.map((data) {
-                                  return Container(
-                                      padding: EdgeInsets.only(right: 5),
-                                      child: OutlinedButton(
-                                        onPressed: () {},
-                                        child: Text(
-                                          data["size"],
-                                          textAlign: TextAlign.left,
-                                          style: TextStyle(
-                                              color: secondaryColor,
-                                              fontSize: 10),
-                                        ),
-                                        style: ButtonStyle(
-                                          side: MaterialStateProperty.all(
-                                              BorderSide(
-                                                  color: secondaryColor,
-                                                  width: 1)),
-                                        ),
-                                      ));
-                                }).toList()),
+                          CustomRadioButton(
+                            buttonTextStyle: ButtonTextStyle(
+                              selectedColor: Colors.white,
+                              unSelectedColor: Colors.black,
+                              textStyle: TextStyle(
+                                fontSize: 11,
+                              ),
+                            ),
+                            unSelectedColor: Colors.white,
+                            buttonLables: [
+                              "M",
+                              "L",
+                              "XL",
+                              "XXL",
+                            ],
+                            buttonValues: [
+                              "M",
+                              "L",
+                              "XL",
+                              "XXL",
+                            ],
+                            radioButtonValue: (values) {
+                              print(values);
+                            },
+                            spacing: 0,
+                            horizontal: false,
+                            enableButtonWrap: false,
+                            autoWidth: true,
+                            elevation: 0,
+                            absoluteZeroSpacing: false,
+                            selectedColor: secondaryColor,
+                            selectedBorderColor: secondaryColor,
+                            unSelectedBorderColor: secondaryColor,
+                            padding: 5,
                           )
                         ]),
                       )
