@@ -157,74 +157,71 @@ class _AturInformasiTokoState extends State<AturInformasiToko> {
                         )
                       ],
                     ),
-                    Column(
-                      children: <Widget>[
-                        Container(
-                          alignment: FractionalOffset.bottomCenter,
-                          width: double.infinity,
-                          padding: new EdgeInsets.only(top: 300),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: <Widget>[
-                              new Expanded(
-                                  child: OutlinedButton(
-                                style: OutlinedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(vertical: 15),
-                                  textStyle: TextStyle(
-                                    fontSize: 13,
-                                  ),
-                                  primary: Colors.black,
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: ((context) =>
-                                              (MulaiJual()))));
-                                },
-                                child: Text(
-                                  "Kembali",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              )),
-                              Padding(
-                                  padding:
-                                      EdgeInsets.symmetric(horizontal: 10)),
-                              new Expanded(
-                                  child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  padding: EdgeInsets.symmetric(vertical: 15),
-                                  textStyle: TextStyle(
-                                      fontSize: 13,
-                                      color: isTextFormFieldFilled
-                                          ? Colors.white
-                                          : Color.fromARGB(255, 94, 70, 70)),
-                                  primary: isTextFormFieldFilled
-                                      ? secondaryColor
-                                      : Colors.grey[400],
-                                ),
-                                onPressed: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: ((context) => (Toko()))));
-                                },
-                                child: Text(
-                                  "Lanjut",
-                                  style: TextStyle(color: Colors.black),
-                                ),
-                              ))
-                            ],
-                          ),
-                        )
-                      ],
-                    )
                   ],
                 ),
               )
             ],
           ),
-        ));
+        ),
+        persistentFooterButtons: <Widget>[
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                new Expanded(
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        textStyle: TextStyle(
+                          fontSize: 13,
+                        ),
+                        primary: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) =>
+                                (MulaiJual()))));
+                      },
+                      child: Text(
+                        "Kembali",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    )),
+                Padding(
+                    padding:
+                    EdgeInsets.symmetric(horizontal: 10)),
+                new Expanded(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        textStyle: TextStyle(
+                            fontSize: 13,
+                            color: isTextFormFieldFilled
+                                ? Colors.white
+                                : Color.fromARGB(255, 94, 70, 70)),
+                        primary: isTextFormFieldFilled
+                            ? secondaryColor
+                            : Colors.grey[400],
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: ((context) => (Toko()))));
+                      },
+                      child: Text(
+                        "Lanjut",
+                        style: TextStyle(color: Colors.black),
+                      ),
+                    ))
+              ],
+            ),
+          )
+        ]
+    );
+
   }
 }

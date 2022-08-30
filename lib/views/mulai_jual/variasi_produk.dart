@@ -58,14 +58,15 @@ class _VariasiProdukState extends State<VariasiProduk> {
               new Container(
                 padding: EdgeInsets.only(top: 35.0, right: 35.0, left: 35.0),
                 alignment: Alignment.center,
-                child: new Row(children: [
+                child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                   new Container(
                     child: Text(
                       "Warna",
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.only(left: 150.0)),
                   new Container(
                     child: TextButton(
                       onPressed: () => print("Tapped"),
@@ -78,7 +79,14 @@ class _VariasiProdukState extends State<VariasiProduk> {
                 ]),
               ),
               new Container(
-                padding: EdgeInsets.only(top: 5, left: 30, right: 30),
+                margin: EdgeInsets.symmetric(
+                  horizontal: 20
+                ),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Color(0x20D9D9D9),
+                  borderRadius: BorderRadius.circular(20)
+                ),
                 alignment: Alignment.center,
                 child: new Row(
                   children: <Widget>[
@@ -120,7 +128,7 @@ class _VariasiProdukState extends State<VariasiProduk> {
                       child: new Container(
                         padding: EdgeInsets.all(20),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(233, 234, 215, 104),
+                            color: Color(0x50FDD100),
                             borderRadius: BorderRadius.circular(15.0)),
                         child: new Column(
                           children: [
@@ -273,14 +281,15 @@ class _VariasiProdukState extends State<VariasiProduk> {
               new Container(
                 padding: EdgeInsets.only(right: 35.0, left: 35.0),
                 alignment: Alignment.center,
-                child: new Row(children: [
+                child: new Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
                   new Container(
                     child: Text(
                       "Ukur",
                       style: TextStyle(fontSize: 20),
                     ),
                   ),
-                  new Padding(padding: EdgeInsets.only(left: 150.0)),
                   new Container(
                     child: TextButton(
                       onPressed: () => print("Tapped"),
@@ -293,13 +302,23 @@ class _VariasiProdukState extends State<VariasiProduk> {
                 ]),
               ),
               new Container(
-                padding: EdgeInsets.only(top: 5, left: 30, right: 30),
+                margin: EdgeInsets.symmetric(
+                    horizontal: 20
+                ),
+                padding: EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                    color: Color(0x20D9D9D9),
+                    borderRadius: BorderRadius.circular(20)
+                ),
                 alignment: Alignment.center,
                 child: new Row(
                   children: <Widget>[
                     new Expanded(
                         child: new Container(
                       padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.only(
+                        right: 20
+                      ),
                       decoration: BoxDecoration(
                         color: secondaryColor,
                         borderRadius: BorderRadius.circular(15.0),
@@ -310,65 +329,58 @@ class _VariasiProdukState extends State<VariasiProduk> {
                         style: TextStyle(color: Colors.white, fontSize: 17),
                       ),
                     )),
-                    const SizedBox(
-                      width: 15.0,
-                    ),
                     new Expanded(
                         child: new Container(
-                      padding: EdgeInsets.all(10),
+                      padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(233, 234, 215, 104),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      child: new Column(
-                        children: [
-                          TextButton.icon(
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  backgroundColor: Colors.white,
-                                  isScrollControlled: true,
-                                  context: context,
-                                  builder: ((context) {
-                                    return Wrap(
-                                      children: [
-                                        Container(
-                                          padding: EdgeInsets.all(8),
-                                          child: Padding(
-                                            padding: EdgeInsets.only(
-                                                bottom: MediaQuery.of(context)
-                                                    .viewInsets
-                                                    .bottom),
-                                            child: TextFormField(
-                                                cursorColor: secondaryColor,
-                                                maxLength: 10,
-                                                decoration: const InputDecoration(
-                                                    icon: Icon(PhosphorIcons
-                                                        .arrowsOutCardinalBold),
-                                                    labelText:
-                                                        "Tambah Variasi Ukuran",
-                                                    labelStyle: TextStyle(
-                                                        color: Colors.black),
-                                                    hintText: "Ukuran",
-                                                    hintStyle: TextStyle(
-                                                        color: Colors.grey),
-                                                    suffixIcon: Icon(
-                                                        PhosphorIcons
-                                                            .checkCircle))),
-                                          ),
-                                        ),
-                                      ],
-                                    );
-                                  }));
-                            },
-                            label: Text(
-                              "Tambah",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                            icon: Icon(
-                              PhosphorIcons.plusBold,
-                              color: secondaryColor,
-                            ),
-                          ),
-                        ],
+                          color: Color(0x50FDD100),
+                          borderRadius: BorderRadius.circular(12.0)),
+                      child: TextButton.icon(
+                        onPressed: () {
+                          showModalBottomSheet(
+                              backgroundColor: Colors.white,
+                              isScrollControlled: true,
+                              context: context,
+                              builder: ((context) {
+                                return Wrap(
+                                  children: [
+                                    Container(
+                                      padding: EdgeInsets.all(8),
+                                      child: Padding(
+                                        padding: EdgeInsets.only(
+                                            bottom: MediaQuery.of(context)
+                                                .viewInsets
+                                                .bottom),
+                                        child: TextFormField(
+                                            cursorColor: secondaryColor,
+                                            maxLength: 10,
+                                            decoration: const InputDecoration(
+                                                icon: Icon(PhosphorIcons
+                                                    .arrowsOutCardinalBold),
+                                                labelText:
+                                                    "Tambah Variasi Ukuran",
+                                                labelStyle: TextStyle(
+                                                    color: Colors.black),
+                                                hintText: "Ukuran",
+                                                hintStyle: TextStyle(
+                                                    color: Colors.grey),
+                                                suffixIcon: Icon(
+                                                    PhosphorIcons
+                                                        .checkCircle))),
+                                      ),
+                                    ),
+                                  ],
+                                );
+                              }));
+                        },
+                        label: Text(
+                          "Tambah",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        icon: Icon(
+                          PhosphorIcons.plusBold,
+                          color: secondaryColor,
+                        ),
                       ),
                     )),
                   ],
