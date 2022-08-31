@@ -27,49 +27,57 @@ class _ProfileViewState extends State<ProfileView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              onPressed: () => showDialog<String>(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                      content: const Text(
-                        'Apakah anda ingin LogOut?',
-                        textAlign: TextAlign.center,
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              actions: [
+                IconButton(
+                    onPressed: () => showDialog<String>(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                        content: const Text(
+                          'Apakah anda ingin LogOut?',
+                          textAlign: TextAlign.center,
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Ya'),
+                            child: const Text(
+                              'Ya',
+                              style: TextStyle(color: Colors.black),
+                            ),
+                          ),
+                          TextButton(
+                            style: ButtonStyle(
+                                backgroundColor:
+                                MaterialStateProperty.all(secondaryColor),
+                                padding: MaterialStateProperty.all(
+                                    EdgeInsets.all(10.0))),
+                            onPressed: () => Navigator.pop(context, 'Tidak'),
+                            child: const Text(
+                              'Tidak',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ),
+                        ],
                       ),
-                      actions: <Widget>[
-                        TextButton(
-                          onPressed: () => Navigator.pop(context, 'Ya'),
-                          child: const Text(
-                            'Ya',
-                            style: TextStyle(color: Colors.black),
-                          ),
-                        ),
-                        TextButton(
-                          style: ButtonStyle(
-                              backgroundColor:
-                                  MaterialStateProperty.all(secondaryColor),
-                              padding: MaterialStateProperty.all(
-                                  EdgeInsets.all(10.0))),
-                          onPressed: () => Navigator.pop(context, 'Tidak'),
-                          child: const Text(
-                            'Tidak',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
                     ),
-                  ),
-              icon: Icon(
-                PhosphorIcons.signOutBold,
-                size: 32.0,
-                color: secondaryColor,
-              ))
-        ],
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
+                    icon: Icon(
+                      PhosphorIcons.signOutBold,
+                      size: 32.0,
+                      color: secondaryColor,
+                    ))
+              ],
+              backgroundColor: Colors.transparent,
+              elevation: 0,
+              floating: true,
+              forceElevated: innerBoxIsScrolled,
+            ),
+          ];
+        },
       body: SingleChildScrollView(
+          physics: BouncingScrollPhysics(),
           child: Container(
         alignment: Alignment.center,
         child: Column(children: [
@@ -104,6 +112,7 @@ class _ProfileViewState extends State<ProfileView> {
                   ],
                 )
               : Container(
+            margin: EdgeInsets.only(top: 50,bottom: 50),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -722,7 +731,12 @@ class _ProfileViewState extends State<ProfileView> {
             ],
           )
         ]),
-      )),
+      )
+    ),
+      // appBar: AppBar(
+      //
+      // ),
+      )
     );
   }
 }
