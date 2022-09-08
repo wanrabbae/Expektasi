@@ -26,17 +26,16 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
     slides.add(
       Slide(
         title: "EXPEKTASI",
-          styleTitle: TextStyle(
-            color: Color(0xffFDD100),
-            fontSize: 15,
-            fontWeight: FontWeight.w700,
-          ),
-        description:
-        "Belanja Puas, Harga Pas",
+        styleTitle: TextStyle(
+          color: Color(0xffFDD100),
+          fontSize: 15,
+          fontWeight: FontWeight.w700,
+        ),
+        description: "Belanja Puas, Harga Pas",
         styleDescription: TextStyle(
-            color: Colors.black,
-            fontSize: 10,
-            fontWeight: FontWeight.w500,
+          color: Colors.black,
+          fontSize: 10,
+          fontWeight: FontWeight.w500,
         ),
         pathImage: "images/1.png",
         //   widthImage : 400,
@@ -53,7 +52,7 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
           fontWeight: FontWeight.w700,
         ),
         description:
-        "Bingung pilih produk?\n Expektasi menyediakan ribuan produk, yuk cek!",
+            "Bingung pilih produk?\n Expektasi menyediakan ribuan produk, yuk cek!",
         styleDescription: TextStyle(
           color: Colors.black,
           fontSize: 10,
@@ -70,8 +69,7 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
           fontSize: 15,
           fontWeight: FontWeight.w700,
         ),
-        description:
-        "Bayar instant tanpa ribet.",
+        description: "Bayar instant tanpa ribet.",
         styleDescription: TextStyle(
           color: Colors.black,
           fontSize: 10,
@@ -81,25 +79,21 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
       ),
     );
   }
+
   Widget renderNextBtn() {
     return Text(
       'NEXT',
-      style: TextStyle(
-        color: Color(0xffFDD100),
-        fontWeight: FontWeight.w700
-      ),
+      style: TextStyle(color: Color(0xffFDD100), fontWeight: FontWeight.w700),
     );
   }
+
   Widget renderDoneBtn() {
     return Center(
       child: Container(
         width: double.infinity,
         child: Text(
           'Ayo Mulai Belanja!',
-          style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w700
-          ),
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.w700),
         ),
       ),
     );
@@ -107,17 +101,15 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
 
   ButtonStyle myButtonStyle() {
     return ButtonStyle(
-      backgroundColor: MaterialStateProperty.all<Color>(const Color(0xffFDD100)),
+      backgroundColor:
+          MaterialStateProperty.all<Color>(const Color(0xffFDD100)),
     );
   }
 
   Widget renderSkipBtn() {
     return Text(
       'SKIP',
-      style: TextStyle(
-          color: Color(0xffFDD100),
-          fontWeight: FontWeight.w700
-      ),
+      style: TextStyle(color: Color(0xffFDD100), fontWeight: FontWeight.w700),
     );
   }
 
@@ -127,10 +119,9 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
     //   HomeView()
     // );
     Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => HomeView()),
-        ModalRoute.withName('/')
-        );
+        context,
+        MaterialPageRoute(builder: (context) => HomeView()),
+        ModalRoute.withName('/'));
     // goPush(
     //     HomeView()
     // );
@@ -139,7 +130,7 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
   List<Widget> renderListCustomTabs() {
     return List.generate(
       slides.length,
-          (index) => SizedBox(
+      (index) => SizedBox(
         width: double.infinity,
         height: double.infinity,
         child: Container(
@@ -153,7 +144,7 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
                   slides[index].pathImage!,
                   width: 300.0,
                   height: 400.0,
-                  fit: BoxFit.fitWidth  ,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
               Container(
@@ -196,13 +187,11 @@ class _WelcomeOneViewState extends State<WelcomeOneView> {
       sizeDot: 10.0,
       typeDotAnimation: dotSliderAnimation.SIZE_TRANSITION,
 
-
       listCustomTabs: renderListCustomTabs(),
       backgroundColorAllSlides: Colors.white,
       refFuncGoToTab: (refFunc) {
         goToTab = refFunc;
       },
-
     );
   }
 }
